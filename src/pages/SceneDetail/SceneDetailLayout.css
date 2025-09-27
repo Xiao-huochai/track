@@ -38,8 +38,8 @@
 /* 中间内容区：左右分栏 */
 .detail-content {
   display: grid;
-  grid-template-columns: 1fr 3fr; /* 左栏固定宽度，右栏自适应 */
-  gap: 20px;
+  grid-template-columns: 1fr 2fr; /* 左栏固定宽度，右栏自适应 */
+  gap: 15px;
   flex-grow: 1;
   overflow: hidden;
 }
@@ -55,9 +55,9 @@
 /* 左列 */
 .column.left {
   display: flex;
-  align-items: center;
+  align-items: center; /* 顶部对齐 */
   justify-content: center;
-  padding: 20px;
+  padding: 10px; /* 最小化内边距 */
 }
 
 /* 右列：上下分栏 */

@@ -1,0 +1,52 @@
+.split-combine-knob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4px; /* 缩小间距 */
+  width: 65px; /* 压缩宽度 */
+  padding: 4px;
+}
+
+.knob-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.knob-indicator.分::after {
+  content: "";
+  position: absolute;
+  width: 3px; /* 缩小箭头 */
+  height: 14px;
+  background-color: #f00;
+  transform: rotate(-45deg);
+  top: 5px;
+  left: 12px;
+}
+
+.knob-indicator.合::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 14px;
+  background-color: #0f0;
+  transform: rotate(45deg);
+  top: 5px;
+  left: 12px;
+}
+
+.knob-label {
+  font-size: 11px; /* 缩小字体 */
+  margin-top: 3px;
+  text-align: center;
+  white-space: normal; /* 强制换行 */
+  word-break: break-all; /* 极端情况强制拆分文字 */
+  line-height: 1.2; /* 缩小行高 */
+  max-width: 60px; /* 严格限制宽度 */
+}

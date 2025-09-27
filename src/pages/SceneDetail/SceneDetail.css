@@ -56,3 +56,28 @@
 .action-btn:hover {
   background-color: #0056b3;
 }
+
+/* 添加的 */
+
+.left-content-placeholder {
+  display: flex;
+  flex-direction: column;
+  padding: 10px; /* 缩小内边距 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.knob-row {
+  display: flex;
+  flex-wrap: nowrap; /* 禁止换行 */
+  margin-bottom: 12px; /* 缩小行间距 */
+  gap: 2px; /* 最小化组件间距 */
+  align-items: flex-start; /* 顶部对齐，避免文字换行导致错位 */
+}
+
+.instruments-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 12px;
+  padding: 0 10px;
+}
