@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ColorButton.css";
 
-const SingleRedButton = ({
+const ColorButton = ({
   label,
   topLabel,
   activeColor = "#e74c3c", // 激活状态颜色，默认红色
@@ -34,4 +34,4 @@ const SingleRedButton = ({
   );
 };
 
-export default SingleRedButton;
+export default ColorButton;

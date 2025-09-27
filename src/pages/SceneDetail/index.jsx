@@ -5,14 +5,10 @@ import SplitZeroCombineKnob from "../../components/Knob/SplitZeroCombineKnob";
 import Voltmeter from "../../components/Instruments/Voltmeter";
 import OdometerPlaceholder from "../../components/Instruments/OdometerPlaceholder";
 import OperationModeKnob from "../../components/Knob/OperationModeKnob";
-import ColoredButton from "../../components/Button/ColoredButton";
 import EmergencyBrakeButton from "../../components/Button/EmergencyBrakeButton";
-import GreyBorderButton from "../../components/Button/GreyBorderButton";
 import ButtonPair from "../../components/Button/ButtonPair";
 import ColorButton from "../../components/Button/ColorButton";
 import DriveModeButton from "../../components/Button/DriveModeButton";
-import AtoModeButton from "../../components/Button/AtoModeButton";
-import UnmannedButton from "../../components/Button/UnmannedButton";
 import SquareButton from "../../components/Button/SquareButton";
 
 const SceneDetail = () => {
@@ -99,17 +95,37 @@ const SceneDetail = () => {
           <div className="left-section">
             {/* 左列1：5个白边彩色圆形按钮 */}
             <div className="left-col1">
-              <ColoredButton color="#e74c3c" label="开左门" isOn={true} />
-              <ColoredButton color="#f39c12" label="强制开左门" isOn={false} />
-              <ColoredButton color="#333" label="重开左门" isOn={false} />
-              <ColoredButton color="#e74c3c" label="开左门" isOn={true} />
-              <ColoredButton color="#2ecc71" label="关左门" isOn={false} />
+              <ColorButton
+                activeColor="#e74c3c"
+                label="开左门"
+                borderColor="white"
+              />
+              <ColorButton
+                activeColor="#f39c12"
+                label="强制开左门"
+                borderColor="white"
+              />
+              <ColorButton
+                activeColor="#333"
+                label="重开左门"
+                borderColor="white"
+              />
+              <ColorButton
+                activeColor="#e74c3c"
+                label="开左门"
+                borderColor="white"
+              />
+              <ColorButton
+                activeColor="#2ecc71"
+                label="关左门"
+                borderColor="white"
+              />
             </div>
             {/* 左列2：紧急制动+2个灰边按钮 */}
             <div className="left-col2">
               <EmergencyBrakeButton isOn={false} />
-              <GreyBorderButton color="#666" label="解钩" isOn={false} />
-              <GreyBorderButton color="#f39c12" label="窗外加热" isOn={false} />
+              <ColorButton activeColor="grey" label="解钩" />
+              <ColorButton activeColor="#f39c12" label="窗外加热" />
             </div>
           </div>
 
@@ -166,12 +182,12 @@ const SceneDetail = () => {
             {/* 第三行：7个控制元素 */}
             <div className="middle-row3">
               <DriveModeButton />
-              <AtoModeButton label="ATO模式" />
+              <ColorButton activeColor="#2ecc71" label="ATO模式" />
               <SplitZeroCombineKnob
                 label="ATP后退"
                 options={splitCombineOptions}
               />
-              <UnmannedButton label="无人驾驶折返模式" />
+              <ColorButton activeColor="#f39c12" label="无人驾驶折返模式" />
               <SplitZeroCombineKnob
                 label="关门模式选择"
                 options={splitCombineOptions}
