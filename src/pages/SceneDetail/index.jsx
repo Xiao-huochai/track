@@ -9,7 +9,7 @@ import ColoredButton from "../../components/Button/ColoredButton";
 import EmergencyBrakeButton from "../../components/Button/EmergencyBrakeButton";
 import GreyBorderButton from "../../components/Button/GreyBorderButton";
 import ButtonPair from "../../components/Button/ButtonPair";
-import SingleRedButton from "../../components/Button/SingleRedButton";
+import ColorButton from "../../components/Button/ColorButton";
 import DriveModeButton from "../../components/Button/DriveModeButton";
 import AtoModeButton from "../../components/Button/AtoModeButton";
 import UnmannedButton from "../../components/Button/UnmannedButton";
@@ -138,7 +138,7 @@ const SceneDetail = () => {
                 rightState="缓解"
                 rightColor="#2ecc71"
               />
-              <SingleRedButton label="乘客报警复位" topLabel="复位" />
+              <ColorButton label="乘客报警复位" topLabel="复位" />
             </div>
 
             {/* 第二行：6个旋钮 */}
