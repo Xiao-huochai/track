@@ -1,0 +1,82 @@
+/* 页面整体容器 */
+.detail-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 顶部标题栏 */
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.detail-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.operation-btn {
+  background-color: #e6f3ff;
+  color: #007bff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.operation-btn:hover {
+  background-color: #c9e6ff;
+}
+
+/* 中间内容区：左右分栏 */
+.detail-content {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* 左栏固定宽度，右栏自适应 */
+  gap: 20px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+/* 列通用样式 */
+.column {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 左列 */
+.column.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 右列：上下分栏 */
+.column.right {
+  display: grid;
+  grid-template-rows: 1fr 1fr; /* 上下两部分各占一半高度 */
+  gap: 10px;
+}
+
+/* 右列上下行通用样式 */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.row.top,
+.row.bottom {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}

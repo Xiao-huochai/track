@@ -1,5 +1,13 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes";
+import "./assets/global.css";
+
 function App() {
-  return <div className="App">ciallo</div>;
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
 }
 
 export default App;

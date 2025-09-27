@@ -1,0 +1,58 @@
+.detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.scene-title {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-breadcrumb {
+  color: #666;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.scene-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scene-content h2 {
+  color: #555;
+  margin-top: 0;
+}
+
+.scene-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.action-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}
