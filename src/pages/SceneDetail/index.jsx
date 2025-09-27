@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import SceneDetailLayout from "./SceneDetailLayout";
 import "./SceneDetail.css";
-import SplitCombineKnob from "../../components/Knob/SplitCombineKnob";
 import SplitZeroCombineKnob from "../../components/Knob/SplitZeroCombineKnob";
 import Voltmeter from "../../components/Instruments/Voltmeter";
 import OdometerPlaceholder from "../../components/Instruments/OdometerPlaceholder";
@@ -15,6 +14,7 @@ import DriveModeButton from "../../components/Button/DriveModeButton";
 import AtoModeButton from "../../components/Button/AtoModeButton";
 import UnmannedButton from "../../components/Button/UnmannedButton";
 import SquareButton from "../../components/Button/SquareButton";
+
 const SceneDetail = () => {
   const location = useLocation();
 
@@ -25,7 +25,10 @@ const SceneDetail = () => {
     ? decodeURIComponent(encodedSystemName)
     : "未知系统";
 
-  // 第一行分合旋钮标签（对应图中第一行10个旋钮）
+  // 定义分合选项，供所有替换后的旋钮使用
+  const splitCombineOptions = ["分", "合"];
+
+  // 第一行旋钮标签（对应图中第一行10个旋钮）
   const row1Labels = [
     "信号选择",
     "允许开弓旁路",
@@ -57,17 +60,25 @@ const SceneDetail = () => {
       title={systemName + "故障"}
       childrenLeft={
         <div className="left-content-placeholder">
-          {/* 第一行：10个分合旋钮 */}
+          {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
           <div className="knob-row">
             {row1Labels.map((label) => (
-              <SplitCombineKnob key={label} label={label} />
+              <SplitZeroCombineKnob
+                key={label}
+                label={label}
+                options={splitCombineOptions}
+              />
             ))}
           </div>
 
           {/* 第二行：6个分合 + 3个分0合旋钮 */}
           <div className="knob-row">
             {row2SplitCombineLabels.map((label) => (
-              <SplitCombineKnob key={label} label={label} />
+              <SplitZeroCombineKnob
+                key={label}
+                label={label}
+                options={splitCombineOptions}
+              />
             ))}
             {row2SplitZeroCombineLabels.map((label) => (
               <SplitZeroCombineKnob key={label} label={label} />
@@ -132,23 +143,47 @@ const SceneDetail = () => {
 
             {/* 第二行：6个旋钮 */}
             <div className="middle-row2">
-              <SplitCombineKnob label="司机室照明" />
-              <SplitCombineKnob label="阅读灯" />
+              <SplitZeroCombineKnob
+                label="司机室照明"
+                options={splitCombineOptions}
+              />
+              <SplitZeroCombineKnob
+                label="阅读灯"
+                options={splitCombineOptions}
+              />
               <SplitZeroCombineKnob label="客室照明" />
               <SplitZeroCombineKnob label="紧急照明" />
-              <SplitCombineKnob label="刮雨器" />
-              <SplitCombineKnob label="头灯" />
+              <SplitZeroCombineKnob
+                label="刮雨器"
+                options={splitCombineOptions}
+              />
+              <SplitZeroCombineKnob
+                label="头灯"
+                options={splitCombineOptions}
+              />
             </div>
 
             {/* 第三行：7个控制元素 */}
             <div className="middle-row3">
               <DriveModeButton />
               <AtoModeButton label="ATO模式" />
-              <SplitCombineKnob label="ATP后退" />
+              <SplitZeroCombineKnob
+                label="ATP后退"
+                options={splitCombineOptions}
+              />
               <UnmannedButton label="无人驾驶折返模式" />
-              <SplitCombineKnob label="关门模式选择" />
-              <SplitCombineKnob label="灯测试" />
-              <SplitCombineKnob label="风笛" />
+              <SplitZeroCombineKnob
+                label="关门模式选择"
+                options={splitCombineOptions}
+              />
+              <SplitZeroCombineKnob
+                label="灯测试"
+                options={splitCombineOptions}
+              />
+              <SplitZeroCombineKnob
+                label="风笛"
+                options={splitCombineOptions}
+              />
             </div>
           </div>
 

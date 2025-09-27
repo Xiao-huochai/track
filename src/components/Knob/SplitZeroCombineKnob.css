@@ -13,24 +13,16 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 4px;
+  position: relative;
+  height: 16px; /* 固定高度防止布局跳动 */
 }
 
 .label-left,
 .label-middle,
 .label-right {
-  font-size: 10px;
-  width: 20px;
-  height: 25px;
-}
-
-.label-left {
-  margin-left: 2px;
-}
-.label-middle {
-  margin: 0 4px;
-}
-.label-right {
-  margin-right: 2px;
+  font-size: 8px; /* 字体调小 */
+  width: 10px;
+  text-align: center; /* 文字居中对齐 */
 }
 
 /* 外层圆环 */
@@ -58,8 +50,8 @@
   background-color: #666;
 }
 
-/* 分状态：红色左箭头 */
-.knob-indicator.分::after {
+/* 左状态：红色左箭头 */
+.knob-indicator.left::after {
   content: "";
   position: absolute;
   width: 4px;
@@ -70,8 +62,8 @@
   left: 10px;
 }
 
-/* 0状态：黄色竖箭头（指向0） */
-.knob-indicator.zero::after {
+/* 中间状态：黄色竖箭头 */
+.knob-indicator.middle::after {
   content: "";
   position: absolute;
   width: 4px;
@@ -81,8 +73,8 @@
   left: 10px;
 }
 
-/* 合状态：绿色右箭头 */
-.knob-indicator.合::after {
+/* 右状态：绿色右箭头 */
+.knob-indicator.right::after {
   content: "";
   position: absolute;
   width: 4px;
@@ -94,7 +86,7 @@
 }
 
 .knob-label {
-  font-size: 11px;
+  font-size: 10px; /* 底部标签字体调小 */
   margin-top: 3px;
   text-align: center;
   white-space: normal;
