@@ -187,7 +187,7 @@ const SceneDetail = () => {
                 label="ATP后退"
                 options={splitCombineOptions}
               />
-              <ColorButton activeColor="#f39c12" label="无人驾驶折返模式" />
+              <ColorButton activeColor="#f39c12" label="无人驾折返模式" />
               <SplitZeroCombineKnob
                 label="关门模式选择"
                 options={splitCombineOptions}
