@@ -6,7 +6,15 @@ import SplitZeroCombineKnob from "../../components/Knob/SplitZeroCombineKnob";
 import Voltmeter from "../../components/Instruments/Voltmeter";
 import OdometerPlaceholder from "../../components/Instruments/OdometerPlaceholder";
 import OperationModeKnob from "../../components/Knob/OperationModeKnob";
-
+import ColoredButton from "../../components/Button/ColoredButton";
+import EmergencyBrakeButton from "../../components/Button/EmergencyBrakeButton";
+import GreyBorderButton from "../../components/Button/GreyBorderButton";
+import ButtonPair from "../../components/Button/ButtonPair";
+import SingleRedButton from "../../components/Button/SingleRedButton";
+import DriveModeButton from "../../components/Button/DriveModeButton";
+import AtoModeButton from "../../components/Button/AtoModeButton";
+import UnmannedButton from "../../components/Button/UnmannedButton";
+import SquareButton from "../../components/Button/SquareButton";
 const SceneDetail = () => {
   const location = useLocation();
 
@@ -74,7 +82,84 @@ const SceneDetail = () => {
           </div>
         </div>
       }
-      childrenRightTop={<div className="right-top-placeholder"></div>}
+      childrenRightTop={
+        <div className="right-top-placeholder">
+          {/* 左部分：两列按钮 */}
+          <div className="left-section">
+            {/* 左列1：5个白边彩色圆形按钮 */}
+            <div className="left-col1">
+              <ColoredButton color="#e74c3c" label="开左门" isOn={true} />
+              <ColoredButton color="#f39c12" label="强制开左门" isOn={false} />
+              <ColoredButton color="#333" label="重开左门" isOn={false} />
+              <ColoredButton color="#e74c3c" label="开左门" isOn={true} />
+              <ColoredButton color="#2ecc71" label="关左门" isOn={false} />
+            </div>
+            {/* 左列2：紧急制动+2个灰边按钮 */}
+            <div className="left-col2">
+              <EmergencyBrakeButton isOn={false} />
+              <GreyBorderButton color="#666" label="解钩" isOn={false} />
+              <GreyBorderButton color="#f39c12" label="窗外加热" isOn={false} />
+            </div>
+          </div>
+
+          {/* 中间部分：三行控制区 */}
+          <div className="middle-section">
+            {/* 第一行：按钮对+乘客报警复位 */}
+            <div className="middle-row1">
+              <ButtonPair
+                label="主断"
+                leftState="分"
+                leftColor="#e74c3c"
+                rightState="合"
+                rightColor="#2ecc71"
+              />
+              <ButtonPair
+                label="受电弓"
+                leftState="降"
+                leftColor="#e74c3c"
+                rightState="升"
+                rightColor="#2ecc71"
+              />
+              <ButtonPair
+                label="停放制动"
+                leftState="施加"
+                leftColor="#e74c3c"
+                rightState="缓解"
+                rightColor="#2ecc71"
+              />
+              <SingleRedButton label="乘客报警复位" topLabel="复位" />
+            </div>
+
+            {/* 第二行：6个旋钮 */}
+            <div className="middle-row2">
+              <SplitCombineKnob label="司机室照明" />
+              <SplitCombineKnob label="阅读灯" />
+              <SplitZeroCombineKnob label="客室照明" />
+              <SplitZeroCombineKnob label="紧急照明" />
+              <SplitCombineKnob label="刮雨器" />
+              <SplitCombineKnob label="头灯" />
+            </div>
+
+            {/* 第三行：7个控制元素 */}
+            <div className="middle-row3">
+              <DriveModeButton />
+              <AtoModeButton label="ATO模式" />
+              <SplitCombineKnob label="ATP后退" />
+              <UnmannedButton label="无人驾驶折返模式" />
+              <SplitCombineKnob label="关门模式选择" />
+              <SplitCombineKnob label="灯测试" />
+              <SplitCombineKnob label="风笛" />
+            </div>
+          </div>
+
+          {/* 右部分：3个正方形按钮 */}
+          <div className="right-section">
+            <SquareButton color="#2ecc71" label="所有气制动缓解" isOn={true} />
+            <SquareButton color="#e74c3c" label="气制动施加" isOn={false} />
+            <SquareButton color="#2ecc71" label="所有车门关闭" isOn={false} />
+          </div>
+        </div>
+      }
       childrenRightBottom={<div className="right-bottom-placeholder"></div>}
     />
   );

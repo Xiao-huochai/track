@@ -81,3 +81,57 @@
   margin-top: 12px;
   padding: 0 10px;
 }
+/* 右上左1 */
+/* 右侧上部分整体容器 */
+.right-top-placeholder {
+  display: flex;
+  height: 100%;
+  background-color: #2c3e50; /* 深色背景 */
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 左部分容器（占比1） */
+.left-section {
+  flex: 1;
+  display: flex;
+  gap: 16px; /* 两列之间的间距 */
+  padding: 5px;
+}
+
+/* 左部分的两列 */
+.left-col1,
+.left-col2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 中间部分容器（占比3） */
+.middle-section {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* 三行之间的间距 */
+  padding: 5px;
+}
+
+/* 中间部分的三行 */
+.middle-row1,
+.middle-row2,
+.middle-row3 {
+  display: flex;
+  gap: 10px; /* 元素之间的间距 */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 右部分容器（占比1） */
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
