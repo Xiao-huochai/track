@@ -1,0 +1,25 @@
+.chat-character {
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+.chat-character img {
+  width: 60px;
+  height: auto;
+}
+
+.chat-dialog {
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* white-space: nowrap; */
+  z-index: 10000;
+  font-size: 14px;
+  width: 150px;
+}

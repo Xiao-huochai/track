@@ -7,6 +7,7 @@ const ButtonPair = ({
   leftColor,
   rightState,
   rightColor,
+  wrapperId,
 }) => {
   // 左右按钮状态（默认左关右开）
   const [leftOn, setLeftOn] = useState(false);
@@ -25,7 +26,7 @@ const ButtonPair = ({
   };
 
   return (
-    <div className="button-pair">
+    <div className="button-pair" id={wrapperId}>
       {/* 上方文字（分/合、降/升等） */}
       <div className="pair-top-labels">
         <span>{leftState}</span>

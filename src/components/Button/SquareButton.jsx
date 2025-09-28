@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./SquareButton.css";
 
-const SquareButton = ({ color, label, initialOn = false }) => {
+const SquareButton = ({ color, label, initialOn = false, wrapperId }) => {
   const [isOn, setIsOn] = useState(initialOn);
 
   const toggle = () => setIsOn(!isOn);
 
   return (
-    <div className="square-button-container" onClick={toggle}>
+    <div className="square-button-container" onClick={toggle} id={wrapperId}>
       <div
         className="square-button"
         style={{ backgroundColor: isOn ? color : "#666" }}

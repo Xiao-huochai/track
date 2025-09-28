@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./DriveModeButton.css";
 
-const DriveModeButton = () => {
+const DriveModeButton = ({ wrapperId }) => {
   // 模式循环：OFF -> PM -> RM -> OFF
   const modes = ["OFF", "PM", "RM"];
   const [currentMode, setCurrentMode] = useState("OFF");
@@ -13,7 +13,7 @@ const DriveModeButton = () => {
   };
 
   return (
-    <div className="drive-mode-container" onClick={toggleMode}>
+    <div className="drive-mode-container" onClick={toggleMode} id={wrapperId}>
       {/* 上方三个模式文字 */}
       <div className="mode-labels">
         <span>RM</span>

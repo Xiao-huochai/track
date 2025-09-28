@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./SplitZeroCombineKnob.css";
 
-const SplitZeroCombineKnob = ({ label, options }) => {
+const SplitZeroCombineKnob = ({ label, options, wrapperId }) => {
   // 验证输入参数，确保是2或3个选项
   if (
     !options ||
@@ -35,7 +35,11 @@ const SplitZeroCombineKnob = ({ label, options }) => {
   };
 
   return (
-    <div className="split-zero-combine-knob" onClick={toggleState}>
+    <div
+      className="split-zero-combine-knob"
+      onClick={toggleState}
+      id={wrapperId}
+    >
       {/* 动态状态标签 */}
       <div className="knob-state-labels">
         <span className="label-left">{options[0]}</span>

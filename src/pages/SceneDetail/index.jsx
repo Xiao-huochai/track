@@ -12,9 +12,12 @@ import DriveModeButton from "../../components/Button/DriveModeButton";
 import SquareButton from "../../components/Button/SquareButton";
 import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
 import GuideCharacter from "../../components/GuideCharacter/GuideCharacter";
+
+import ChatCharacter from "../../components/ChatCharacter/ChatCharacter";
+import { useState } from "react";
 const SceneDetail = () => {
   // 定义引导的步骤
-
+  const [nextStepTrigger, setNextStepTrigger] = useState(false);
   const location = useLocation();
 
   // 解析并解码URL中的系统名称
@@ -61,34 +64,40 @@ const SceneDetail = () => {
         <div className="left-content-placeholder">
           {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
           <div className="knob-row">
-            {row1Labels.map((label) => (
+            {row1Labels.map((label, index) => (
               <SplitZeroCombineKnob
                 key={label}
                 label={label}
                 options={splitCombineOptions}
+                wrapperId={"SZCK-L-2-1-" + index}
               />
             ))}
           </div>
 
           {/* 第二行：6个分合 + 3个分0合旋钮 */}
           <div className="knob-row">
-            {row2SplitCombineLabels.map((label) => (
+            {row2SplitCombineLabels.map((label, index) => (
               <SplitZeroCombineKnob
                 key={label}
                 label={label}
                 options={splitCombineOptions}
+                wrapperId={"SZCK-L-2-2-" + index}
               />
             ))}
-            {row2SplitZeroCombineLabels.map((label) => (
-              <SplitZeroCombineKnob key={label} label={label} />
+            {row2SplitZeroCombineLabels.map((label, index) => (
+              <SplitZeroCombineKnob
+                key={label}
+                label={label}
+                wrapperId={"SZCK-L-3-2-" + index}
+              />
             ))}
           </div>
 
           {/* 仪表区：电压表 + 里程计占位 + 运行模式旋钮 */}
           <div className="instruments-row">
-            <Voltmeter />
-            <OdometerPlaceholder />
-            <OperationModeKnob />
+            <Voltmeter wrapperId={"Voltmeter"} />
+            <OdometerPlaceholder wrapperId={"OdometerPlaceholder"} />
+            <OperationModeKnob wrapperId={"OperationModeKnob"} />
           </div>
         </div>
       }
@@ -103,33 +112,49 @@ const SceneDetail = () => {
                   activeColor="#e74c3c"
                   label="开左门"
                   borderColor="white"
+                  wrapperId={"CBRL-0-0"}
                 />
                 <ColorButton
                   activeColor="#f39c12"
                   label="强制开左门"
                   borderColor="white"
+                  wrapperId={"CBRL-0-1"}
                 />
                 <ColorButton
                   activeColor="#333"
                   label="重开左门"
                   borderColor="white"
+                  wrapperId={"CBRL-0-2"}
                 />
                 <ColorButton
                   activeColor="#e74c3c"
                   label="开左门"
                   borderColor="white"
+                  wrapperId={"CBRL-0-3"}
                 />
                 <ColorButton
                   activeColor="#2ecc71"
                   label="关左门"
                   borderColor="white"
+                  wrapperId={"CBRL-0-4"}
                 />
               </div>
               {/* 左列2：紧急制动+2个灰边按钮 */}
               <div className="left-col2">
-                <EmergencyBrakeButton isOn={false} />
-                <ColorButton activeColor="grey" label="解钩" />
-                <ColorButton activeColor="#f39c12" label="窗外加热" />
+                <EmergencyBrakeButton
+                  isOn={false}
+                  wrapperId={"EmergencyBrakeButton-0"}
+                />
+                <ColorButton
+                  activeColor="grey"
+                  label="解钩"
+                  wrapperId={"CBRL-1-0"}
+                />
+                <ColorButton
+                  activeColor="#f39c12"
+                  label="窗外加热"
+                  wrapperId={"CBRL-1-1"}
+                />
               </div>
             </div>
 
@@ -143,6 +168,7 @@ const SceneDetail = () => {
                   leftColor="#e74c3c"
                   rightState="合"
                   rightColor="#2ecc71"
+                  wrapperId={"BP-0"}
                 />
                 <ButtonPair
                   label="受电弓"
@@ -150,6 +176,7 @@ const SceneDetail = () => {
                   leftColor="#e74c3c"
                   rightState="升"
                   rightColor="#2ecc71"
+                  wrapperId={"BP-1"}
                 />
                 <ButtonPair
                   label="停放制动"
@@ -157,8 +184,13 @@ const SceneDetail = () => {
                   leftColor="#e74c3c"
                   rightState="缓解"
                   rightColor="#2ecc71"
+                  wrapperId={"BP-2"}
                 />
-                <ColorButton label="乘客报警复位" topLabel="复位" />
+                <ColorButton
+                  label="乘客报警复位"
+                  topLabel="复位"
+                  wrapperId={"CBRC-0-0"}
+                />
               </div>
 
               {/* 第二行：6个旋钮 */}
@@ -166,43 +198,65 @@ const SceneDetail = () => {
                 <SplitZeroCombineKnob
                   label="司机室照明"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-1-0"}
                 />
                 <SplitZeroCombineKnob
                   label="阅读灯"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-1-1"}
                 />
-                <SplitZeroCombineKnob label="客室照明" />
-                <SplitZeroCombineKnob label="紧急照明" />
+                <SplitZeroCombineKnob
+                  label="客室照明"
+                  wrapperId={"SZCK-R-1-2"}
+                />
+                <SplitZeroCombineKnob
+                  label="紧急照明"
+                  wrapperId={"SZCK-R-1-3"}
+                />
                 <SplitZeroCombineKnob
                   label="刮雨器"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-1-4"}
                 />
                 <SplitZeroCombineKnob
                   label="头灯"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-1-5"}
                 />
               </div>
 
               {/* 第三行：7个控制元素 */}
               <div className="middle-row3">
-                <DriveModeButton />
-                <ColorButton activeColor="#2ecc71" label="ATO模式" />
+                <DriveModeButton wrapperId={"DriveModeButton"} />
+                <ColorButton
+                  activeColor="#2ecc71"
+                  label="ATO模式"
+                  wrapperId={"CBRC-2-1"}
+                />
                 <SplitZeroCombineKnob
                   label="ATP后退"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-2-2"}
                 />
-                <ColorButton activeColor="#f39c12" label="无人驾折返模式" />
+                <ColorButton
+                  activeColor="#f39c12"
+                  label="无人驾折返模式"
+                  wrapperId={"CBRC-2-3"}
+                />
                 <SplitZeroCombineKnob
                   label="关门模式选择"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-2-4"}
                 />
                 <SplitZeroCombineKnob
                   label="灯测试"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-2-5"}
                 />
                 <SplitZeroCombineKnob
                   label="风笛"
                   options={splitCombineOptions}
+                  wrapperId={"SZCK-R-2-6"}
                 />
               </div>
             </div>
@@ -213,16 +267,33 @@ const SceneDetail = () => {
                 color="#2ecc71"
                 label="所有气制动缓解"
                 isOn={true}
+                wrapperId={"SB-0"}
               />
-              <SquareButton color="#e74c3c" label="气制动施加" isOn={false} />
-              <SquareButton color="#2ecc71" label="所有车门关闭" isOn={false} />
+              <SquareButton
+                color="#e74c3c"
+                label="气制动施加"
+                isOn={false}
+                wrapperId={"SB-1"}
+              />
+              <SquareButton
+                color="#2ecc71"
+                label="所有车门关闭"
+                isOn={false}
+                wrapperId={"SB-2"}
+              />
             </div>
           </div>
           <div className="right-top-right">
-            <DisplayScreen content="这是要显示的内容"></DisplayScreen>
+            <DisplayScreen
+              content="这是要显示的内容"
+              wrapperId={"DisplayScreen"}
+            ></DisplayScreen>
             <div className="left-col2">
-              <EmergencyBrakeButton isOn={false} />
-              <ColorButton activeColor="grey" />
+              <EmergencyBrakeButton
+                isOn={false}
+                wrapperId={"EmergencyBrakeButton-1"}
+              />
+              <ColorButton activeColor="grey" wrapperId={"CBRR-0-0"} />
             </div>
             <div>
               <div className="left-col1">
@@ -230,26 +301,31 @@ const SceneDetail = () => {
                   activeColor="#e74c3c"
                   label="开右门"
                   borderColor="white"
+                  wrapperId={"CBRR-1-0"}
                 />
                 <ColorButton
                   activeColor="#f39c12"
                   label="强制开右门"
                   borderColor="white"
+                  wrapperId={"CBRR-1-1"}
                 />
                 <ColorButton
                   activeColor="#333"
                   label="重开右门"
                   borderColor="white"
+                  wrapperId={"CBRR-1-2"}
                 />
                 <ColorButton
                   activeColor="#e74c3c"
                   label="开右门"
                   borderColor="white"
+                  wrapperId={"CBRR-1-3"}
                 />
                 <ColorButton
                   activeColor="#2ecc71"
                   label="关右门"
                   borderColor="white"
+                  wrapperId={"CBRR-1-4"}
                 />
               </div>
             </div>
@@ -259,38 +335,88 @@ const SceneDetail = () => {
       childrenRightBottom={
         <div className="right-bottom-placeholder">
           <div>
-            <button id="login-button">登录</button>
-            <input id="search-input" placeholder="搜索..." />
-            <button id="submit-btn">提交</button>
-
             <GuideCharacter
               steps={[
                 {
-                  selector: "#login-button",
-                  text: "点击这里登录哦 😃",
+                  selector: "#DisplayScreen",
+                  text: "XX次,申请执行车辆故障处理流程,行调同意",
+                  offset: { top: -150, left: 250 },
+                },
+                {
+                  selector: "#DisplayScreen",
+                  text: "点击车辆显示屏的“临时停车”播放广播",
                   offset: { top: 50, left: 50 },
                 },
                 {
-                  selector: "#search-input",
-                  text: "输入你想要的内容",
+                  selector: "#SZCK-R-2-5",
+                  text: "点击按压“灯测试”按钮进行试灯",
                   offset: { top: 50, left: 50 },
                 },
                 {
-                  selector: "#submit-btn",
-                  text: "完成后点这里提交！🎉",
+                  selector: "#SB-0",
+                  text: "快点击看看“所有气制动缓解”灯是否亮起",
+                  offset: { top: 50, left: 50 },
+                },
+                {
+                  selector: "#DisplayScreen",
+                  text: "请尝试动车,点击“车辆显示屏”看看制动状态界面",
                   offset: { top: 40, left: 50 },
                 },
                 {
-                  selector: ".left-content-placeholder",
-                  text: "galama！",
+                  selector: "#SZCK-L-2-1-5",
+                  text: "点击将“气制动旁路”按钮调整至“合”位试试",
                   offset: { top: 40, left: 50 },
                 },
                 {
-                  text: "koko",
-                  offset: { top: 40, left: 50 },
+                  selector: "#SZCK-L-2-1-6",
+                  text: "点击将“停放制动旁路”调整至“合”位并尝试动车试试",
+                },
+                {
+                  selector: "#DisplayScreen",
+                  text: "XX次,申请退出服务,行调同意",
                 },
               ]}
             />
+            <ChatCharacter
+              steps={[
+                {
+                  selector: "#DisplayScreen",
+                  text: "接通电话:呼叫行调 “行调”,“xx次在xx站-xx”站上/下行区间列车自行产生制动停车，无法动车司机申请执行车辆故障处理流程 结束通话",
+                  offset: { top: 10, left: 0 },
+                },
+                {
+                  selector: "#SZCK-R-2-5",
+                  text: "试灯亮",
+                  offset: { top: 10, left: 0 },
+                },
+                {
+                  selector: "#DisplayScreen",
+                  text: "无制动故障显示",
+                  offset: { top: 10, left: 0 },
+                },
+                {
+                  selector: "#SZCK-L-2-1-5",
+                  text: "“气制动旁路”至“合”位",
+                  offset: { top: 10, left: 0 },
+                },
+                {
+                  selector: "#SZCK-L-2-1-6",
+                  text: "“停放制动旁路”至“合”位,并尝试动车",
+                  offset: { top: 10, left: 0 },
+                },
+                {
+                  text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
+                },
+                {
+                  text: "挂断电话",
+                },
+              ]}
+              next={nextStepTrigger}
+              onNextConsumed={() => setNextStepTrigger(false)}
+            />
+
+            {/* 控制下一步的按钮 */}
+            <button onClick={() => setNextStepTrigger(true)}>下一步</button>
           </div>
         </div>
       }

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./EmergencyBrakeButton.css";
 
-const EmergencyBrakeButton = ({ initialOn = false }) => {
+const EmergencyBrakeButton = ({ initialOn = false, wrapperId }) => {
   const [isOn, setIsOn] = useState(initialOn);
 
   const toggle = () => setIsOn(!isOn);
 
   return (
-    <div className="emergency-button-container" onClick={toggle}>
+    <div className="emergency-button-container" onClick={toggle} id={wrapperId}>
       {/* 红色圆形按钮 */}
       <div
         className="emergency-button"

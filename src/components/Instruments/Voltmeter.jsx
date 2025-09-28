@@ -1,8 +1,8 @@
 import "./Voltmeter.css";
 
-const Voltmeter = () => {
+const Voltmeter = ({ wrapperId }) => {
   return (
-    <div className="voltmeter">
+    <div className="voltmeter" id={wrapperId}>
       <div className="meter-dial">
         <div className="meter-scale">0</div>
         <div className="meter-scale">20</div>
