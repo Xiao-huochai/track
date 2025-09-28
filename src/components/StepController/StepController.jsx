@@ -47,6 +47,73 @@ const INTERACTIVE_STEPS = [
     },
   },
   {
+    type: "guide",
+    step: {
+      selector: "#SB-0",
+      text: "快点击看看“所有气制动缓解”灯是否亮起",
+      offset: { top: 50, left: 50 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-R-2-5",
+      text: "试灯亮",
+      offset: { top: 10, left: 0 },
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#DisplayScreen",
+      text: "请尝试动车,点击“车辆显示屏”看看制动状态界面",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#DisplayScreen",
+      text: "无制动故障显示",
+      offset: { top: 10, left: 0 },
+    },
+  },
+  {
+    type: "both",
+    guideStep: {
+      selector: "#SZCK-L-2-1-5",
+      text: "点击将“气制动旁路”按钮调整至“合”位试试",
+      offset: { top: 40, left: 50 },
+    },
+    chatStep: {
+      selector: "#SZCK-L-2-1-5",
+      text: "“气制动旁路”至“合”位",
+      offset: { top: 10, left: 0 },
+    },
+  },
+  {
+    type: "both",
+    guideStep: {
+      selector: "#SZCK-L-2-1-6",
+      text: "点击将“停放制动旁路”调整至“合”位并尝试动车试试",
+    },
+    chatStep: {
+      selector: "#SZCK-L-2-1-6",
+      text: "“停放制动旁路”至“合”位,并尝试动车",
+      offset: { top: 10, left: 0 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
+    },
+  },
+  {
+    type: "guide",
+    step: { selector: "#DisplayScreen", text: "XX次,申请退出服务,行调同意" },
+  },
+  {
     type: "chat",
     step: {
       text: "挂断电话",
@@ -107,7 +174,7 @@ const StepController = () => {
       {current?.type === "none" && <div>🎉 所有步骤已经完成。</div>}
 
       {/* 操作按钮，只对 chat / both 有效 */}
-      {(current?.type === "chat" || current?.type === "both") && (
+      {current?.type === "chat" && (
         <div style={{ marginTop: 20 }}>
           <button onClick={handleChatNext}>下一步</button>
         </div>
