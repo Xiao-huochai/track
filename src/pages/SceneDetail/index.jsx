@@ -15,9 +15,10 @@ import GuideCharacter from "../../components/GuideCharacter/GuideCharacter";
 
 import ChatCharacter from "../../components/ChatCharacter/ChatCharacter";
 import { useState } from "react";
+import StepController from "../../components/StepController/StepController";
 const SceneDetail = () => {
   // 定义引导的步骤
-  const [nextStepTrigger, setNextStepTrigger] = useState(false);
+  // const [nextStepTrigger, setNextStepTrigger] = useState(false);
   const location = useLocation();
 
   // 解析并解码URL中的系统名称
@@ -334,91 +335,7 @@ const SceneDetail = () => {
       }
       childrenRightBottom={
         <div className="right-bottom-placeholder">
-          <div>
-            <GuideCharacter
-              steps={[
-                {
-                  selector: "#DisplayScreen",
-                  text: "XX次,申请执行车辆故障处理流程,行调同意",
-                  offset: { top: -150, left: 250 },
-                  noLight: true,
-                },
-                {
-                  selector: "#DisplayScreen",
-                  text: "点击车辆显示屏的“临时停车”播放广播",
-                  offset: { top: 50, left: 50 },
-                },
-                {
-                  selector: "#SZCK-R-2-5",
-                  text: "点击按压“灯测试”按钮进行试灯",
-                  offset: { top: 50, left: 50 },
-                },
-                {
-                  selector: "#SB-0",
-                  text: "快点击看看“所有气制动缓解”灯是否亮起",
-                  offset: { top: 50, left: 50 },
-                },
-                {
-                  selector: "#DisplayScreen",
-                  text: "请尝试动车,点击“车辆显示屏”看看制动状态界面",
-                  offset: { top: 40, left: 50 },
-                },
-                {
-                  selector: "#SZCK-L-2-1-5",
-                  text: "点击将“气制动旁路”按钮调整至“合”位试试",
-                  offset: { top: 40, left: 50 },
-                },
-                {
-                  selector: "#SZCK-L-2-1-6",
-                  text: "点击将“停放制动旁路”调整至“合”位并尝试动车试试",
-                },
-                {
-                  selector: "#DisplayScreen",
-                  text: "XX次,申请退出服务,行调同意",
-                },
-              ]}
-            />
-            <ChatCharacter
-              steps={[
-                {
-                  selector: "#SZCK-R-2-2",
-                  text: "接通电话:呼叫行调 “行调”,“xx次在xx站-xx”站上/下行区间列车自行产生制动停车，无法动车司机申请执行车辆故障处理流程 结束通话",
-                  offset: { top: 90, left: -50 },
-                },
-                {
-                  selector: "#SZCK-R-2-5",
-                  text: "试灯亮",
-                  offset: { top: 10, left: 0 },
-                },
-                {
-                  selector: "#DisplayScreen",
-                  text: "无制动故障显示",
-                  offset: { top: 10, left: 0 },
-                },
-                {
-                  selector: "#SZCK-L-2-1-5",
-                  text: "“气制动旁路”至“合”位",
-                  offset: { top: 10, left: 0 },
-                },
-                {
-                  selector: "#SZCK-L-2-1-6",
-                  text: "“停放制动旁路”至“合”位,并尝试动车",
-                  offset: { top: 10, left: 0 },
-                },
-                {
-                  text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
-                },
-                {
-                  text: "挂断电话",
-                },
-              ]}
-              next={nextStepTrigger}
-              onNextConsumed={() => setNextStepTrigger(false)}
-            />
-
-            {/* 控制下一步的按钮 */}
-            <button onClick={() => setNextStepTrigger(true)}>下一步</button>
-          </div>
+          <StepController />
         </div>
       }
     />

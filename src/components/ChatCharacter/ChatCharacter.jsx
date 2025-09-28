@@ -6,16 +6,15 @@ const ChatCharacter = ({
   steps = [],
   next = false,
   onNextConsumed = () => {},
+  onNext = () => {},
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
 
-  const currentStep = steps[currentIndex];
+  const currentStep = steps[0]; // 只显示当前 step
 
   useEffect(() => {
     if (!currentStep) return;
 
-    // 计算位置
     const targetEl = currentStep.selector
       ? document.querySelector(currentStep.selector)
       : null;
@@ -29,22 +28,18 @@ const ChatCharacter = ({
       const scrollLeft = window.scrollX;
 
       setCoords({
-        top: rect.bottom + scrollTop + offsetTop, // 下方显示
+        top: rect.bottom + scrollTop + offsetTop,
         left: rect.left + scrollLeft + offsetLeft,
       });
-    } else {
-      // 无目标元素时，位置不动，只显示对话
-      setCoords((prev) => ({ ...prev }));
     }
-  }, [currentIndex, steps]);
+  }, [currentStep]);
 
   useEffect(() => {
     if (next) {
-      // 触发下一步
-      setCurrentIndex((prev) => (prev + 1 < steps.length ? prev + 1 : prev));
-      onNextConsumed(); // 重置 next 参数，比如设为 false
+      onNext(); // 🚀 通知外部进入下一步
+      onNextConsumed();
     }
-  }, [next, steps.length, onNextConsumed]);
+  }, [next]);
 
   if (!currentStep) return null;
 

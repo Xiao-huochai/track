@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import characterImg from "../../assets/imgs/characterImg.png";
 import "./GuideCharacter.css";
 
-const GuideCharacter = ({ steps = [] }) => {
+const GuideCharacter = ({ steps = [], onStepFinished = () => {} }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
-  // const characterRef = useRef(null);
 
   const currentStep = steps[currentIndex];
 
@@ -15,11 +14,9 @@ const GuideCharacter = ({ steps = [] }) => {
     const targetEl = document.querySelector(currentStep.selector);
     if (!targetEl) return;
 
-    // 获取偏移（如果没有传递默认 60）
     const offsetTop = currentStep.offset?.top ?? 60;
     const offsetLeft = currentStep.offset?.left ?? 60;
 
-    // 获取对应组件的位置信息
     const rect = targetEl.getBoundingClientRect();
     const scrollTop = window.scrollY;
     const scrollLeft = window.scrollX;
@@ -29,13 +26,19 @@ const GuideCharacter = ({ steps = [] }) => {
       left: rect.left + scrollLeft - offsetLeft,
     });
 
-    // 添加高亮
     if (!currentStep.noLight) targetEl.classList.add("guide-highlight");
 
-    // 点击跳转下一步
     const clickHandler = () => {
       targetEl.classList.remove("guide-highlight");
-      setCurrentIndex((prev) => (prev + 1 < steps.length ? prev + 1 : prev));
+      setCurrentIndex((prev) => {
+        const nextIndex = prev + 1;
+        if (nextIndex < steps.length) {
+          return nextIndex;
+        } else {
+          onStepFinished(); // 🔥 整个 guide step 完成
+          return prev; // 不再变
+        }
+      });
     };
 
     targetEl.addEventListener("click", clickHandler);
@@ -43,7 +46,7 @@ const GuideCharacter = ({ steps = [] }) => {
     return () => {
       targetEl.removeEventListener("click", clickHandler);
     };
-  }, [currentIndex, steps, currentStep]);
+  }, [currentIndex, steps, currentStep, onStepFinished]);
 
   if (!currentStep) return null;
 
