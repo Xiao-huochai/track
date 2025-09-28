@@ -1,9 +1,7 @@
-import { useState, useCallback, useEffect } from "react";
-// import GuideCharacter from "./GuideCharacter";
-// import ChatCharacter from "./ChatCharacter";
+import { useState, useCallback } from "react";
 import GuideCharacter from "../GuideCharacter/GuideCharacter";
 import ChatCharacter from "../ChatCharacter/ChatCharacter";
-
+import CompletionModal from "../Modal/CompletionModal";
 const INTERACTIVE_STEPS = [
   {
     type: "chat",
@@ -19,7 +17,7 @@ const INTERACTIVE_STEPS = [
       selector: "#DisplayScreen",
       text: "XX次,申请执行车辆故障处理流程,行调同意",
       offset: { top: -150, left: 250 },
-      // noLight: true,
+      noLight: true,
     },
   },
   {
@@ -130,9 +128,6 @@ const StepController = () => {
 
   const current = INTERACTIVE_STEPS[stepIndex];
 
-  useEffect(() => {
-    console.log("🔥 当前 stepIndex:", stepIndex);
-  }, [stepIndex]);
   const goNextStep = useCallback(() => {
     setStepIndex((prev) =>
       prev + 1 < INTERACTIVE_STEPS.length ? prev + 1 : prev
@@ -168,7 +163,7 @@ const StepController = () => {
       />
 
       {/* none 类型 */}
-      {current?.type === "none" && <div>🎉 所有步骤已经完成。</div>}
+      {current?.type === "none" && <CompletionModal />}
 
       {/* 操作按钮，只对 chat / both 有效 */}
       {current?.type === "chat" && (

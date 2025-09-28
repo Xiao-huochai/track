@@ -1,0 +1,70 @@
+/* 背景遮罩层 */
+.cm-mask {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 弹窗主体 */
+.cm-modal {
+  background: white;
+  width: 400px;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: cm-fade-in-up 0.4s ease;
+}
+
+/* 动画 */
+@keyframes cm-fade-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* 内容区域 */
+.cm-content {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 按钮容器 */
+.cm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 按钮基础样式 */
+.cm-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #eee;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cm-btn:hover {
+  background: #ddd;
+}
+
+/* 主按钮样式 */
+.cm-primary {
+  background: #4caf50;
+  color: white;
+}
+
+.cm-primary:hover {
+  background: #43a047;
+}

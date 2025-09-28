@@ -11,10 +11,6 @@ import ColorButton from "../../components/Button/ColorButton";
 import DriveModeButton from "../../components/Button/DriveModeButton";
 import SquareButton from "../../components/Button/SquareButton";
 import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
-import GuideCharacter from "../../components/GuideCharacter/GuideCharacter";
-
-import ChatCharacter from "../../components/ChatCharacter/ChatCharacter";
-import { useState } from "react";
 import StepController from "../../components/StepController/StepController";
 const SceneDetail = () => {
   // 定义引导的步骤
