@@ -2,48 +2,44 @@ import { useEffect, useState } from "react";
 import characterImg from "../../assets/imgs/characterImg.png";
 import "./GuideCharacter.css";
 
-const GuideCharacter = ({ steps = [], onStepFinished = () => {} }) => {
-  const currentStep = steps[0]; // 👈 只显示一个step
+const GuideCharacter = ({
+  step = null,
+  visible = false,
+  onStepFinished = () => {},
+}) => {
   const [coords, setCoords] = useState({ top: 0, left: 0 });
 
   useEffect(() => {
-    if (!currentStep) return;
+    if (!step || !visible) return;
 
-    const targetEl = document.querySelector(currentStep.selector);
+    const targetEl = document.querySelector(step.selector);
     if (!targetEl) return;
 
-    const offsetTop = currentStep.offset?.top ?? 60;
-    const offsetLeft = currentStep.offset?.left ?? 60;
-
     const rect = targetEl.getBoundingClientRect();
-    const scrollTop = window.scrollY;
-    const scrollLeft = window.scrollX;
+    const offsetTop = step.offset?.top ?? 60;
+    const offsetLeft = step.offset?.left ?? 60;
 
     setCoords({
-      top: rect.top + scrollTop - offsetTop,
-      left: rect.left + scrollLeft - offsetLeft,
+      top: rect.top + window.scrollY - offsetTop,
+      left: rect.left + window.scrollX - offsetLeft,
     });
 
-    if (!currentStep.noLight) {
+    if (!step.noLight) {
       targetEl.classList.add("guide-highlight");
     }
 
     const clickHandler = () => {
-      if (!currentStep.noLight) {
+      if (!step.noLight) {
         targetEl.classList.remove("guide-highlight");
       }
-
-      onStepFinished(); // 🔥 通知外部“当前这一步完成”
+      onStepFinished();
     };
 
     targetEl.addEventListener("click", clickHandler);
+    return () => targetEl.removeEventListener("click", clickHandler);
+  }, [step, visible]);
 
-    return () => {
-      targetEl.removeEventListener("click", clickHandler);
-    };
-  }, [currentStep, onStepFinished]);
-
-  if (!currentStep) return null;
+  if (!step || !visible) return null;
 
   return (
     <div
@@ -51,10 +47,11 @@ const GuideCharacter = ({ steps = [], onStepFinished = () => {} }) => {
       style={{
         top: `${coords.top}px`,
         left: `${coords.left}px`,
+        transition: "top 0.5s, left 0.5s",
       }}
     >
       <img src={characterImg} alt="guide" />
-      <div className="guide-dialog">{currentStep.text}</div>
+      <div className="guide-dialog">{step.text}</div>
     </div>
   );
 };

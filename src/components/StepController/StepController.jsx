@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 // import GuideCharacter from "./GuideCharacter";
 // import ChatCharacter from "./ChatCharacter";
 import GuideCharacter from "../GuideCharacter/GuideCharacter";
@@ -19,7 +19,7 @@ const INTERACTIVE_STEPS = [
       selector: "#DisplayScreen",
       text: "XX次,申请执行车辆故障处理流程,行调同意",
       offset: { top: -150, left: 250 },
-      noLight: true,
+      // noLight: true,
     },
   },
   {
@@ -130,6 +130,9 @@ const StepController = () => {
 
   const current = INTERACTIVE_STEPS[stepIndex];
 
+  useEffect(() => {
+    console.log("🔥 当前 stepIndex:", stepIndex);
+  }, [stepIndex]);
   const goNextStep = useCallback(() => {
     setStepIndex((prev) =>
       prev + 1 < INTERACTIVE_STEPS.length ? prev + 1 : prev
@@ -150,25 +153,19 @@ const StepController = () => {
 
   return (
     <>
-      {/* Guide 类型 */}
-      {(current?.type === "guide" || current?.type === "both") && (
-        <GuideCharacter
-          steps={[current.step || current.guideStep]}
-          key={`guide-${stepIndex}`}
-          onStepFinished={handleGuideClickAdvance}
-        />
-      )}
+      <GuideCharacter
+        step={current?.step || current?.guideStep}
+        visible={["guide", "both"].includes(current?.type)}
+        onStepFinished={handleGuideClickAdvance}
+      />
 
-      {/* Chat 类型 */}
-      {(current?.type === "chat" || current?.type === "both") && (
-        <ChatCharacter
-          steps={[current.step || current.chatStep]}
-          key={`chat-${stepIndex}`}
-          next={chatNext}
-          onNextConsumed={handleChatNextConsumed}
-          onNext={goNextStep}
-        />
-      )}
+      <ChatCharacter
+        visible={current?.type === "chat" || current?.type === "both"}
+        step={current?.step || current?.chatStep}
+        next={chatNext}
+        onNext={goNextStep}
+        onNextConsumed={handleChatNextConsumed}
+      />
 
       {/* none 类型 */}
       {current?.type === "none" && <div>🎉 所有步骤已经完成。</div>}
