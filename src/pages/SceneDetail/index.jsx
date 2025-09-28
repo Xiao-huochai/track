@@ -11,7 +11,10 @@ import ColorButton from "../../components/Button/ColorButton";
 import DriveModeButton from "../../components/Button/DriveModeButton";
 import SquareButton from "../../components/Button/SquareButton";
 import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
+import GuideCharacter from "../../components/GuideCharacter/GuideCharacter";
 const SceneDetail = () => {
+  // 定义引导的步骤
+
   const location = useLocation();
 
   // 解析并解码URL中的系统名称
@@ -50,21 +53,6 @@ const SceneDetail = () => {
 
   // 第二行分0合旋钮标签（3个）
   const row2SplitZeroCombineLabels = ["列车空调", "A车空调", "列车激活"];
-
-  const guideSteps = [
-    {
-      target: "component-1",
-      message: "你好！我是引导小人，先点击这个按钮~",
-    },
-    {
-      target: "component-2",
-      message: "不错！接下来点击这个卡片~",
-    },
-    {
-      target: "component-3",
-      message: "最后点击这个输入框，完成引导！",
-    },
-  ];
 
   return (
     <SceneDetailLayout
@@ -268,7 +256,39 @@ const SceneDetail = () => {
           </div>
         </div>
       }
-      childrenRightBottom={<div className="right-bottom-placeholder"></div>}
+      childrenRightBottom={
+        <div className="right-bottom-placeholder">
+          <div>
+            <button id="login-button">登录</button>
+            <input id="search-input" placeholder="搜索..." />
+            <button id="submit-btn">提交</button>
+
+            <GuideCharacter
+              steps={[
+                {
+                  selector: "#login-button",
+                  text: "点击这里登录哦 😃",
+                },
+                {
+                  selector: "#search-input",
+                  text: "输入你想要的内容",
+                },
+                {
+                  selector: "#submit-btn",
+                  text: "完成后点这里提交！🎉",
+                },
+                {
+                  selector: ".left-content-placeholder",
+                  text: "galama！",
+                },
+                {
+                  text: "koko",
+                },
+              ]}
+            />
+          </div>
+        </div>
+      }
     />
   );
 };
