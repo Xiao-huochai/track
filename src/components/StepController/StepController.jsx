@@ -12,12 +12,11 @@ const INTERACTIVE_STEPS = [
     },
   },
   {
-    type: "guide",
+    type: "chat",
     step: {
       selector: "#DisplayScreen",
       text: "XX次,申请执行车辆故障处理流程,行调同意",
-      offset: { top: -150, left: 250 },
-      noLight: true,
+      offset: { top: 0, left: 0 },
     },
   },
   {
@@ -104,12 +103,17 @@ const INTERACTIVE_STEPS = [
   {
     type: "chat",
     step: {
+      selector: "#SZCK-R-2-2",
       text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
+      offset: {
+        top: 100,
+        left: -50,
+      },
     },
   },
   {
-    type: "guide",
-    step: { selector: "#DisplayScreen", text: "XX次,申请退出服务,行调同意" },
+    type: "chat",
+    step: { selector: "#SZCK-R-2-2", text: "XX次,申请退出服务,行调同意" },
   },
   {
     type: "chat",
