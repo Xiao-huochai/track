@@ -268,21 +268,26 @@ const SceneDetail = () => {
                 {
                   selector: "#login-button",
                   text: "点击这里登录哦 😃",
+                  offset: { top: 50, left: 50 },
                 },
                 {
                   selector: "#search-input",
                   text: "输入你想要的内容",
+                  offset: { top: 50, left: 50 },
                 },
                 {
                   selector: "#submit-btn",
                   text: "完成后点这里提交！🎉",
+                  offset: { top: 40, left: 50 },
                 },
                 {
                   selector: ".left-content-placeholder",
                   text: "galama！",
+                  offset: { top: 40, left: 50 },
                 },
                 {
                   text: "koko",
+                  offset: { top: 40, left: 50 },
                 },
               ]}
             />

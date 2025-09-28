@@ -1,13 +1,11 @@
-// components/GuideCharacter.jsx
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import characterImg from "../../assets/imgs/characterImg.png";
-import "./GuideCharacter.css"; // 样式拆分出去
+import "./GuideCharacter.css";
 
 const GuideCharacter = ({ steps = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [coords, setCoords] = useState({ top: 0, left: 0 });
-  const characterRef = useRef(null);
-  const dialogRef = useRef(null);
+  // const characterRef = useRef(null);
 
   const currentStep = steps[currentIndex];
 
@@ -15,49 +13,47 @@ const GuideCharacter = ({ steps = [] }) => {
     if (!currentStep) return;
 
     const targetEl = document.querySelector(currentStep.selector);
+    if (!targetEl) return;
 
-    if (targetEl) {
-      const rect = targetEl.getBoundingClientRect();
-      const scrollTop = window.scrollY;
-      const scrollLeft = window.scrollX;
+    // 获取偏移（如果没有传递默认 60）
+    const offsetTop = currentStep.offset?.top ?? 60;
+    const offsetLeft = currentStep.offset?.left ?? 60;
 
-      setCoords({
-        top: rect.top + scrollTop - 40, // 小人高度修正
-        left: rect.left + scrollLeft - 40, // 左移一点
-      });
+    // 获取对应组件的位置信息
+    const rect = targetEl.getBoundingClientRect();
+    const scrollTop = window.scrollY;
+    const scrollLeft = window.scrollX;
 
-      // 添加类激活高亮
-      targetEl.classList.add("guide-highlight");
+    setCoords({
+      top: rect.top + scrollTop - offsetTop,
+      left: rect.left + scrollLeft - offsetLeft,
+    });
 
-      const clickHandler = () => {
-        targetEl.classList.remove("guide-highlight");
-        setCurrentIndex((prev) => (prev + 1 < steps.length ? prev + 1 : prev));
-      };
+    // 添加高亮
+    targetEl.classList.add("guide-highlight");
 
-      targetEl.addEventListener("click", clickHandler);
+    // 点击跳转下一步
+    const clickHandler = () => {
+      targetEl.classList.remove("guide-highlight");
+      setCurrentIndex((prev) => (prev + 1 < steps.length ? prev + 1 : prev));
+    };
 
-      return () => {
-        targetEl.removeEventListener("click", clickHandler);
-      };
-    }
+    targetEl.addEventListener("click", clickHandler);
+
+    return () => {
+      targetEl.removeEventListener("click", clickHandler);
+    };
   }, [currentIndex, steps, currentStep]);
 
   if (!currentStep) return null;
 
   return (
-    <div>
-      {/* 小人窗口固定定位 */}
-      <div
-        className="guide-character"
-        ref={characterRef}
-        style={{ top: coords.top, left: coords.left }}
-      >
-        <img src={characterImg} alt="guide" />
-        {/* 对话框 */}
-        <div className="guide-dialog" ref={dialogRef}>
-          {currentStep.text}
-        </div>
-      </div>
+    <div
+      className="guide-character"
+      style={{ top: `${coords.top}px`, left: `${coords.left}px` }}
+    >
+      <img src={characterImg} alt="guide" />
+      <div className="guide-dialog">{currentStep.text}</div>
     </div>
   );
 };
