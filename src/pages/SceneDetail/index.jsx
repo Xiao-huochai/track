@@ -285,7 +285,7 @@ const SceneDetail = () => {
           </div>
           <div className="right-top-right">
             <DisplayScreen
-              content="这是要显示的内容"
+              content="临时停车"
               wrapperId={"DisplayScreen"}
             ></DisplayScreen>
             <div className="left-col2">
@@ -341,6 +341,7 @@ const SceneDetail = () => {
                   selector: "#DisplayScreen",
                   text: "XX次,申请执行车辆故障处理流程,行调同意",
                   offset: { top: -150, left: 250 },
+                  noLight: true,
                 },
                 {
                   selector: "#DisplayScreen",
@@ -380,9 +381,9 @@ const SceneDetail = () => {
             <ChatCharacter
               steps={[
                 {
-                  selector: "#DisplayScreen",
+                  selector: "#SZCK-R-2-2",
                   text: "接通电话:呼叫行调 “行调”,“xx次在xx站-xx”站上/下行区间列车自行产生制动停车，无法动车司机申请执行车辆故障处理流程 结束通话",
-                  offset: { top: 10, left: 0 },
+                  offset: { top: 90, left: -50 },
                 },
                 {
                   selector: "#SZCK-R-2-5",

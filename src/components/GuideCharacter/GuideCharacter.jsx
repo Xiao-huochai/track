@@ -30,7 +30,7 @@ const GuideCharacter = ({ steps = [] }) => {
     });
 
     // 添加高亮
-    targetEl.classList.add("guide-highlight");
+    if (!currentStep.noLight) targetEl.classList.add("guide-highlight");
 
     // 点击跳转下一步
     const clickHandler = () => {
