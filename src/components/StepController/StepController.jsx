@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import GuideCharacter from "../GuideCharacter/GuideCharacter";
 import ChatCharacter from "../ChatCharacter/ChatCharacter";
 import CompletionModal from "../Modal/CompletionModal";
@@ -142,7 +142,10 @@ const INTERACTIVE_STEPS = [
   },
 ];
 
-const StepController = () => {
+const StepController = ({ setForceDisplayOpen }) => {
+  // const [shouldForceOpenDisplayScreen, setShouldForceOpenDisplayScreen] =
+  //   useState(false);
+
   const [stepIndex, setStepIndex] = useState(0);
   const [chatNext, setChatNext] = useState(false);
 
@@ -165,6 +168,18 @@ const StepController = () => {
   const handleChatNextConsumed = () => {
     setChatNext(false);
   };
+
+  useEffect(() => {
+    if (
+      current?.type === "guide" &&
+      current?.step?.selector === "#DisplayScreen" &&
+      current?.step?.text?.includes("临时停车")
+    ) {
+      setForceDisplayOpen(true); // ✅ 激活开启状态
+    } else {
+      setForceDisplayOpen(false); // ❌ 正常步骤关闭状态
+    }
+  }, [current, setForceDisplayOpen]);
 
   return (
     <>

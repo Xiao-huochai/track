@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import SceneDetailLayout from "./SceneDetailLayout";
 import "./SceneDetail.css";
 import SplitZeroCombineKnob from "../../components/Knob/SplitZeroCombineKnob";
@@ -10,11 +11,13 @@ import ButtonPair from "../../components/Button/ButtonPair";
 import ColorButton from "../../components/Button/ColorButton";
 import DriveModeButton from "../../components/Button/DriveModeButton";
 import SquareButton from "../../components/Button/SquareButton";
-import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
+// import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
+import TrueScreen from "../../components/StepController/TrueScreen";
 import StepController from "../../components/StepController/StepController";
 const SceneDetail = () => {
   // 定义引导的步骤
   // const [nextStepTrigger, setNextStepTrigger] = useState(false);
+  const [forceDisplayOpen, setForceDisplayOpen] = useState(false);
   const location = useLocation();
 
   // 解析并解码URL中的系统名称
@@ -281,10 +284,10 @@ const SceneDetail = () => {
             </div>
           </div>
           <div className="right-top-right">
-            <DisplayScreen
-              content="临时停车"
-              wrapperId={"DisplayScreen"}
-            ></DisplayScreen>
+            <TrueScreen
+              displayContent="临时停车"
+              forceActive={forceDisplayOpen}
+            ></TrueScreen>
             <div className="left-col2">
               <EmergencyBrakeButton
                 isOn={false}
@@ -331,7 +334,7 @@ const SceneDetail = () => {
       }
       childrenRightBottom={
         <div className="right-bottom-placeholder">
-          <StepController />
+          <StepController setForceDisplayOpen={setForceDisplayOpen} />
         </div>
       }
     />
