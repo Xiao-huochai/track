@@ -2,13 +2,17 @@ import { useState, useCallback } from "react";
 import GuideCharacter from "../GuideCharacter/GuideCharacter";
 import ChatCharacter from "../ChatCharacter/ChatCharacter";
 import CompletionModal from "../Modal/CompletionModal";
+import driverAvatar from "../../assets/imgs/user.png";
+import dispatcherAvatar from "../../assets/imgs/leader.png";
+
 const INTERACTIVE_STEPS = [
   {
     type: "chat",
     step: {
       selector: "#SZCK-R-2-2",
-      text: "接通电话:呼叫行调 “行调”,“xx次在xx站-xx”站上/下行区间列车自行产生制动停车，无法动车司机申请执行车辆故障处理流程 结束通话",
+      text: "接通电话:呼叫行调 “行调”,“xx次在xx站-xx”站上/下行区间列车自行产生制动停车，无法动车司机申请执行车辆故障处理流程",
       offset: { top: 90, left: -50 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -17,14 +21,16 @@ const INTERACTIVE_STEPS = [
       selector: "#DisplayScreen",
       text: "XX次,申请执行车辆故障处理流程,行调同意",
       offset: { top: 0, left: 0 },
+      avatar: dispatcherAvatar,
     },
   },
   {
     type: "chat",
     step: {
       selector: "#SZCK-R-2-2",
-      text: "接通电话：申请流程",
+      text: "结束通话",
       offset: { top: 90, left: -50 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -57,6 +63,7 @@ const INTERACTIVE_STEPS = [
       selector: "#SZCK-R-2-5",
       text: "试灯亮",
       offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -73,6 +80,7 @@ const INTERACTIVE_STEPS = [
       selector: "#DisplayScreen",
       text: "无制动故障显示",
       offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -86,6 +94,7 @@ const INTERACTIVE_STEPS = [
       selector: "#SZCK-L-2-1-5",
       text: "“气制动旁路”至“合”位",
       offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -98,6 +107,7 @@ const INTERACTIVE_STEPS = [
       selector: "#SZCK-L-2-1-6",
       text: "“停放制动旁路”至“合”位,并尝试动车",
       offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
     },
   },
   {
@@ -109,16 +119,22 @@ const INTERACTIVE_STEPS = [
         top: 100,
         left: -50,
       },
+      avatar: driverAvatar,
     },
   },
   {
     type: "chat",
-    step: { selector: "#SZCK-R-2-2", text: "XX次,申请退出服务,行调同意" },
+    step: {
+      selector: "#SZCK-R-2-2",
+      text: "XX次,申请退出服务,行调同意",
+      avatar: dispatcherAvatar,
+    },
   },
   {
     type: "chat",
     step: {
       text: "挂断电话",
+      avatar: driverAvatar,
     },
   },
   {

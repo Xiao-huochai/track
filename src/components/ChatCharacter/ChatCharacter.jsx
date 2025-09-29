@@ -1,5 +1,6 @@
+// ChatCharacter.jsx
 import { useEffect, useState } from "react";
-import characterImg from "../../assets/imgs/user.png";
+import defaultAvatar from "../../assets/imgs/user.png";
 import "./ChatCharacter.css";
 
 const ChatCharacter = ({
@@ -36,8 +37,8 @@ const ChatCharacter = ({
 
   useEffect(() => {
     if (next && visible) {
-      onNext(); // ⚡ 通知外部进入下一步
-      onNextConsumed(); // 🔄 重置
+      onNext();
+      onNextConsumed();
     }
   }, [next, visible, onNext, onNextConsumed]);
 
@@ -54,7 +55,11 @@ const ChatCharacter = ({
         zIndex: 9998,
       }}
     >
-      <img src={characterImg} alt="chat-character" />
+      <img
+        src={step.avatar || defaultAvatar}
+        alt="chat-character"
+        className="chat-avatar"
+      />
       <div className="chat-dialog">{step.text}</div>
     </div>
   );
