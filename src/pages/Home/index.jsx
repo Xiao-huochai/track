@@ -16,6 +16,7 @@ const Home = () => {
     const section = faultData.find((section) =>
       section.scenes.some((s) => s.id === scene.id)
     );
+    console.log(scene);
 
     setCurrentScene(scene);
     setCurrentSectionTitle(section?.title || "");

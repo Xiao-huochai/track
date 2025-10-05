@@ -14,6 +14,9 @@ import SquareButton from "../../components/Button/SquareButton";
 // import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
 import TrueScreen from "../../components/StepController/TrueScreen";
 import StepController from "../../components/StepController/StepController";
+
+import { c1s3Steps } from "../../data/c1s3";
+
 const SceneDetail = () => {
   // 定义引导的步骤
   // const [nextStepTrigger, setNextStepTrigger] = useState(false);
@@ -334,7 +337,10 @@ const SceneDetail = () => {
       }
       childrenRightBottom={
         <div className="right-bottom-placeholder">
-          <StepController setForceDisplayOpen={setForceDisplayOpen} />
+          <StepController
+            setForceDisplayOpen={setForceDisplayOpen}
+            INTERACTIVE_STEPS={c1s3Steps}
+          />
         </div>
       }
     />

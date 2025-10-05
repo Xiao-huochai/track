@@ -37,7 +37,7 @@ const GuideCharacter = ({
 
     targetEl.addEventListener("click", clickHandler);
     return () => targetEl.removeEventListener("click", clickHandler);
-  }, [step, visible]);
+  }, [step, visible, onStepFinished]);
 
   if (!step || !visible) return null;
 
