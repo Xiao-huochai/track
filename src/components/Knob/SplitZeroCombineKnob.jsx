@@ -9,7 +9,7 @@ const SplitZeroCombineKnob = ({ label, options, wrapperId }) => {
     options.length < 2 ||
     options.length > 3
   ) {
-    console.warn("options必须是包含2或3个元素的数组，使用默认值");
+    // console.warn("options必须是包含2或3个元素的数组，使用默认值");
     options = ["分", "0", "合"]; // 默认值
   }
 

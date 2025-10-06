@@ -137,3 +137,4 @@ export const c1s3 = [
     type: "none",
   },
 ];
+export const screenContent = "临时停车";

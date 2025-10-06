@@ -7,7 +7,7 @@ export const useDynamicData = (paramKey = "s") => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const [screenContent, setScreenContent] = useState("屏幕内容");
   // 从URL获取指定参数的值
   const dataKey = searchParams.get(paramKey);
 
@@ -28,8 +28,8 @@ export const useDynamicData = (paramKey = "s") => {
       try {
         // 动态导入对应的模块（路径可根据实际情况调整）
         const module = await import(`../../../data/${dataKey}`);
-
         // 支持默认导出和命名导出
+        setScreenContent(module["screenContent"]); //对应文件里导出了screenContent
         setData(module.default || module[dataKey]);
       } catch (err) {
         console.error("数据加载失败:", err);
@@ -43,5 +43,5 @@ export const useDynamicData = (paramKey = "s") => {
   }, [dataKey, paramKey]);
 
   // 返回数据、加载状态和错误信息
-  return { data, loading, error };
+  return { data, loading, error, screenContent };
 };
