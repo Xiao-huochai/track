@@ -325,39 +325,37 @@ const SceneDetail = () => {
               />
               <ColorButton activeColor="grey" wrapperId={"CBRR-0-0"} />
             </div>
-            <div>
-              <div className="left-col1">
-                <ColorButton
-                  activeColor="#e74c3c"
-                  label="开右门"
-                  borderColor="white"
-                  wrapperId={"CBRR-1-0"}
-                />
-                <ColorButton
-                  activeColor="#f39c12"
-                  label="强制开右门"
-                  borderColor="white"
-                  wrapperId={"CBRR-1-1"}
-                />
-                <ColorButton
-                  activeColor="#333"
-                  label="重开右门"
-                  borderColor="white"
-                  wrapperId={"CBRR-1-2"}
-                />
-                <ColorButton
-                  activeColor="#e74c3c"
-                  label="开右门"
-                  borderColor="white"
-                  wrapperId={"CBRR-1-3"}
-                />
-                <ColorButton
-                  activeColor="#2ecc71"
-                  label="关右门"
-                  borderColor="white"
-                  wrapperId={"CBRR-1-4"}
-                />
-              </div>
+            <div className="left-col1">
+              <ColorButton
+                activeColor="#e74c3c"
+                label="开右门"
+                borderColor="white"
+                wrapperId={"CBRR-1-0"}
+              />
+              <ColorButton
+                activeColor="#f39c12"
+                label="强制开右门"
+                borderColor="white"
+                wrapperId={"CBRR-1-1"}
+              />
+              <ColorButton
+                activeColor="#333"
+                label="重开右门"
+                borderColor="white"
+                wrapperId={"CBRR-1-2"}
+              />
+              <ColorButton
+                activeColor="#e74c3c"
+                label="开右门"
+                borderColor="white"
+                wrapperId={"CBRR-1-3"}
+              />
+              <ColorButton
+                activeColor="#2ecc71"
+                label="关右门"
+                borderColor="white"
+                wrapperId={"CBRR-1-4"}
+              />
             </div>
           </div>
         </div>
