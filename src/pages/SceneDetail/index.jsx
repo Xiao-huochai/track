@@ -115,7 +115,6 @@ const SceneDetail = () => {
             <OdometerPlaceholder wrapperId={"OdometerPlaceholder"} />
             <OperationModeKnob wrapperId={"OperationModeKnob"} />
           </div>
-          <DemoGauge />
         </div>
       }
       childrenRightTop={
@@ -301,6 +300,20 @@ const SceneDetail = () => {
             </div>
           </div>
           <div className="right-top-right">
+            <div>
+              <div
+                className="demoGauge"
+                style={{ width: "120px", height: "120px" }}
+              >
+                <DemoGauge />
+              </div>
+              <div
+                className="demoGauge"
+                style={{ width: "120px", height: "120px" }}
+              >
+                <DemoGauge />
+              </div>
+            </div>
             <TrueScreen
               displayContent="临时停车"
               forceActive={forceDisplayOpen}
