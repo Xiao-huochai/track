@@ -1,7 +1,7 @@
 import driverAvatar from "../assets/imgs/user.png";
 import dispatcherAvatar from "../assets/imgs/leader.png";
 
-export const c1s3Steps = [
+export const c1s3 = [
   {
     type: "chat",
     step: {

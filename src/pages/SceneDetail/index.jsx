@@ -14,14 +14,25 @@ import SquareButton from "../../components/Button/SquareButton";
 // import DisplayScreen from "../../components/DisplayScreen/DsplayScreen";
 import TrueScreen from "../../components/StepController/TrueScreen";
 import StepController from "../../components/StepController/StepController";
-
-import { c1s3Steps } from "../../data/c1s3";
-
+import { useDynamicData } from "./Hooks/useDynamicData";
 const SceneDetail = () => {
+  const { data, loading, error } = useDynamicData(); //获取对应关卡的数据
   // 定义引导的步骤
   // const [nextStepTrigger, setNextStepTrigger] = useState(false);
   const [forceDisplayOpen, setForceDisplayOpen] = useState(false);
   const location = useLocation();
+
+  if (loading) {
+    return <div>加载中...</div>;
+  }
+
+  if (error) {
+    return <div>错误: {error}</div>;
+  }
+
+  if (!data) {
+    return <div>未找到数据</div>;
+  }
 
   // 解析并解码URL中的系统名称
   const pathParts = location.pathname.split("/");
@@ -339,7 +350,7 @@ const SceneDetail = () => {
         <div className="right-bottom-placeholder">
           <StepController
             setForceDisplayOpen={setForceDisplayOpen}
-            INTERACTIVE_STEPS={c1s3Steps}
+            INTERACTIVE_STEPS={data}
           />
         </div>
       }
