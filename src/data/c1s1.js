@@ -1,6 +1,6 @@
 import driverAvatar from "../assets/imgs/user.png";
 import dispatcherAvatar from "../assets/imgs/leader.png";
-
+import guideAvatar from "../assets/imgs/characterImg.png";
 export const c1s1 = [
   {
     type: "guide",
@@ -42,77 +42,17 @@ export const c1s1 = [
   {
     type: "guide",
     step: {
-      selector: "#DisplayScreen",
-      text: "点击车辆显示屏的“临时停车”播放广播",
-      offset: { top: 50, left: 50 },
-    },
-  },
-  {
-    type: "guide",
-    step: {
-      selector: "#SZCK-R-2-5",
-      text: "点击按压“灯测试”按钮进行试灯",
-      offset: { top: 50, left: 50 },
-    },
-  },
-  {
-    type: "guide",
-    step: {
-      selector: "#SB-0",
-      text: "快点击看看“所有气制动缓解”灯是否亮起",
-      offset: { top: 50, left: 50 },
+      selector: "#demoGauge2",
+      text: "请点击查看气压表是否为3Bar",
+      // offset: { top: 50, left: 50 },
     },
   },
   {
     type: "chat",
     step: {
       selector: "#SZCK-R-2-5",
-      text: "试灯亮",
-      offset: { top: 10, left: 0 },
-      avatar: driverAvatar,
-    },
-  },
-  {
-    type: "guide",
-    step: {
-      selector: "#DisplayScreen",
-      text: "请尝试动车,点击“车辆显示屏”看看制动状态界面",
-      offset: { top: 40, left: 50 },
-    },
-  },
-  {
-    type: "chat",
-    step: {
-      selector: "#DisplayScreen",
-      text: "无制动故障显示",
-      offset: { top: 10, left: 0 },
-      avatar: driverAvatar,
-    },
-  },
-  {
-    type: "both",
-    guideStep: {
-      selector: "#SZCK-L-2-1-5",
-      text: "点击将“气制动旁路”按钮调整至“合”位试试",
-      offset: { top: 40, left: 50 },
-    },
-    chatStep: {
-      selector: "#SZCK-L-2-1-5",
-      text: "“气制动旁路”至“合”位",
-      offset: { top: 10, left: 0 },
-      avatar: driverAvatar,
-    },
-  },
-  {
-    type: "both",
-    guideStep: {
-      selector: "#SZCK-L-2-1-6",
-      text: "点击将“停放制动旁路”调整至“合”位并尝试动车试试",
-    },
-    chatStep: {
-      selector: "#SZCK-L-2-1-6",
-      text: "“停放制动旁路”至“合”位,并尝试动车",
-      offset: { top: 10, left: 0 },
+      text: "气压3Bar",
+      offset: { top: 50, left: 50 },
       avatar: driverAvatar,
     },
   },
@@ -120,7 +60,117 @@ export const c1s1 = [
     type: "chat",
     step: {
       selector: "#SZCK-R-2-2",
-      text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
+      text: "“行调，XX 次在XX 站-XX 站上/下行区间列车突发紧急制动，无法动车，司机申请中央缓解紧急制动。”",
+      offset: { top: 100, left: -50 },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-R-2-5",
+      text: "“XX 次，申请中央缓解紧急制动，行调收到。”",
+      offset: { top: 10, left: 0 },
+      avatar: dispatcherAvatar,
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#DisplayScreen",
+      text: "快点击显示屏上的按钮播放紧急广播",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#DisplayScreen",
+      text: "XX 次，中央无法缓解紧制，司机执行车辆故障处理流程。”",
+      avatar: dispatcherAvatar,
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-R-2-2",
+      text: "“中央无法缓解紧制，执行车辆故障处理流程，司机明白。”",
+      offset: {
+        top: 100,
+        left: -50,
+      },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#DriveModeButton",
+      text: "驾驶员,将驾驶模式调成RM试试吧,别忘了注意气压表哦",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#DriveModeButton",
+      text: "驾驶员,将驾驶模式调成RM试试吧,别忘了注意气压表哦",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#demoGauge2",
+      text: "请点击查看气压表是否为3Bar",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-R-2-2",
+      text: "转RM模式 气压3Bar",
+      offset: {
+        top: 100,
+        left: -50,
+      },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#SZCK-L-2-2-1",
+      text: "还是不行呢，再调整安全回路旁路按钮试试吧",
+      offset: { top: 40, left: 50 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-L-2-2-1",
+      text: "“安全回路旁路”至“合”位",
+      offset: {
+        top: 100,
+        left: -50,
+      },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#SZCK-L-2-1-0",
+      text: "只能再调整信号选择按钮试试了",
+      offset: { top: 40, left: 10 },
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-L-2-2-1",
+      text: "“信号选择”开关至“信号切除”位",
       offset: {
         top: 100,
         left: -50,
@@ -131,20 +181,41 @@ export const c1s1 = [
   {
     type: "chat",
     step: {
-      selector: "#SZCK-R-2-2",
-      text: "XX次,申请退出服务,行调同意",
-      avatar: dispatcherAvatar,
+      selector: "#SZCK-L-2-2-1",
+      text: "成功了！快打电话报告行调",
+      offset: {
+        top: 100,
+        left: -50,
+      },
+      avatar: guideAvatar,
     },
   },
   {
     type: "chat",
     step: {
-      text: "挂断电话",
+      selector: "#SZCK-L-2-2-1",
+      text: "行调，XX 次在XX 站-XX 站上/下行区间列车已动车，司机操作“安全回路旁路”至“合”位、“信号选择”开关至“信号切除”位，申请限速退出服务。”",
+      offset: {
+        top: 100,
+        left: -50,
+      },
       avatar: driverAvatar,
+    },
+  },
+  {
+    type: "chat",
+    step: {
+      selector: "#SZCK-L-2-2-1",
+      text: "XX 次，申请限速退出服务，行调同意。",
+      offset: {
+        top: 10,
+        left: -50,
+      },
+      avatar: dispatcherAvatar,
     },
   },
   {
     type: "none",
   },
 ];
-export const screenContent = "你好";
+export const screenContent = "网压正常,车门状态正常";

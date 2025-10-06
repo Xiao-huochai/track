@@ -304,12 +304,14 @@ const SceneDetail = () => {
               <div
                 className="demoGauge"
                 style={{ width: "120px", height: "120px" }}
+                id="demoGauge1"
               >
                 <DemoGauge />
               </div>
               <div
                 className="demoGauge"
                 style={{ width: "120px", height: "120px" }}
+                id="demoGauge2"
               >
                 <DemoGauge />
               </div>

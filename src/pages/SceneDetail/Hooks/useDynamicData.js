@@ -29,7 +29,7 @@ export const useDynamicData = (paramKey = "s") => {
         // 动态导入对应的模块（路径可根据实际情况调整）
         const module = await import(`../../../data/${dataKey}`);
         // 支持默认导出和命名导出
-        setScreenContent(module["screenContent"]); //对应文件里导出了screenContent
+        if (module["screenContent"]) setScreenContent(module["screenContent"]); //对应文件里导出了screenContent
         setData(module.default || module[dataKey]);
       } catch (err) {
         console.error("数据加载失败:", err);

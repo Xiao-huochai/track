@@ -43,8 +43,8 @@ const DemoGauge = () => {
   const config = {
     autoFit: true,
     data: {
-      target: 120,
-      total: 400,
+      target: 3,
+      total: 12,
       name: "score",
     },
     style: {
