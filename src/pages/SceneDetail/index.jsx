@@ -300,7 +300,7 @@ const SceneDetail = () => {
             </div>
           </div>
           <div className="right-top-right">
-            <div>
+            <div className="right-top-right-col1">
               <div
                 className="demoGauge"
                 style={{ width: "120px", height: "120px" }}
@@ -314,10 +314,12 @@ const SceneDetail = () => {
                 <DemoGauge />
               </div>
             </div>
-            <TrueScreen
-              displayContent="临时停车"
-              forceActive={forceDisplayOpen}
-            ></TrueScreen>
+            <div className="right-top-right-col2">
+              <TrueScreen
+                displayContent="临时停车"
+                forceActive={forceDisplayOpen}
+              ></TrueScreen>
+            </div>
             <div className="left-col2">
               <EmergencyBrakeButton
                 isOn={false}
