@@ -15,6 +15,8 @@ import SquareButton from "../../components/Button/SquareButton";
 import TrueScreen from "../../components/StepController/TrueScreen";
 import StepController from "../../components/StepController/StepController";
 import { useDynamicData } from "./Hooks/useDynamicData";
+
+import DemoGauge from "../../components/Gauge/DemoGauge";
 const SceneDetail = () => {
   const { data, loading, error } = useDynamicData(); //获取对应关卡的数据
   // 定义引导的步骤
@@ -113,6 +115,7 @@ const SceneDetail = () => {
             <OdometerPlaceholder wrapperId={"OdometerPlaceholder"} />
             <OperationModeKnob wrapperId={"OperationModeKnob"} />
           </div>
+          <DemoGauge />
         </div>
       }
       childrenRightTop={
