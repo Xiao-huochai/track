@@ -75,7 +75,7 @@ const SceneDetail = () => {
 
   return (
     <SceneDetailLayout
-      title={systemName + "故障"}
+      title={systemName}
       childrenLeft={
         <div className="left-content-placeholder">
           {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
@@ -181,25 +181,25 @@ const SceneDetail = () => {
                 <ButtonPair
                   label="主断"
                   leftState="分"
-                  leftColor="#e74c3c"
+                  leftColor="#ff0000"
                   rightState="合"
-                  rightColor="#2ecc71"
+                  rightColor="#60ff68"
                   wrapperId={"BP-0"}
                 />
                 <ButtonPair
                   label="受电弓"
                   leftState="降"
-                  leftColor="#e74c3c"
+                  leftColor="#ff0000"
                   rightState="升"
-                  rightColor="#2ecc71"
+                  rightColor="#60ff68"
                   wrapperId={"BP-1"}
                 />
                 <ButtonPair
                   label="停放制动"
                   leftState="施加"
-                  leftColor="#e74c3c"
+                  leftColor="#ff0000"
                   rightState="缓解"
-                  rightColor="#2ecc71"
+                  rightColor="#60ff68"
                   wrapperId={"BP-2"}
                 />
                 <ColorButton

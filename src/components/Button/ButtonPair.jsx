@@ -13,16 +13,34 @@ const ButtonPair = ({
   const [leftOn, setLeftOn] = useState(false);
   const [rightOn, setRightOn] = useState(true);
 
-  // 点击左侧按钮：左侧开，右侧关
+  // 点击左侧按钮
   const toggleLeft = () => {
-    setLeftOn(true);
-    setRightOn(false);
+    setLeftOn((prevLeftOn) => {
+      setRightOn((prevRightOn) => {
+        // 如果两个都是true，就都设为false
+        if (prevLeftOn && prevRightOn) {
+          return false;
+        }
+        // 否则正常切换左侧，右侧设为false
+        return false;
+      });
+      return !prevLeftOn;
+    });
   };
 
-  // 点击右侧按钮：右侧开，左侧关
+  // 点击右侧按钮
   const toggleRight = () => {
-    setLeftOn(false);
-    setRightOn(true);
+    setRightOn((prevRightOn) => {
+      setLeftOn((prevLeftOn) => {
+        // 如果两个都是true，就都设为false
+        if (prevLeftOn && prevRightOn) {
+          return false;
+        }
+        // 否则正常切换右侧，左侧设为false
+        return false;
+      });
+      return !prevRightOn;
+    });
   };
 
   return (
@@ -36,13 +54,14 @@ const ButtonPair = ({
       <div className="pair-buttons">
         <div
           className="pair-button"
-          style={{ backgroundColor: leftOn ? leftColor : "#666" }}
+          style={{ backgroundColor: leftOn ? leftColor : "#a50505" }}
           onClick={toggleLeft}
         ></div>
         <div
           className="pair-button"
-          style={{ backgroundColor: rightOn ? rightColor : "#666" }}
+          style={{ backgroundColor: rightOn ? rightColor : "#007343" }}
           onClick={toggleRight}
+          id={wrapperId + "-r"}
         ></div>
       </div>
       {/* 下方功能文字（主断、受电弓等） */}
