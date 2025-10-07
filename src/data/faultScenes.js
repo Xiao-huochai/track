@@ -41,7 +41,7 @@ export const faultData = [
         name: "场景三：牵引封锁/激活故障",
         detail:
           "故障现象：ATO 启动灯不亮，尝试 ATO 模式动车且推主控手柄，“车辆显示屏”显示“牵引封锁/激活故障”，列车无法动车。",
-        path: "/scene/牵引封锁激活故障?s=c2s1",
+        path: "/scene/牵引封锁激活故障?s=c2s3",
       },
     ],
   },
