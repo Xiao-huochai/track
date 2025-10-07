@@ -172,8 +172,8 @@ const StepController = ({ setForceDisplayOpen, INTERACTIVE_STEPS }) => {
   useEffect(() => {
     if (
       current?.type === "guide" &&
-      current?.step?.selector === "#DisplayScreen" &&
-      current?.step?.text?.includes("临时停车")
+      current?.step?.selector === "#DisplayScreen"
+      // current?.step?.text?.includes("临时停车")
     ) {
       setForceDisplayOpen(true); // ✅ 激活开启状态
     } else {

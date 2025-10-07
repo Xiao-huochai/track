@@ -21,7 +21,7 @@ const SceneDetail = () => {
   const { data, loading, error, screenContent } = useDynamicData(); //获取对应关卡的数据
   // 定义引导的步骤
   // const [nextStepTrigger, setNextStepTrigger] = useState(false);
-  const [forceDisplayOpen, setForceDisplayOpen] = useState(false);
+  const [forceDisplayOpen, setForceDisplayOpen] = useState(false); //控制屏幕是否激活 传给control 和truescreen
   const location = useLocation();
 
   if (loading) {

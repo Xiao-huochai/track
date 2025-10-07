@@ -137,4 +137,4 @@ export const c1s3 = [
     type: "none",
   },
 ];
-export const screenContent = "临时停车";
+export const screenContent = ["临时停车", "无制动故障显示"];
