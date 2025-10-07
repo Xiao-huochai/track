@@ -149,3 +149,56 @@
   align-items: center;
   height: 100%;
 }
+/* 右下的样式文件 */
+
+.right-bottom-placeholder {
+  display: flex;
+  width: 100%;
+  gap: 4px; /* 三个大盒子之间的间距 */
+  color: white;
+  align-items: center; /* 垂直方向居中对齐三个大盒子 */
+}
+
+/* 三个大盒子横向分布，不强制拉伸，根据内容自适应宽度 */
+.right-bottom-left,
+.right-bottom-center,
+.right-bottom-right {
+  flex: 1; /* 保持三个大盒子宽度均分父容器 */
+  display: flex;
+  gap: 4px; /* 内部元素间距 */
+}
+
+/* 第一、二个盒子纵向布局 */
+.right-bottom-left,
+.right-bottom-center {
+  flex-direction: column;
+  align-items: center; /* 内部元素水平居中 */
+}
+
+/* 行容器：控制内部元素均匀分布，不拉伸子元素 */
+.right-bottom-left-line1,
+.right-bottom-left-line2,
+.right-bottom-center-line1,
+.right-bottom-center-line2 {
+  display: flex;
+  width: 100%; /* 行容器占满父盒子宽度 */
+  gap: 2px; /* 元素间距 */
+  justify-content: space-around; /* 子元素均匀分布（保持自身尺寸） */
+}
+
+/* 第三个盒子横向布局，内部元素均匀分布 */
+.right-bottom-right {
+  flex-direction: row;
+  justify-content: space-around; /* 子元素横向均匀分布（保持自身尺寸） */
+  width: 100%;
+}
+
+/* 移除子元素的强制拉伸（关键：不改变原有尺寸） */
+.right-bottom-left-line1 > *,
+.right-bottom-center-line1 > *,
+.right-bottom-left-line2 > *,
+.right-bottom-center-line2 > *,
+.right-bottom-right > * {
+  /* 去掉 flex:1，避免子元素被拉伸 */
+  flex: none; /* 保持元素原有尺寸 */
+}

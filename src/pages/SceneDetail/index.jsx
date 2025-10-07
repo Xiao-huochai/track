@@ -115,6 +115,12 @@ const SceneDetail = () => {
             <OdometerPlaceholder wrapperId={"OdometerPlaceholder"} />
             <OperationModeKnob wrapperId={"OperationModeKnob"} />
           </div>
+          <div className="nextStep">
+            <StepController
+              setForceDisplayOpen={setForceDisplayOpen}
+              INTERACTIVE_STEPS={data}
+            />
+          </div>
         </div>
       }
       childrenRightTop={
@@ -366,10 +372,80 @@ const SceneDetail = () => {
       }
       childrenRightBottom={
         <div className="right-bottom-placeholder">
-          <StepController
-            setForceDisplayOpen={setForceDisplayOpen}
-            INTERACTIVE_STEPS={data}
-          />
+          <div className="right-bottom-left">
+            <div className="right-bottom-left-line1">
+              <SquareButton
+                color="#2ecc71"
+                label="SKS1"
+                isOn={true}
+                wrapperId={"RBLL-SB-0"}
+              />
+              <SquareButton
+                color="#e74c3c"
+                label="HSCB控制"
+                isOn={false}
+                wrapperId={"RBLL-SB-1"}
+              />
+              <SquareButton
+                color="#2ecc71"
+                label="VCU开关"
+                isOn={false}
+                wrapperId={"RBLL-SB-2"}
+              />
+            </div>
+            <div className="right-bottom-left-line2">
+              <SplitZeroCombineKnob
+                label="运行模式开关"
+                options={["降级", "升级"]}
+                wrapperId={"runModel"}
+              />
+              <SplitZeroCombineKnob
+                label="ICU自动开关"
+                options={["开", "关"]}
+                wrapperId={"autoICU"}
+              />
+            </div>
+          </div>
+          <div className="right-bottom-center">
+            <div className="right-bottom-center-line1">
+              <ColorButton activeColor="grey" label="" wrapperId={"RBCL11"} />
+              <ColorButton
+                activeColor="#f39c12"
+                label=""
+                wrapperId={"RBCL12"}
+              />
+              <ColorButton
+                activeColor="#f39c12"
+                label=""
+                wrapperId={"RBCL13"}
+              />
+            </div>
+            <div className="right-bottom-center-line2">
+              <ColorButton activeColor="grey" label="" wrapperId={"RBCL21"} />
+              <ColorButton
+                activeColor="#f39c12"
+                label=""
+                wrapperId={"RBCL22"}
+              />
+            </div>
+          </div>
+          <div className="right-bottom-right">
+            <SplitZeroCombineKnob
+              label="主控钥匙"
+              options={["关", "开"]}
+              wrapperId={"mainKey"}
+            />
+            <SplitZeroCombineKnob
+              label="司机室照明"
+              options={splitCombineOptions}
+              wrapperId={"rr1"}
+            />
+            <SplitZeroCombineKnob
+              label="司机室照明"
+              options={splitCombineOptions}
+              wrapperId={"rr2"}
+            />
+          </div>
         </div>
       }
     />

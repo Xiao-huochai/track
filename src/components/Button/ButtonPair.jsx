@@ -56,6 +56,7 @@ const ButtonPair = ({
           className="pair-button"
           style={{ backgroundColor: leftOn ? leftColor : "#a50505" }}
           onClick={toggleLeft}
+          id={wrapperId + "-l"}
         ></div>
         <div
           className="pair-button"
