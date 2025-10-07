@@ -61,7 +61,7 @@ export const c2s1 = [
   {
     type: "guide",
     step: {
-      selector: "#BP-1-r",
+      selector: "#mainKey",
       text: "点击检查“受电弓升”绿灯是否亮起 “主控钥匙”是否在“开”位",
       // offset: { top: 50, left: 50 },
     },
@@ -78,7 +78,7 @@ export const c2s1 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-1-6",
+      selector: "#SZCK-L-2-1-8",
       text: "点击按下“MVB 复位”按钮保持5s",
     },
     chatStep: {
@@ -91,11 +91,11 @@ export const c2s1 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-1-6",
+      selector: "#BP-0-r",
       text: "点击按下“主断合”按钮",
     },
     chatStep: {
-      selector: "#SZCK-L-2-1-6",
+      selector: "#BP-0-r",
       text: "合主断",
       offset: { top: 10, left: 0 },
       avatar: driverAvatar,
@@ -104,7 +104,7 @@ export const c2s1 = [
   {
     type: "chat",
     step: {
-      selector: "#SZCK-R-2-5",
+      selector: "#BP-2-r",
       text: "“主断合”绿灯亮，尝试动车",
       offset: { top: 10, left: 0 },
       avatar: dispatcherAvatar,
@@ -113,22 +113,52 @@ export const c2s1 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-1-6",
+      selector: "#OperationModeKnob",
       text: "点击调整运行模式选择开关”至“降级”位 并尝试动车",
     },
     chatStep: {
-      selector: "#SZCK-L-2-1-6",
+      selector: "#OperationModeKnob",
       text: "“运行模式选择”至“降级”位",
       offset: { top: 10, left: 0 },
       avatar: driverAvatar,
     },
   },
   {
-    type: "guide",
+    type: "both",
+    guideStep: {
+      selector: "#OperationModeKnob",
+      text: "点击调整运行模式选择开关”至“降级”位 并尝试动车",
+    },
+    chatStep: {
+      selector: "#OperationModeKnob",
+      text: "“运行模式选择”至“降级”位",
+      offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "both",
+    guideStep: {
+      selector: "#OperationModeKnob",
+      text: "点击调整运行模式选择开关”至“降级”位 并尝试动车",
+    },
+    chatStep: {
+      selector: "#OperationModeKnob",
+      text: "“运行模式选择”至“降级”位",
+      offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "chat",
     step: {
-      selector: "#DisplayScreen",
+      selector: "#RBLL-SB-1",
       text: "接通电话 呼叫行调报告行调：“XX 次在 XX 站-XX 站上/下行区间列车已动车，列车设备正常，司机操作了降级模式，申请限速退出服务。””",
-      offset: { top: 40, left: 50 },
+      offset: {
+        top: -100,
+        left: 0,
+      },
+      avatar: driverAvatar,
     },
   },
   {

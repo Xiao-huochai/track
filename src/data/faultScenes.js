@@ -35,7 +35,7 @@ export const faultData = [
         name: "场景二：牵引电机故障2",
         detail:
           "故障现象：“车辆显示屏”显示牵引电机 1 个图标红点，列车可以维持运行。",
-        path: "/scene/牵引电机故障2?s=c2s1",
+        path: "/scene/牵引电机故障2?s=c2s2",
       },
       {
         name: "场景三：牵引封锁/激活故障",
