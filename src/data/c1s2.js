@@ -142,4 +142,4 @@ export const c1s2 = [
     type: "none",
   },
 ];
-export const screenContent = "P";
+export const screenContent = ["P", "停放制动未缓解"];

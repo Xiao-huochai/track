@@ -218,4 +218,4 @@ export const c1s1 = [
     type: "none",
   },
 ];
-export const screenContent = "网压正常,车门状态正常";
+export const screenContent = ["网压正常,车门状态正常", "播放紧急广播"];
