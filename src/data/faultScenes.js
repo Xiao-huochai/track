@@ -52,18 +52,18 @@ export const faultData = [
         name: "场景一：辅助逆变器图标显示异常",
         detail:
           "“车辆显示屏”显示辅助逆变器图标红点故障，所有空调只有紧急通风，列车无法动车。",
-        path: "/scene/逆变器图标异常?s=c2s1",
+        path: "/scene/逆变器图标异常?s=c3s1",
       },
       {
         name: "场景二：激活端B车失电",
         detail:
           "从激活端单元“车辆显示屏”上会显示 B 车所有车门打开、制动图标显示为 P、空调不工作等，列车无法动车。",
-        path: "/scene/B车失电?s=c2s1",
+        path: "/scene/B车失电?s=c3s2",
       },
       {
         name: "场景三：车辆显示屏黑屏",
         detail: "“车辆显示屏”黑屏，列车无法动车。",
-        path: "/scene/显示屏黑屏?s=c2s1",
+        path: "/scene/显示屏黑屏?s=c3s3",
       },
     ],
   },
@@ -73,7 +73,7 @@ export const faultData = [
       {
         name: "场景一：“所有车门关闭”指示灯不亮",
         detail: "列车“所有车门关闭”指示灯不亮，列车无法动车。",
-        path: "/scene/车门关闭指示灯不亮?s=c2s1",
+        path: "/scene/车门关闭指示灯不亮?s=c4s1",
       },
     ],
   },
@@ -84,13 +84,13 @@ export const faultData = [
         name: "场景一：受电弓降弓追停区间",
         detail:
           "“车辆显示屏”显示网压为零，且受电弓图标显示两受电弓均降下，受电弓“降”灯亮，列车无法动车。",
-        path: "/scene/受电弓降弓追停?s=c2s1",
+        path: "/scene/受电弓降弓追停?s=c5s1",
       },
       {
         name: "场景二：主断合灯不亮",
         detail:
           "主断合灯不亮，“车辆显示屏”显示网压正常，两受电弓均正常，列车无法动车。",
-        path: "/scene/主断合灯不亮?s=c2s1",
+        path: "/scene/主断合灯不亮?s=c5s2",
       },
     ],
   },

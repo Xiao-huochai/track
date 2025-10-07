@@ -135,5 +135,4 @@ export const c2s3 = [
 export const screenContent = [
   "临时停车",
   "车门、牵引、制动、辅助电源和空压机正常",
-  "牵引电机图标正常",
 ];
