@@ -1,7 +1,7 @@
 import driverAvatar from "../assets/imgs/user.png";
 import dispatcherAvatar from "../assets/imgs/leader.png";
 // import guideAvatar from "../assets/imgs/characterImg.png";
-export const c3s3 = [
+export const c5s1 = [
   {
     type: "guide",
     step: {
