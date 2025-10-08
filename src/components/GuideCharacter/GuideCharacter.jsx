@@ -21,6 +21,7 @@ const GuideCharacter = ({
 
     //得到目标div
     const targetEl = document.querySelector(step.selector);
+    const contentWrapper = document.querySelector(".detail-content");
     if (!targetEl) return;
 
     const rect = targetEl.getBoundingClientRect();
@@ -36,8 +37,8 @@ const GuideCharacter = ({
     if (!step.noLight) {
       targetEl.classList.add("guide-highlight");
     }
-
-    const clickHandler = (e) => {
+    // 元素自身点击处理
+    const elementClickHandler = (e) => {
       if (!step.noLight) {
         targetEl.classList.remove("guide-highlight");
       }
@@ -50,9 +51,25 @@ const GuideCharacter = ({
       }
       onStepFinished();
     };
-    // 在捕获阶段注册点击事件，优先于目标元素自己的事件
-    targetEl.addEventListener("click", clickHandler, true);
-    return () => targetEl.removeEventListener("click", clickHandler, true);
+
+    // 限制全局只响应目标元素点击
+    const globalClickBlocker = (e) => {
+      if (!targetEl.contains(e.target)) {
+        // 点击的不是目标元素，阻止行为
+        e.preventDefault?.();
+        e.stopPropagation?.();
+        e.stopImmediatePropagation?.();
+      }
+      // 否则啥也不做，允许目标元素点击生效
+    };
+
+    // 注册事件
+    targetEl.addEventListener("click", elementClickHandler, true);
+    contentWrapper.addEventListener("click", globalClickBlocker, true);
+    return () => {
+      targetEl.removeEventListener("click", elementClickHandler, true);
+      contentWrapper.removeEventListener("click", globalClickBlocker, true);
+    };
   }, [step, visible, onStepFinished]);
 
   if (!step || !visible) return null;

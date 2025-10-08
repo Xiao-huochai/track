@@ -105,6 +105,7 @@ export const c4s1 = [
     guideStep: {
       selector: "#SZCK-L-2-2-0",
       text: "点击切换车门旁路至合位",
+      offset: { top: 60, left: 0 },
     },
     chatStep: {
       selector: "#SZCK-L-2-2-0",
