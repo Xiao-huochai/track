@@ -19,6 +19,7 @@ import { useDoorStore } from "../../stores/doorStore";
 import DemoGauge from "../../components/Gauge/DemoGauge";
 import DoorButton from "../../components/Button/DoorButton";
 import DoorAllButton from "../../components/Button/DoorAllButton";
+import LightTestZeroKnob from "../../components/Knob/LightTestZeroKnob";
 const SceneDetail = () => {
   const { data, loading, error, screenContent, initState } = useDynamicData(); //获取对应关卡的数据
   const {
@@ -44,6 +45,10 @@ const SceneDetail = () => {
   if (!data) {
     return <div>未找到数据</div>;
   }
+
+  const lightTestOnClick = () => {
+    setDoorAllBugOn(true);
+  };
 
   // 解析并解码URL中的系统名称
   const pathParts = location.pathname.split("/");
@@ -295,10 +300,12 @@ const SceneDetail = () => {
                   options={splitCombineOptions}
                   wrapperId={"SZCK-R-2-4"}
                 />
-                <SplitZeroCombineKnob
+                <LightTestZeroKnob
                   label="灯测试"
                   options={splitCombineOptions}
                   wrapperId={"SZCK-R-2-5"}
+                  // 当initState.useDoorBugOn为true时添加点击事件，否则不添加
+                  onClick={initState.useDoorBugOn ? lightTestOnClick : null}
                 />
                 <SplitZeroCombineKnob
                   label="风笛"
@@ -325,7 +332,7 @@ const SceneDetail = () => {
               <DoorAllButton
                 color="#2ecc71"
                 label="所有车门关闭"
-                isOn={doorAllOn} // 使用派生状态
+                isOn={initState.useDoorBugOn ? doorAllBugOn : doorAllOn} // 使用派生状态
                 wrapperId={"SB-2"}
                 onClick={null} // 不允许点击（只显示状态）
               />

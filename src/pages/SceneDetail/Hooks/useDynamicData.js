@@ -15,6 +15,7 @@ export const useDynamicData = (paramKey = "s") => {
     pairButton2r: false,
     pairButton3l: false,
     pairButton3r: false,
+    useDoorBugOn: false,
   });
   // 从URL获取指定参数的值
   const dataKey = searchParams.get(paramKey);
