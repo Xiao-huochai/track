@@ -64,6 +64,19 @@ export const c3s3 = [
   {
     type: "both",
     guideStep: {
+      selector: "#DriveModeButton",
+      text: "将“驾驶模式选择”开关转向“RM”位",
+    },
+    chatStep: {
+      selector: "#DriveModeButton",
+      text: "将“驾驶模式选择”开关转向“RM”位",
+      offset: { top: 10, left: 0 },
+      avatar: driverAvatar,
+    },
+  },
+  {
+    type: "both",
+    guideStep: {
       selector: "#SZCK-L-2-1-0",
       text: "“运行模式选择”至“降级”位",
     },

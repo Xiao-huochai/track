@@ -173,13 +173,30 @@ const StepController = ({ setForceDisplayOpen, INTERACTIVE_STEPS }) => {
     if (
       current?.type === "guide" &&
       current?.step?.selector === "#DisplayScreen"
-      // current?.step?.text?.includes("临时停车")
     ) {
       setForceDisplayOpen(true); // ✅ 激活开启状态
     } else {
       setForceDisplayOpen(false); // ❌ 正常步骤关闭状态
     }
   }, [current, setForceDisplayOpen]);
+
+  //在chat时 鼠标点击任意部位就可以触发下一步
+  useEffect(() => {
+    const handleClickAnywhere = (e) => {
+      // 只有在类型是chat时触发
+      if (current?.type === "chat") {
+        handleChatNext();
+      }
+    };
+
+    // 绑定事件监听到 document 上
+    document.addEventListener("click", handleClickAnywhere);
+
+    // 卸载时移除
+    return () => {
+      document.removeEventListener("click", handleClickAnywhere);
+    };
+  }, [current]); // 每次 current 变化时刷新监听
 
   return (
     <>
@@ -200,12 +217,12 @@ const StepController = ({ setForceDisplayOpen, INTERACTIVE_STEPS }) => {
       {/* none 类型 */}
       {current?.type === "none" && <CompletionModal />}
 
-      {/* 操作按钮，只对 chat / both 有效 */}
+      {/* 操作按钮，只对 chat有效
       {current?.type === "chat" && (
         <div style={{ marginTop: 20 }}>
           <button onClick={handleChatNext}>下一步</button>
         </div>
-      )}
+      )} */}
     </>
   );
 };

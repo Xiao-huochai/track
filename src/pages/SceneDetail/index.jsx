@@ -15,12 +15,12 @@ import SquareButton from "../../components/Button/SquareButton";
 import TrueScreen from "../../components/StepController/TrueScreen";
 import StepController from "../../components/StepController/StepController";
 import { useDynamicData } from "./Hooks/useDynamicData";
-
+import { useDoorStore } from "../../stores/doorStore";
 import DemoGauge from "../../components/Gauge/DemoGauge";
 const SceneDetail = () => {
   const { data, loading, error, screenContent } = useDynamicData(); //获取对应关卡的数据
-  // 定义引导的步骤
-  // const [nextStepTrigger, setNextStepTrigger] = useState(false);
+  const { doorLeftOn, setDoorLeftOn, doorRightOn, setDoorRightOn, doorAllOn } =
+    useDoorStore();
   const [forceDisplayOpen, setForceDisplayOpen] = useState(false); //控制屏幕是否激活 传给control 和truescreen
   const location = useLocation();
 
