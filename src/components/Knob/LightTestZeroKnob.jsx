@@ -33,7 +33,7 @@ const LightTestZeroKnob = ({
 
   // 切换状态的处理函数
   const toggleState = () => {
-    onClick();
+    if (onClick !== null) onClick();
     if (options.length === 2) {
       setStateIndex((prev) => (prev === 0 ? 2 : 0)); // 在 0 和 2 之间切换
     } else {
