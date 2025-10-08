@@ -133,7 +133,7 @@ export const c2s2 = [
   {
     type: "guide",
     step: {
-      selector: "#displayScreen",
+      selector: "#DisplayScreen",
       text: "点击“车辆显示屏”查看牵引状态界面",
       // offset: { top: 50, left: 50 },
     },
@@ -161,9 +161,9 @@ export const c2s2 = [
   {
     type: "guide",
     step: {
-      selector: "CBRR-1-4",
+      selector: "#CBRR-1-4",
       text: "关闭车门、站台门后，按规定模式驾驶",
-      // offset: { top: 50, left: 50 },
+      offset: { top: 50, left: 200 },
     },
   },
   {

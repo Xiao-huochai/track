@@ -7,6 +7,7 @@ export const c1s2 = [
     step: {
       selector: "#BP-2",
       text: "看看“停放制动缓解”灯,“停放制动施加”灯是否正常",
+      offset: { top: -50, left: -50 },
     },
   },
   {
@@ -142,4 +143,4 @@ export const c1s2 = [
     type: "none",
   },
 ];
-export const screenContent = ["P", "停放制动未缓解"];
+export const screenContent = ["P", "临时停车", "停放制动未缓解"];

@@ -1,7 +1,13 @@
 import { useState } from "react";
 import "./SplitZeroCombineKnob.css";
 
-const SplitZeroCombineKnob = ({ label, options, wrapperId }) => {
+const SplitZeroCombineKnob = ({
+  label,
+  options,
+  wrapperId,
+  startIndex = 0,
+  // 0 1 2分别对应左中右
+}) => {
   // 验证输入参数，确保是2或3个选项
   if (
     !options ||
@@ -13,18 +19,23 @@ const SplitZeroCombineKnob = ({ label, options, wrapperId }) => {
     options = ["分", "0", "合"]; // 默认值
   }
 
-  // 根据选项数量设置初始状态索引
-  const initialStateIndex = options.length === 2 ? 0 : 1;
-  const [stateIndex, setStateIndex] = useState(initialStateIndex);
+  // 👉 获取合法的初始状态索引
+  const getValidStartIndex = () => {
+    if (options.length === 2) {
+      return startIndex === 0 || startIndex === 2 ? startIndex : 0;
+    }
+    // 三个选项时，只能是 0, 1, 2
+    return [0, 1, 2].includes(startIndex) ? startIndex : 1;
+  };
+
+  const [stateIndex, setStateIndex] = useState(getValidStartIndex());
 
   // 切换状态的处理函数
   const toggleState = () => {
-    // 两个选项时直接在0和1之间切换（红<->绿）
     if (options.length === 2) {
-      setStateIndex((prev) => (prev === 0 ? 2 : 0));
+      setStateIndex((prev) => (prev === 0 ? 2 : 0)); // 在 0 和 2 之间切换
     } else {
-      // 三个选项时循环切换
-      setStateIndex((prev) => (prev + 1) % 3);
+      setStateIndex((prev) => (prev + 1) % 3); // 在 0, 1, 2 之间循环
     }
   };
 

@@ -8,10 +8,12 @@ const ButtonPair = ({
   rightState,
   rightColor,
   wrapperId,
+  lOn = false,
+  rOn = true,
 }) => {
   // 左右按钮状态（默认左关右开）
-  const [leftOn, setLeftOn] = useState(false);
-  const [rightOn, setRightOn] = useState(true);
+  const [leftOn, setLeftOn] = useState(lOn);
+  const [rightOn, setRightOn] = useState(rOn);
 
   // 点击左侧按钮
   const toggleLeft = () => {

@@ -398,6 +398,7 @@ const SceneDetail = () => {
                 label="运行模式开关"
                 options={["降级", "升级"]}
                 wrapperId={"runModel"}
+                startIndex={2}
               />
               <SplitZeroCombineKnob
                 label="ICU自动开关"
@@ -434,14 +435,15 @@ const SceneDetail = () => {
               label="主控钥匙"
               options={["关", "开"]}
               wrapperId={"mainKey"}
+              startIndex={2}
             />
             <SplitZeroCombineKnob
-              label="司机室照明"
+              label="主控手柄"
               options={splitCombineOptions}
               wrapperId={"rr1"}
             />
             <SplitZeroCombineKnob
-              label="司机室照明"
+              label="主控手柄"
               options={splitCombineOptions}
               wrapperId={"rr2"}
             />
