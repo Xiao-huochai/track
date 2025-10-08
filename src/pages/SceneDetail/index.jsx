@@ -309,11 +309,12 @@ const SceneDetail = () => {
                 isOn={false}
                 wrapperId={"SB-1"}
               />
-              <SquareButton
+              <DoorAllButton
                 color="#2ecc71"
                 label="所有车门关闭"
-                isOn={false}
+                isOn={doorAllOn} // 使用派生状态
                 wrapperId={"SB-2"}
+                onClick={null} // 不允许点击（只显示状态）
               />
             </div>
           </div>
