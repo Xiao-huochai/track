@@ -6,7 +6,7 @@ export const useDoorStore = () => {
 
   // 派生状态，自动根据 left 和 right 的值计算
   const doorAllOn = useMemo(() => {
-    return doorLeftOn && doorRightOn;
+    return !doorLeftOn && !doorRightOn;
   }, [doorLeftOn, doorRightOn]);
 
   return {

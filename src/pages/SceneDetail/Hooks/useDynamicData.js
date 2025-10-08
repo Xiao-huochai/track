@@ -8,6 +8,14 @@ export const useDynamicData = (paramKey = "s") => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [screenContent, setScreenContent] = useState("屏幕内容");
+  const [initState, setInitState] = useState({
+    pairButton1l: false,
+    pairButton1r: false,
+    pairButton2l: false,
+    pairButton2r: false,
+    pairButton3l: false,
+    pairButton3r: false,
+  });
   // 从URL获取指定参数的值
   const dataKey = searchParams.get(paramKey);
 
@@ -29,6 +37,7 @@ export const useDynamicData = (paramKey = "s") => {
         // 动态导入对应的模块（路径可根据实际情况调整）
         const module = await import(`../../../data/${dataKey}`);
         // 支持默认导出和命名导出
+        if (module["initState"]) setInitState(module["initState"]);
         if (module["screenContent"]) setScreenContent(module["screenContent"]); //对应文件里导出了screenContent
         setData(module.default || module[dataKey]);
       } catch (err) {
@@ -43,5 +52,5 @@ export const useDynamicData = (paramKey = "s") => {
   }, [dataKey, paramKey]);
 
   // 返回数据、加载状态和错误信息
-  return { data, loading, error, screenContent };
+  return { data, loading, error, screenContent, initState };
 };

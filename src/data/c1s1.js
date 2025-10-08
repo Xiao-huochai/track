@@ -219,3 +219,12 @@ export const c1s1 = [
   },
 ];
 export const screenContent = ["网压正常,车门状态正常", "播放紧急广播"];
+
+export const initState = {
+  pairButton1l: false,
+  pairButton1r: true,
+  pairButton2l: false,
+  pairButton2r: true,
+  pairButton3l: false,
+  pairButton3r: true,
+};

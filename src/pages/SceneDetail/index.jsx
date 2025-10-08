@@ -20,7 +20,7 @@ import DemoGauge from "../../components/Gauge/DemoGauge";
 import DoorButton from "../../components/Button/DoorButton";
 import DoorAllButton from "../../components/Button/DoorAllButton";
 const SceneDetail = () => {
-  const { data, loading, error, screenContent } = useDynamicData(); //获取对应关卡的数据
+  const { data, loading, error, screenContent, initState } = useDynamicData(); //获取对应关卡的数据
   const { doorLeftOn, setDoorLeftOn, doorRightOn, setDoorRightOn, doorAllOn } =
     useDoorStore();
   const [forceDisplayOpen, setForceDisplayOpen] = useState(false); //控制屏幕是否激活 传给control 和truescreen
@@ -203,6 +203,8 @@ const SceneDetail = () => {
                   rightState="合"
                   rightColor="#60ff68"
                   wrapperId={"BP-0"}
+                  lOn={initState.pairButton1l}
+                  rOn={initState.pairButton1r}
                 />
                 <ButtonPair
                   label="受电弓"
@@ -211,6 +213,8 @@ const SceneDetail = () => {
                   rightState="升"
                   rightColor="#60ff68"
                   wrapperId={"BP-1"}
+                  lOn={initState.pairButton2l}
+                  rOn={initState.pairButton2r}
                 />
                 <ButtonPair
                   label="停放制动"
@@ -219,6 +223,8 @@ const SceneDetail = () => {
                   rightState="缓解"
                   rightColor="#60ff68"
                   wrapperId={"BP-2"}
+                  lOn={initState.pairButton3l}
+                  rOn={initState.pairButton3r}
                 />
                 <ColorButton
                   label="乘客报警复位"

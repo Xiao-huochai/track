@@ -5,8 +5,16 @@ export const c1s2 = [
   {
     type: "guide",
     step: {
-      selector: "#BP-2",
-      text: "看看“停放制动缓解”灯,“停放制动施加”灯是否正常",
+      selector: "#BP-2-r",
+      text: "看看“停放制动缓解”灯是否正常",
+      offset: { top: -50, left: -50 },
+    },
+  },
+  {
+    type: "guide",
+    step: {
+      selector: "#BP-2-l",
+      text: "看看“停放制动施加”灯是否正常",
       offset: { top: -50, left: -50 },
     },
   },

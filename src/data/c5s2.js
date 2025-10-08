@@ -174,3 +174,12 @@ export const c5s2 = [
   },
 ];
 export const screenContent = ["网压正常,受电弓正常升起", "临时停车"];
+
+export const initState = {
+  pairButton1l: false,
+  pairButton1r: false,
+  pairButton2l: false,
+  pairButton2r: true,
+  pairButton3l: false,
+  pairButton3r: false,
+};
