@@ -77,11 +77,11 @@ export const c3s3 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-1-0",
+      selector: "#runModel",
       text: "“运行模式选择”至“降级”位",
     },
     chatStep: {
-      selector: "#SZCK-L-2-1-0",
+      selector: "#runModel",
       text: "“运行模式选择”至“降级”位",
       offset: { top: 10, left: 0 },
       avatar: driverAvatar,

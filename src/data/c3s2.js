@@ -91,6 +91,7 @@ export const c3s2 = [
     guideStep: {
       selector: "#SZCK-L-2-1-0",
       text: "“信号选择打至信号切除位”",
+      offset: { top: 50, left: 0 },
     },
     chatStep: {
       selector: "#SZCK-L-2-1-0",
@@ -104,6 +105,7 @@ export const c3s2 = [
     guideStep: {
       selector: "#SZCK-L-2-2-0",
       text: "“车门旁路”至“合”位",
+      offset: { top: 50, left: 0 },
     },
     chatStep: {
       selector: "#SZCK-L-2-2-0",
@@ -144,7 +146,7 @@ export const c3s2 = [
       selector: "#RBLL-SB-1",
       text: "接通电话，呼叫行调。报告行调:“行调，XX 次在 XX 站-XX 站上/下行区间列车已动车，司机切除故障车 B05、操作 “信号选择”开关至“信号切除”位、“车门旁路”至“合”位、“停放制动旁路”至“合”位、“运行模式选择”至“降级”位，申请限速退出服务。”",
       offset: {
-        top: -100,
+        top: -300,
         left: 0,
       },
       avatar: driverAvatar,

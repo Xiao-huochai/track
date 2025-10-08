@@ -161,7 +161,7 @@ export const c2s2 = [
   {
     type: "guide",
     step: {
-      selector: "#CBRR-1-4",
+      selector: "#CBRL-1-4",
       text: "关闭车门、站台门后，按规定模式驾驶",
       offset: { top: 50, left: 200 },
     },
