@@ -21,8 +21,15 @@ import DoorButton from "../../components/Button/DoorButton";
 import DoorAllButton from "../../components/Button/DoorAllButton";
 const SceneDetail = () => {
   const { data, loading, error, screenContent, initState } = useDynamicData(); //获取对应关卡的数据
-  const { doorLeftOn, setDoorLeftOn, doorRightOn, setDoorRightOn, doorAllOn } =
-    useDoorStore();
+  const {
+    doorLeftOn,
+    setDoorLeftOn,
+    doorRightOn,
+    setDoorRightOn,
+    doorAllOn,
+    doorAllBugOn,
+    setDoorAllBugOn,
+  } = useDoorStore();
   const [forceDisplayOpen, setForceDisplayOpen] = useState(false); //控制屏幕是否激活 传给control 和truescreen
   const location = useLocation();
 

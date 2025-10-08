@@ -33,14 +33,18 @@ export const c4s1 = [
     type: "guide",
     step: {
       selector: "#CBRL-0-4",
-      text: "“关左”绿灯亮、“所有车门关闭”灯不亮",
+      text: "“关左”绿灯亮",
     },
   },
   {
     type: "guide",
     step: {
       selector: "#CBRL-1-4",
-      text: "“关右”绿灯亮、“所有车门关闭”灯不亮",
+      text: "“关右”绿灯亮",
+      offset: {
+        top: 60,
+        left: 200,
+      },
     },
   },
   {
@@ -151,3 +155,13 @@ export const c4s1 = [
   },
 ];
 export const screenContent = ["临时停车", "车门关闭正常"];
+
+export const initState = {
+  pairButton1l: false,
+  pairButton1r: false,
+  pairButton2l: false,
+  pairButton2r: false,
+  pairButton3l: false,
+  pairButton3r: false,
+  useDoorBugOn: true,
+};
