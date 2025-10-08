@@ -42,21 +42,32 @@ const StepController = ({ setForceDisplayOpen, INTERACTIVE_STEPS }) => {
 
   //在chat时 鼠标点击任意部位就可以触发下一步
   useEffect(() => {
+    const detailContainer = document.querySelector(".detail-content");
+
+    if (!detailContainer) return;
+
     const handleClickAnywhere = (e) => {
-      // 只有在类型是chat时触发
       if (current?.type === "chat") {
+        // ⛔ 阻止元素本来的点击事件（提交、跳转、弹层等）
+        e.preventDefault?.();
+        e.stopPropagation?.();
+        e.stopImmediatePropagation?.();
+
+        // ✅ 执行下一步逻辑
         handleChatNext();
       }
     };
 
-    // 绑定事件监听到 document 上
-    document.addEventListener("click", handleClickAnywhere);
+    // ✅ 仅在 chat 类型时绑定
+    if (current?.type === "chat") {
+      detailContainer.addEventListener("click", handleClickAnywhere, true); // true 表示捕获阶段
+    }
 
-    // 卸载时移除
+    // ✅ 清除逻辑
     return () => {
-      document.removeEventListener("click", handleClickAnywhere);
+      detailContainer.removeEventListener("click", handleClickAnywhere, true);
     };
-  }, [current]); // 每次 current 变化时刷新监听
+  }, [current]);
 
   return (
     <>
