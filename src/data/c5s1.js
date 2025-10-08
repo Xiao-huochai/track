@@ -90,6 +90,7 @@ export const c5s1 = [
     step: {
       selector: "#BP-1-r",
       text: "点击受电弓升按钮试试",
+      preventClickEvent: true,
     },
   },
   {

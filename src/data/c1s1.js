@@ -7,6 +7,7 @@ export const c1s1 = [
     step: {
       selector: "#BP-0-r",
       text: "依次点击亮起的三个绿灯",
+      // preventClickEvent: true,
     },
   },
   {

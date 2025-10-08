@@ -59,6 +59,7 @@ export const c5s2 = [
     step: {
       selector: "#BP-0-r",
       text: "点击“主断合”按钮",
+      preventClickEvent: true,
     },
   },
   {
@@ -95,11 +96,11 @@ export const c5s2 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-2-0",
+      selector: "#RBLL-SB-2",
       text: "断开“VCU”自动开关,等待5秒，闭合",
     },
     chatStep: {
-      selector: "#SZCK-L-2-2-0",
+      selector: "#RBLL-SB-2",
       text: "断开“VCU”自动开关",
       offset: { top: 10, left: 0 },
       avatar: driverAvatar,
@@ -108,11 +109,11 @@ export const c5s2 = [
   {
     type: "both",
     guideStep: {
-      selector: "#SZCK-L-2-2-0",
+      selector: "#RBLL-SB-2",
       text: "5秒后",
     },
     chatStep: {
-      selector: "#SZCK-L-2-2-0",
+      selector: "#RBLL-SB-2",
       text: "闭合“VCU”自动开关",
       offset: { top: 10, left: 0 },
       avatar: driverAvatar,

@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import characterImg from "../../assets/imgs/characterImg.png";
 import "./GuideCharacter.css";
+//step里的属性
+//    {
+//       selector: "#demoGauge2",
+//       text: "请点击查看气压表是否为3Bar",
+//       offset: { top: 50, left: 50 },
+//       preventClickEvent:true,阻止当前点击事件执行进入下一步
+//     },
 
 const GuideCharacter = ({
   step = null,
@@ -12,6 +19,7 @@ const GuideCharacter = ({
   useEffect(() => {
     if (!step || !visible) return;
 
+    //得到目标div
     const targetEl = document.querySelector(step.selector);
     if (!targetEl) return;
 
@@ -24,19 +32,27 @@ const GuideCharacter = ({
       left: rect.left + window.scrollX - offsetLeft,
     });
 
+    //给目标高亮
     if (!step.noLight) {
       targetEl.classList.add("guide-highlight");
     }
 
-    const clickHandler = () => {
+    const clickHandler = (e) => {
       if (!step.noLight) {
         targetEl.classList.remove("guide-highlight");
       }
+
+      // 如果设置 preventClickEvent 为 true，则阻止元素的真正点击行为
+      if (step.preventClickEvent) {
+        e.preventDefault?.();
+        e.stopPropagation?.();
+        e.stopImmediatePropagation?.();
+      }
       onStepFinished();
     };
-
-    targetEl.addEventListener("click", clickHandler);
-    return () => targetEl.removeEventListener("click", clickHandler);
+    // 在捕获阶段注册点击事件，优先于目标元素自己的事件
+    targetEl.addEventListener("click", clickHandler, true);
+    return () => targetEl.removeEventListener("click", clickHandler, true);
   }, [step, visible, onStepFinished]);
 
   if (!step || !visible) return null;

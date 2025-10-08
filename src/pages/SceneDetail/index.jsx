@@ -419,6 +419,7 @@ const SceneDetail = () => {
                 color="#2ecc71"
                 label="VCU开关"
                 isOn={false}
+                initialOn={true}
                 wrapperId={"RBLL-SB-2"}
               />
             </div>
