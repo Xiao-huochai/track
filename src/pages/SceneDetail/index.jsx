@@ -17,6 +17,8 @@ import StepController from "../../components/StepController/StepController";
 import { useDynamicData } from "./Hooks/useDynamicData";
 import { useDoorStore } from "../../stores/doorStore";
 import DemoGauge from "../../components/Gauge/DemoGauge";
+import DoorButton from "../../components/Button/DoorButton";
+import DoorAllButton from "../../components/Button/DoorAllButton";
 const SceneDetail = () => {
   const { data, loading, error, screenContent } = useDynamicData(); //获取对应关卡的数据
   const { doorLeftOn, setDoorLeftOn, doorRightOn, setDoorRightOn, doorAllOn } =
@@ -130,35 +132,45 @@ const SceneDetail = () => {
             <div className="left-section">
               {/* 左列1：5个白边彩色圆形按钮 */}
               <div className="left-col1">
-                <ColorButton
+                <DoorButton
                   activeColor="#e74c3c"
                   label="开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-0"}
+                  isOn={doorLeftOn}
+                  onClick={() => setDoorLeftOn(!doorLeftOn)}
                 />
-                <ColorButton
-                  activeColor="#f39c12"
+                <DoorButton
+                  activeColor="#e74c3c"
                   label="强制开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-1"}
+                  isOn={doorLeftOn}
+                  onClick={() => setDoorLeftOn(!doorLeftOn)}
                 />
-                <ColorButton
-                  activeColor="#333"
+                <DoorButton
+                  activeColor="#e74c3c"
                   label="重开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-2"}
+                  isOn={doorLeftOn}
+                  onClick={() => setDoorLeftOn(!doorLeftOn)}
                 />
-                <ColorButton
+                <DoorButton
                   activeColor="#e74c3c"
                   label="开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-3"}
+                  isOn={doorLeftOn}
+                  onClick={() => setDoorLeftOn(!doorLeftOn)}
                 />
-                <ColorButton
+                <DoorButton
                   activeColor="#2ecc71"
                   label="关左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-4"}
+                  isOn={!doorLeftOn}
+                  onClick={() => setDoorLeftOn(false)}
                 />
               </div>
               {/* 左列2：紧急制动+2个灰边按钮 */}
@@ -336,35 +348,45 @@ const SceneDetail = () => {
               <ColorButton activeColor="grey" wrapperId={"CBRR-0-0"} />
             </div>
             <div className="left-col1">
-              <ColorButton
+              <DoorButton
                 activeColor="#e74c3c"
                 label="开右门"
                 borderColor="white"
-                wrapperId={"CBRR-1-0"}
+                wrapperId={"CBRL-1-0"}
+                isOn={doorRightOn}
+                onClick={() => setDoorRightOn(!doorRightOn)}
               />
-              <ColorButton
-                activeColor="#f39c12"
+              <DoorButton
+                activeColor="#e74c3c"
                 label="强制开右门"
                 borderColor="white"
-                wrapperId={"CBRR-1-1"}
+                wrapperId={"CBRL-1-1"}
+                isOn={doorRightOn}
+                onClick={() => setDoorRightOn(!doorRightOn)}
               />
-              <ColorButton
-                activeColor="#333"
+              <DoorButton
+                activeColor="#e74c3c"
                 label="重开右门"
                 borderColor="white"
-                wrapperId={"CBRR-1-2"}
+                wrapperId={"CBRL-1-2"}
+                isOn={doorRightOn}
+                onClick={() => setDoorRightOn(!doorRightOn)}
               />
-              <ColorButton
+              <DoorButton
                 activeColor="#e74c3c"
                 label="开右门"
                 borderColor="white"
-                wrapperId={"CBRR-1-3"}
+                wrapperId={"CBRL-1-3"}
+                isOn={doorRightOn}
+                onClick={() => setDoorRightOn(!doorRightOn)}
               />
-              <ColorButton
+              <DoorButton
                 activeColor="#2ecc71"
                 label="关右门"
                 borderColor="white"
-                wrapperId={"CBRR-1-4"}
+                wrapperId={"CBRL-1-4"}
+                isOn={!doorRightOn}
+                onClick={() => setDoorRightOn(false)}
               />
             </div>
           </div>
