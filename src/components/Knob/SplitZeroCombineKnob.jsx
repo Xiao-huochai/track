@@ -72,33 +72,3 @@ const SplitZeroCombineKnob = ({
 };
 
 export default SplitZeroCombineKnob;
-
-// 预览示例组件
-export const KnobPreview = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "20px",
-        padding: "20px",
-        backgroundColor: "#f5f5f5",
-        flexWrap: "wrap",
-      }}
-    >
-      <div style={{ textAlign: "center" }}>
-        <h4>3个选项示例</h4>
-        <SplitZeroCombineKnob label="三相电流" options={["分", "0", "合"]} />
-      </div>
-
-      <div style={{ textAlign: "center" }}>
-        <h4>2个选项示例</h4>
-        <SplitZeroCombineKnob label="电压选择" options={["交流", "直流"]} />
-      </div>
-
-      <div style={{ textAlign: "center" }}>
-        <h4>模式控制</h4>
-        <SplitZeroCombineKnob label="运行模式" options={["手动", "自动"]} />
-      </div>
-    </div>
-  );
-};

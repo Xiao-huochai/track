@@ -1,11 +1,12 @@
 .split-zero-combine-knob {
+  flex: 1; /* 占满宽度均分 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin: 4px; */
-  width: 55px;
-  height: 70px;
   padding: 4px;
+  min-width: 0; /* 避免 overflow */
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 /* 分0合状态标签容器 */
@@ -14,22 +15,30 @@
   justify-content: space-between;
   width: 100%;
   margin-bottom: 4px;
-  position: relative;
-  height: 16px; /* 固定高度防止布局跳动 */
+  height: 16px;
 }
 
 .label-left,
 .label-middle,
 .label-right {
-  font-size: 8px; /* 字体调小 */
-  width: 10px;
-  text-align: center; /* 文字居中对齐 */
+  font-size: 0.6em; /* 相对字体 */
+  width: 1.8em;
+  text-align: center;
+}
+
+.knob-label {
+  font-size: 0.75em; /* 最底部文本也自适应 */
+  margin-top: 4px;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 /* 外层圆环 */
 .knob-outer-ring {
-  width: 32px;
-  height: 32px;
+  aspect-ratio: 1 / 1; /* 保持圆形 */
+  width: 60%; /* 相对父级宽度缩放 */
+  max-width: 100%;
   border-radius: 50%;
   border: 2px solid #ccc;
   display: flex;
@@ -39,16 +48,17 @@
 }
 
 .knob-indicator {
-  width: 24px;
-  height: 24px;
+  aspect-ratio: 1 / 1;
+  width: 80%; /* 占满 outer-ring */
+  max-width: 100%;
   border-radius: 50%;
   border: 1px solid #333;
+  background-color: #666;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   cursor: pointer;
-  background-color: #666;
 }
 
 /* 左状态：红色左箭头 */
@@ -84,14 +94,4 @@
   transform: rotate(45deg);
   top: 3px;
   left: 10px;
-}
-
-.knob-label {
-  font-size: 10px; /* 底部标签字体调小 */
-  margin-top: 3px;
-  text-align: center;
-  white-space: normal;
-  word-break: break-all;
-  line-height: 1.2;
-  max-width: 60px;
 }

@@ -69,10 +69,11 @@
 
 .knob-row {
   display: flex;
-  flex-wrap: nowrap; /* 禁止换行 */
-  margin-bottom: 12px; /* 缩小行间距 */
-  gap: 2px; /* 最小化组件间距 */
-  align-items: flex-start; /* 顶部对齐，避免文字换行导致错位 */
+  flex-wrap: nowrap; /* 不换行 */
+  margin-bottom: 12px;
+  gap: 4px; /* 稍微加点间距 */
+  width: 100%;
+  align-items: stretch; /* 子项拉伸一致高度 */
 }
 
 .instruments-row {
