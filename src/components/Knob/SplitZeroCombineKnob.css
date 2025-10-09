@@ -49,7 +49,7 @@
 
 .knob-indicator {
   aspect-ratio: 1 / 1;
-  width: 80%; /* 占满 outer-ring */
+  width: 80%;
   max-width: 100%;
   border-radius: 50%;
   border: 1px solid #333;
@@ -61,37 +61,28 @@
   cursor: pointer;
 }
 
-/* 左状态：红色左箭头 */
+/* 公共箭头样式：使用 ::after 创建指针 */
+.knob-indicator::after {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 50%;
+  background-color: currentColor;
+  top: 50%;
+  left: 50%;
+  transform-origin: center bottom;
+}
+
+/* 状态方向改变 */
 .knob-indicator.left::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 12px;
-  background-color: #f00;
-  transform: rotate(-45deg);
-  top: 3px;
-  left: 10px;
+  transform: translate(-50%, -100%) rotate(-45deg);
+  color: red;
 }
-
-/* 中间状态：黄色竖箭头 */
 .knob-indicator.middle::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 12px;
-  background-color: #ffcc00;
-  top: 3px;
-  left: 10px;
+  transform: translate(-50%, -100%) rotate(0deg);
+  color: #ffcc00;
 }
-
-/* 右状态：绿色右箭头 */
 .knob-indicator.right::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 12px;
-  background-color: #0f0;
-  transform: rotate(45deg);
-  top: 3px;
-  left: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  color: #0f0;
 }
