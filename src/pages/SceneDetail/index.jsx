@@ -486,11 +486,6 @@ const SceneDetail = () => {
               options={splitCombineOptions}
               wrapperId={"rr1"}
             />
-            <SplitZeroCombineKnob
-              label="主控手柄"
-              options={splitCombineOptions}
-              wrapperId={"rr2"}
-            />
           </div>
         </div>
       }
