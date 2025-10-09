@@ -67,6 +67,7 @@
   box-sizing: border-box;
 }
 
+/* 左侧上方10个按钮 */
 .knob-row {
   display: flex;
   flex-wrap: nowrap; /* 不换行 */
@@ -74,6 +75,33 @@
   gap: 4px; /* 稍微加点间距 */
   width: 100%;
   align-items: stretch; /* 子项拉伸一致高度 */
+}
+
+/* 左侧下方6个按钮 */
+.knob-row-custom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+/* 分组1：前6个盒子 */
+.knob-group-1 {
+  flex: 6;
+  display: flex;
+  gap: 4px;
+}
+
+/* 分组2：后3个盒子，均分剩余空间 */
+.knob-group-2 {
+  flex: 4;
+  display: flex;
+  gap: 4px;
+}
+.knob-group-2 > * {
+  flex: 1; /* 均分3个组件宽度 */
+  min-width: 0;
 }
 
 .instruments-row {

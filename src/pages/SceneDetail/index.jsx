@@ -105,22 +105,28 @@ const SceneDetail = () => {
           </div>
 
           {/* 第二行：6个分合 + 3个分0合旋钮 */}
-          <div className="knob-row">
-            {row2SplitCombineLabels.map((label, index) => (
-              <SplitZeroCombineKnob
-                key={label}
-                label={label}
-                options={splitCombineOptions}
-                wrapperId={"SZCK-L-2-2-" + index}
-              />
-            ))}
-            {row2SplitZeroCombineLabels.map((label, index) => (
-              <SplitZeroCombineKnob
-                key={label}
-                label={label}
-                wrapperId={"SZCK-L-3-2-" + index}
-              />
-            ))}
+          <div className="knob-row-custom">
+            {/* 分组 1：6个组件 */}
+            <div className="knob-group knob-group-1">
+              {row2SplitCombineLabels.map((label, index) => (
+                <SplitZeroCombineKnob
+                  key={label}
+                  label={label}
+                  options={splitCombineOptions}
+                  wrapperId={"SZCK-L-2-2-" + index}
+                />
+              ))}
+            </div>
+            {/* 分组2：3个组件，并排均分剩余空间 */}
+            <div className="knob-group knob-group-2">
+              {row2SplitZeroCombineLabels.map((label, index) => (
+                <SplitZeroCombineKnob
+                  key={label}
+                  label={label}
+                  wrapperId={"SZCK-L-3-2-" + index}
+                />
+              ))}
+            </div>
           </div>
 
           {/* 仪表区：电压表 + 里程计占位 + 运行模式旋钮 */}

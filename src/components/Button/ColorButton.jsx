@@ -23,7 +23,6 @@ const ColorButton = ({
       <div className="top-label" style={{ opacity: topLabel === null ? 0 : 1 }}>
         {topLabel}
       </div>
-
       {/* 按钮 - 使用传入的颜色 */}
       <div
         className="red-button"
@@ -32,7 +31,6 @@ const ColorButton = ({
           borderColor: borderColor,
         }}
       ></div>
-
       {/* 下方文字 */}
       <div className="bottom-label">{label}</div>
     </div>

@@ -62,7 +62,7 @@
 /* 中间内容区：左右分栏 */
 .detail-content {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* 左栏固定宽度，右栏自适应 */
+  grid-template-columns: 1fr 2fr;
   /* gap: 5px; */
   flex-grow: 1;
   overflow: hidden;
