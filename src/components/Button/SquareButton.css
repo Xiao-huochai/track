@@ -1,21 +1,32 @@
 .square-button-container {
+  flex: 1; /* 让3个按钮容器平均分上下空间 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0; /* 上下间距 */
-  width: 80px;
+  justify-content: center;
+  font-size: calc(0.6vw + 0.6vh); /* 🔥 字体尺寸随着视图缩放 */
+  box-sizing: border-box;
+  min-height: 0;
 }
 
 .square-button {
-  width: 30px;
-  height: 30px; /* 正方形 */
-  border: 2px solid white; /* 白边 */
+  width: 40%; /* 相对于容器宽度 */
+  aspect-ratio: 1 / 1; /* ✅ 保持正方形 */
+  border: 0.2em solid white;
+  background-color: #666;
   cursor: pointer;
+  flex-shrink: 0; /* 防止被压缩 */
+  max-width: 40px; /* 可选：设置最大尺寸 */
 }
 
 .button-label {
-  font-size: 12px;
+  font-size: 1em; /* 相对于 .square-button-container */
   color: white;
-  margin-top: 4px;
+  margin-top: 0.5em;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 4px;
 }

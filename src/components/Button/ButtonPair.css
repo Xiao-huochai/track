@@ -1,35 +1,45 @@
 .button-pair {
+  flex: 1; /* 均分父容器宽度 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80px; /* 固定宽度 */
+  justify-content: center;
+  font-size: calc(0.6vw + 0.6vh); /* 🔥 字体响应式适配 */
+  padding: 4px;
+  box-sizing: border-box;
+  min-width: 0; /* 防止overflow */
 }
 
 .pair-top-labels {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 12px;
+  font-size: 1em;
   color: white;
   margin-bottom: 4px;
 }
 
 .pair-buttons {
   display: flex;
-  gap: 8px; /* 两按钮间距 */
+  justify-content: center;
+  gap: 8%;
+  width: 100%;
 }
 
 .pair-button {
-  width: 30px;
-  height: 30px;
+  width: 40%; /* 相对于 .pair-buttons 自适应宽度 */
+  aspect-ratio: 1 / 1; /* 保持正圆 */
   border-radius: 50%;
-  border: 2px solid white; /* 白边 */
+  border: 0.16em solid white;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .pair-bottom-label {
-  font-size: 12px;
+  font-size: 1em;
   color: white;
   margin-top: 4px;
   text-align: center;
+  word-wrap: break-word;
+  padding: 0 4px;
 }
