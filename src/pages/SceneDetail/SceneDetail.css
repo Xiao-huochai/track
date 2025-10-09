@@ -210,15 +210,21 @@
   display: flex;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 /* 右下的样式文件 */
 
 .right-bottom-placeholder {
   display: flex;
+  align-items: center; /* 垂直居中 wrapper */
+  justify-content: center; /* 水平居中 wrapper */
   width: 100%;
-  gap: 4px; /* 三个大盒子之间的间距 */
+  height: 100%;
+
+  aspect-ratio: 4 / 1; /* 可选，确保外部容器长宽比 */
+  background-color: #2c3e50; /* 可选背景测试 */
   color: white;
-  align-items: center; /* 垂直方向居中对齐三个大盒子 */
+  box-sizing: border-box;
 }
 
 /* 三个大盒子横向分布，不强制拉伸，根据内容自适应宽度 */
@@ -263,4 +269,15 @@
 .right-bottom-right > * {
   /* 去掉 flex:1，避免子元素被拉伸 */
   flex: none; /* 保持元素原有尺寸 */
+}
+
+.right-bottom-wrapper {
+  width: 70%;
+  height: 70%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1vw; /* 组件之间有些间距 */
+
+  box-sizing: border-box;
 }
