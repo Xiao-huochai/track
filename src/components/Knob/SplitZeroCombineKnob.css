@@ -7,6 +7,8 @@
   min-width: 0; /* 避免 overflow */
   min-height: 0;
   box-sizing: border-box;
+
+  font-size: calc(0.6vw + 0.6vh); /* 👈 核心，viewport 相对单位，可以调节 */
 }
 
 /* 分0合状态标签容器 */

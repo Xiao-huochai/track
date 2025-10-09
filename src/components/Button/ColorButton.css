@@ -8,16 +8,18 @@
   box-sizing: border-box;
   padding: 4px;
   overflow: hidden; /* ⛔️ 保证字不溢出变大 */
+
+  font-size: calc(0.6vw + 0.6vh); /* 👈 核心，viewport 相对单位，可以调节 */
 }
 
 .red-button {
-  width: 40%; /* 相对宽度 */
+  width: 60%; /* 相对宽度 */
   aspect-ratio: 1 / 1; /* 保持圆形 */
   border-radius: 50%;
-  border: 2px solid;
+  border: 0.2em solid;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  max-width: 30px;
+  /* max-width: 30px; */
   flex-shrink: 0; /* ✅ 防止因为上下文字挤压按钮 */
 }
 
