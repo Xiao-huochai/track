@@ -421,7 +421,7 @@ const SceneDetail = () => {
       }
       childrenRightBottom={
         <div className="right-bottom-placeholder">
-          {/* <div className="right-bottom-left">
+          <div className="right-bottom-left">
             <div className="right-bottom-left-line1">
               <SquareButton
                 color="#2ecc71"
@@ -492,7 +492,7 @@ const SceneDetail = () => {
               options={splitCombineOptions}
               wrapperId={"rr1"}
             />
-          </div> */}
+          </div>
         </div>
       }
     />
