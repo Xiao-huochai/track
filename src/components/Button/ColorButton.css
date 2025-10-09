@@ -1,29 +1,34 @@
 .single-red-button-container {
+  flex: 1; /* 均分每一个组件高度 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60px;
-}
-
-.top-label {
-  font-size: 8px;
-  color: white;
-  margin-bottom: 4px;
-  transition: opacity 0.2s ease; /* 平滑过渡效果 */
+  justify-content: center; /* ⬅ 居中内容 */
+  min-height: 0; /* 防止 overflow */
+  box-sizing: border-box;
+  padding: 4px;
+  overflow: hidden; /* ⛔️ 保证字不溢出变大 */
 }
 
 .red-button {
-  width: 30px;
-  height: 30px;
+  width: 40%; /* 相对宽度 */
+  aspect-ratio: 1 / 1; /* 保持圆形 */
   border-radius: 50%;
-  border: 2px solid; /* 边框颜色由JS动态设置 */
+  border: 2px solid;
   cursor: pointer;
-  transition: background-color 0.2s ease; /* 状态切换动画 */
+  transition: background-color 0.2s ease;
+  max-width: 30px;
+  flex-shrink: 0; /* ✅ 防止因为上下文字挤压按钮 */
 }
 
+.top-label,
 .bottom-label {
-  font-size: 8px;
+  font-size: 0.65em; /* 相对缩放 */
+  width: 6.5em;
+  /* 一个汉字占两个fs 这里的width能容纳5个汉字 */
   color: white;
-  margin-top: 4px;
   text-align: center;
+  line-height: 1.2;
+  transition: opacity 0.2s ease;
+  margin: 4px 0;
 }

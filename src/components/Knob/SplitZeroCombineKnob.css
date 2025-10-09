@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4px;
+  padding: 3px;
   min-width: 0; /* 避免 overflow */
   min-height: 0;
   box-sizing: border-box;
@@ -19,15 +19,20 @@
 }
 
 .label-left,
-.label-middle,
 .label-right {
   font-size: 0.6em; /* 相对字体 */
-  width: 1.8em;
+  width: 1.2em;
+  text-align: center;
+}
+.label-middle {
+  font-size: 0.6em;
+  width: 1.2em;
   text-align: center;
 }
 
 .knob-label {
-  font-size: 0.75em; /* 最底部文本也自适应 */
+  font-size: 0.6em;
+  width: 100%;
   margin-top: 4px;
   text-align: center;
   line-height: 1.2;
