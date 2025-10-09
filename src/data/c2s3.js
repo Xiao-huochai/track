@@ -34,6 +34,10 @@ export const c2s3 = [
     step: {
       selector: "#rr1",
       text: "请推主控手柄尝试动车",
+      offset: {
+        top: 60,
+        left: 150,
+      },
     },
   },
   {
@@ -62,6 +66,10 @@ export const c2s3 = [
     step: {
       selector: "#rr1",
       text: "将“主控手柄”拉至“快速制动”位，之后回零，等 3 秒后，再尝试动车",
+      offset: {
+        top: 60,
+        left: 150,
+      },
     },
   },
   {
