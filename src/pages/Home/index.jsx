@@ -13,10 +13,13 @@ const Home = () => {
   // 打开弹窗，传入场景数据
   const handleCardClick = (scene) => {
     // 查找场景所属的分类标题
+    console.log(scene);
+
+    console.log(faultData);
     const section = faultData.find((section) =>
       section.scenes.some((s) => s.id === scene.id)
     );
-    console.log(scene);
+    console.log(section);
 
     setCurrentScene(scene);
     setCurrentSectionTitle(section?.title || "");
