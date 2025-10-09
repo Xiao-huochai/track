@@ -5,7 +5,7 @@
   border: 0.4em solid #333; /* ✅ 可响应缩放的 border */
   border-radius: 0.5em;
   background-color: #0a0a0a;
-  padding: 1em;
+  /* padding: 1em; */
   box-sizing: border-box;
 
   display: flex;
