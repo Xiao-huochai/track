@@ -1,13 +1,13 @@
 import "./SceneDetailLayout.css";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+// import { useState } from "react";
 const SceneDetailLayout = ({
   title,
   childrenLeft,
   childrenRightTop,
   childrenRightBottom,
 }) => {
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  // const [showHelpModal, setShowHelpModal] = useState(false);
   const navigate = useNavigate();
   const handleBackToHome = () => {
     // 跳转到首页路由
@@ -20,19 +20,19 @@ const SceneDetailLayout = ({
         <h1>{title}</h1>
 
         <div className="header-btn-group">
-          <button
+          {/* <button
             className="operation-btn"
             onClick={() => setShowHelpModal(true)}
           >
             操作说明
-          </button>
+          </button> */}
           <button className="back-btn" onClick={handleBackToHome}>
             返回首页
           </button>
         </div>
       </header>
       {/* 操作说明弹窗 */}
-      {showHelpModal && (
+      {/* {showHelpModal && (
         <div className="modal-overlay" onClick={() => setShowHelpModal(false)}>
           <div
             className="help-modal"
@@ -56,7 +56,7 @@ const SceneDetailLayout = ({
             </div>
           </div>
         </div>
-      )}
+      )} */}
       {/* 中间主内容区：左右分栏，右侧再上下分栏 */}
       <main className="detail-content">
         <div className="column left">{childrenLeft}</div>
