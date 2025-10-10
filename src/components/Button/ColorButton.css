@@ -20,12 +20,13 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   /* max-width: 30px; */
-  flex-shrink: 0; /* ✅ 防止因为上下文字挤压按钮 */
+  flex-shrink: 0;
+  /* ✅ 防止因为上下文字挤压按钮 */
 }
 
 .top-label,
 .bottom-label {
-  font-size: 0.65em; /* 相对缩放 */
+  font-size: 0.6em; /* 相对缩放 */
   width: 6.5em;
   /* 一个汉字占两个fs 这里的width能容纳5个汉字 */
   color: white;
