@@ -27,7 +27,7 @@ export const c3s1 = [
       selector: "#RBLL-SB-1",
       text: "接通电话，呼叫行调。报告行调:“行调，XX 次在XX 站-XX 站上/下行区间“车辆显示屏”辅助逆变器图标显示红点，列车出现空调、空压机不工作，司机申请执行车辆故障处理流程。”",
       offset: {
-        top: -100,
+        top: -200,
         left: 0,
       },
       avatar: driverAvatar,
@@ -54,6 +54,7 @@ export const c3s1 = [
       selector: "#mainKey",
       text: "查看主控钥匙",
       avatar: driverAvatar,
+      offset: { top: -100, left: -200 },
     },
   },
   {

@@ -50,7 +50,7 @@ export const c1s3 = [
     step: {
       selector: "#SB-0",
       text: "快点击看看“所有气制动缓解”灯是否亮起",
-      offset: { top: 50, left: 50 },
+      offset: { top: -50, left: 200 },
     },
   },
   {
@@ -112,7 +112,7 @@ export const c1s3 = [
       selector: "#SZCK-R-2-2",
       text: "接通电调呼叫行调 报告行调:“行调，XX次在XX站下行区间列车已动车，列车设备正常，司机操作了“气动制动器” 和 “停放制动器路”，列车功能缓解，运行正常，申请退出服务。”",
       offset: {
-        top: 100,
+        top: 0,
         left: -50,
       },
       avatar: driverAvatar,

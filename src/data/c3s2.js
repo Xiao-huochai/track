@@ -27,7 +27,7 @@ export const c3s2 = [
       selector: "#RBLL-SB-1",
       text: "接通电话，呼叫行调。报告行调:““行调，XX 次在 XX 站-XX 站上/下行区间激活端单元 B 车失电，车辆显示屏上 B 车出现空调不工作、车门打开、制动图标显示 P，司机申请执行车辆故障处理流程。”",
       offset: {
-        top: -100,
+        top: -200,
         left: 0,
       },
       avatar: driverAvatar,
@@ -136,7 +136,7 @@ export const c3s2 = [
     chatStep: {
       selector: "#runModel",
       text: "“运行模式选择”至“降级”位",
-      offset: { top: 10, left: 0 },
+      offset: { top: -100, left: 150 },
       avatar: driverAvatar,
     },
   },

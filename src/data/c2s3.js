@@ -100,7 +100,7 @@ export const c2s3 = [
     chatStep: {
       selector: "#runModel",
       text: "“运行模式选择”至“降级”位",
-      offset: { top: 10, left: 0 },
+      offset: { top: -100, left: 150 },
       avatar: driverAvatar,
     },
   },

@@ -100,7 +100,7 @@ export const c2s2 = [
     chatStep: {
       selector: "#autoICU",
       text: "复位 ICU 自动开关",
-      offset: { top: 10, left: 0 },
+      offset: { top: -100, left: 150 },
       avatar: driverAvatar,
     },
   },
@@ -113,7 +113,7 @@ export const c2s2 = [
     chatStep: {
       selector: "#autoICU",
       text: "闭合 ICU 自动开关",
-      offset: { top: 10, left: 0 },
+      offset: { top: -100, left: 150 },
       avatar: driverAvatar,
     },
   },

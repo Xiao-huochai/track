@@ -25,7 +25,7 @@ export const c2s1 = [
     type: "chat",
     step: {
       offset: {
-        top: 150,
+        top: 0,
         left: 100,
       },
       avatar: driverAvatar,
