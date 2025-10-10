@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./DisplayScreen.css";
-
+import trueScreenImg from "../../assets/imgs/trueScreen.png";
 const DisplayScreen = ({ content, wrapperId, forceActive = false }) => {
   // 状态管理：控制是否显示内容
   const [isActive, setIsActive] = useState(false);
@@ -46,7 +46,14 @@ const DisplayScreen = ({ content, wrapperId, forceActive = false }) => {
   };
 
   return (
-    <div className="display-screen" onClick={handleClick} id={wrapperId}>
+    <div
+      className="display-screen"
+      onClick={handleClick}
+      id={wrapperId}
+      style={{
+        backgroundImage: `url(${trueScreenImg})`,
+      }}
+    >
       <div className="display-content">{displayContent()}</div>
     </div>
   );

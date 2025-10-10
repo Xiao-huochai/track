@@ -10,7 +10,7 @@
 }
 
 .square-button {
-  width: 40%; /* 相对于容器宽度 */
+  width: 100%; /* 相对于容器宽度 */
   aspect-ratio: 1 / 1; /* ✅ 保持正方形 */
   border: 0.2em solid white;
   background-color: #666;
@@ -20,11 +20,11 @@
 }
 
 .button-label {
-  font-size: 1em; /* 相对于 .square-button-container */
+  font-size: 0.8em; /* 相对于 .square-button-container */
   color: white;
   margin-top: 0.5em;
   text-align: center;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
