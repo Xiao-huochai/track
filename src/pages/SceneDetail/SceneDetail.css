@@ -106,7 +106,7 @@
 
 .instruments-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   margin-top: 12px;
   padding: 0 10px;
 }
@@ -167,7 +167,6 @@
   display: flex;
   align-items: stretch; /* 所有子项同高 */
   width: 100%;
-  gap: 8px; /* 可选：间距 */
   box-sizing: border-box;
 }
 
@@ -176,7 +175,6 @@
   display: flex;
   align-items: first baseline;
   width: 100%;
-  gap: 8px; /* 可选：间距 */
   box-sizing: border-box;
 }
 

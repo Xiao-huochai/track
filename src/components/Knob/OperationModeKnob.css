@@ -3,56 +3,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 16px 0;
+  justify-content: flex-start;
+  user-select: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.knob-title {
+  font-size: 10px;
+}
+
+.knob-svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 
 .mode-label {
   font-size: 14px;
-  margin-bottom: 8px;
+  fill: #444;
+  pointer-events: none;
 }
 
-.mode-indicator {
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.mode-option {
-  position: absolute;
-  font-size: 12px;
-}
-
-.mode-option:nth-child(1) {
-  top: 8px;
-} /* 正常 */
-.mode-option:nth-child(2) {
-  right: 8px;
-} /* 慢行 */
-.mode-option:nth-child(3) {
-  bottom: 8px;
-} /* 救援 */
-.mode-option:nth-child(4) {
-  left: 8px;
-} /* 降级 */
-
-.mode-option.active {
-  font-weight: bold;
-  color: #007bff;
-}
-
-.mode-pointer {
-  position: absolute;
-  width: 4px;
-  height: 24px;
-  background-color: #007bff;
-  top: 4px;
-  left: 50%;
-  transform-origin: bottom;
-  transition: transform 0.3s ease;
+.current-mode {
+  font-size: 16px;
+  fill: #222;
 }

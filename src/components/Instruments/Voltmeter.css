@@ -1,72 +1,14 @@
-.voltmeter {
+.voltmeter-wrapper {
   flex: 1;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 16px;
-}
-
-.meter-dial {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #333;
-  position: relative;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.meter-scale {
-  position: absolute;
-  font-size: 10px;
-}
-
-.meter-scale:nth-child(1) {
-  transform: rotate(180deg) translate(0, -30px);
-} /* 0 */
-.meter-scale:nth-child(2) {
-  transform: rotate(144deg) translate(0, -34px);
-} /* 20 */
-.meter-scale:nth-child(3) {
-  transform: rotate(108deg) translate(0, -36px);
-} /* 40 */
-.meter-scale:nth-child(4) {
-  transform: rotate(72deg) translate(0, -36px);
-} /* 60 */
-.meter-scale:nth-child(5) {
-  transform: rotate(36deg) translate(0, -34px);
-} /* 80 */
-.meter-scale:nth-child(6) {
-  transform: rotate(0deg) translate(0, -30px);
-} /* 100 */
-.meter-scale:nth-child(7) {
-  transform: rotate(-36deg) translate(0, -34px);
-} /* 120 */
-
-.meter-needle {
-  position: absolute;
-  width: 2px;
-  height: 30px;
-  background-color: #f00;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%) rotate(30deg);
-  transform-origin: bottom;
-}
-
-.meter-center {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #333;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.meter-label {
-  font-size: 12px;
-  margin-top: 4px;
+.voltmeter-svg {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
 }
