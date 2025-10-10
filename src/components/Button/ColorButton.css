@@ -13,7 +13,7 @@
 }
 
 .red-button {
-  width: 60%; /* 相对宽度 */
+  width: 80%; /* 相对宽度 */
   aspect-ratio: 1 / 1; /* 保持圆形 */
   border-radius: 50%;
   border: 0.2em solid;

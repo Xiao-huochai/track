@@ -253,7 +253,10 @@
   gap: 2px; /* 元素间距 */
   justify-content: space-around; /* 子元素均匀分布（保持自身尺寸） */
 }
-
+.right-bottom-left-line2,
+.right-bottom-center-line2 {
+  width: 66%;
+}
 /* 第三个盒子横向布局，内部元素均匀分布 */
 .right-bottom-right {
   flex-direction: row;
@@ -261,23 +264,12 @@
   width: 100%;
 }
 
-/* 移除子元素的强制拉伸（关键：不改变原有尺寸） */
-.right-bottom-left-line1 > *,
-.right-bottom-center-line1 > *,
-.right-bottom-left-line2 > *,
-.right-bottom-center-line2 > *,
-.right-bottom-right > * {
-  /* 去掉 flex:1，避免子元素被拉伸 */
-  flex: none; /* 保持元素原有尺寸 */
-}
-
 .right-bottom-wrapper {
   width: 70%;
   height: 70%;
-
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1vw; /* 组件之间有些间距 */
-
   box-sizing: border-box;
 }

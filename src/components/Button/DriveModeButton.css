@@ -21,7 +21,7 @@
 }
 
 .mode-button {
-  width: 40%; /* 相对于容器缩放 */
+  width: 70%; /* 相对于容器缩放 */
   aspect-ratio: 1 / 1; /* 保持圆形 */
   border-radius: 50%;
   border: 0.2em solid #999;

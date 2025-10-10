@@ -244,11 +244,20 @@ const SceneDetail = () => {
                   lOn={initState.pairButton3l}
                   rOn={initState.pairButton3r}
                 />
-                <ColorButton
-                  label="乘客报警复位"
-                  topLabel="复位"
-                  wrapperId={"CBRC-0-0"}
-                />
+                <div
+                  style={{
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center", // 垂直居中
+                    justifyContent: "center", // 水平居中
+                  }}
+                >
+                  <ColorButton
+                    label="乘客报警复位"
+                    topLabel="复位"
+                    wrapperId={"CBRC-0-0"}
+                  />
+                </div>
               </div>
 
               {/* 第二行：6个旋钮 */}

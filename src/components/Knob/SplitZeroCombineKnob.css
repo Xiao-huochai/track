@@ -44,7 +44,7 @@
 /* 外层圆环 */
 .knob-outer-ring {
   aspect-ratio: 1 / 1; /* 保持圆形 */
-  width: 60%; /* 相对父级宽度缩放 */
+  width: 80%; /* 相对父级宽度缩放 */
   max-width: 100%;
   border-radius: 50%;
   border: 2px solid #ccc;

@@ -10,13 +10,12 @@
 }
 
 .square-button {
-  width: 100%; /* 相对于容器宽度 */
+  width: 60%; /* 相对于容器宽度 */
   aspect-ratio: 1 / 1; /* ✅ 保持正方形 */
   border: 0.2em solid white;
   background-color: #666;
   cursor: pointer;
   flex-shrink: 0; /* 防止被压缩 */
-  max-width: 40px; /* 可选：设置最大尺寸 */
 }
 
 .button-label {
