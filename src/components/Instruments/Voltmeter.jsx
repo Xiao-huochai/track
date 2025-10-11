@@ -59,6 +59,7 @@ const Voltmeter = ({ voltage = 0, wrapperId }) => {
           {clampedVoltage.toFixed(1)} V
         </text>
       </svg>
+      <div className="voltmeter-name">电池电压表</div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "./OperationModeKnob.css";
 
 const modes = ["正常", "慢行", "救援", "降级"];
 
-const OperationModeKnob = ({ wrapperId, title = "运行模式" }) => {
+const OperationModeKnob = ({ wrapperId }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const toggleMode = () => {
@@ -24,9 +24,6 @@ const OperationModeKnob = ({ wrapperId, title = "运行模式" }) => {
 
   return (
     <div className="operation-mode-knob" id={wrapperId} onClick={toggleMode}>
-      {/* 表名 */}
-      <div className="knob-title">{title}</div>
-
       {/* 圆形旋钮 */}
       <svg viewBox="0 0 200 200" className="knob-svg">
         {/* 圆背景 */}
@@ -87,6 +84,8 @@ const OperationModeKnob = ({ wrapperId, title = "运行模式" }) => {
         {/* 圆心 */}
         <circle cx={center} cy={center} r="5" fill="#000" />
       </svg>
+      {/* 表名 */}
+      <div className="knob-title">运行模式</div>
     </div>
   );
 };

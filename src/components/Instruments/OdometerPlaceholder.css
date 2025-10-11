@@ -1,35 +1,42 @@
 .odometer-placeholder {
-  background-color: #bdbdbd;
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1em; /* 响应式间距 */
+  margin: 1em;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   font-size: calc(0.6vw + 0.6vh);
 }
 
-/* 自适应显示区 */
+.main-odcontent {
+  background-color: #bdbdbd;
+  border-radius: 12px; /* ✅ 添加圆角 */
+  padding: 0.8em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
 .odometer-display {
   width: 80%;
-  aspect-ratio: 8 / 3; /* 控制显示比例，替代固定高度 */
-  border: 1px solid #333;
+  aspect-ratio: 8 / 3;
+  background-color: #333333;
+  border-radius: 8px; /* ✅ 添加圆角 */
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: monospace;
-
-  /* 字体在容器内自动缩放 */
-  /* font-size: clamp(0.5rem, 3vw, 2rem); */
-  padding: 0.2em;
+  color: #fff; /* ✅ 字体颜色适配深色背景 */
   box-sizing: border-box;
 }
 
-/* 标签文字区域 */
 .odometer-label {
-  font-size: 1em; /* 随宽度调整 */
+  font-size: 1em;
   margin-top: 0.5em;
   text-align: center;
+  color: #333;
 }

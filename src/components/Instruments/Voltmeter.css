@@ -5,10 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .voltmeter-svg {
   width: 100%;
   height: auto;
   max-width: 300px;
+}
+.voltmeter-name {
+  color: #222;
+  font-size: 0.5em;
 }
