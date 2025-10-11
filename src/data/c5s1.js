@@ -76,7 +76,7 @@ export const c5s1 = [
     type: "both",
     guideStep: {
       selector: "#BP-1-l",
-      text: "受电弓降",
+      text: "请点击受电弓降按钮",
     },
     chatStep: {
       selector: "#BP-1-l",

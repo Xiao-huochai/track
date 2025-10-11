@@ -44,7 +44,7 @@ export const c3s3 = [
   {
     type: "guide",
     step: {
-      selector: "#RBLL-SB-1",
+      selector: "#RBLL-SB-0",
       text: "“SKS1”自动开关跳闸",
     },
   },

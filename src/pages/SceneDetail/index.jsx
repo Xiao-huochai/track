@@ -105,7 +105,7 @@ const SceneDetail = () => {
                   key={label}
                   label={label}
                   options={splitCombineOptions}
-                  wrapperId={"SZCK-L-2-1-" + index + 1}
+                  wrapperId={"SZCK-L-2-1-" + (index + 1)}
                 />
               ))}
             </div>
@@ -209,7 +209,7 @@ const SceneDetail = () => {
                 />
                 <ColorButton
                   activeColor="grey"
-                  label="解钩"
+                  label="解构"
                   wrapperId={"CBRL-1-0"}
                 />
                 <ColorButton
@@ -388,7 +388,6 @@ const SceneDetail = () => {
                 isOn={false}
                 wrapperId={"EmergencyBrakeButton-1"}
               />
-              <ColorButton activeColor="grey" wrapperId={"CBRR-0-0"} />
             </div>
             <div className="right-col2">
               <DoorButton

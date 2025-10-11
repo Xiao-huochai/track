@@ -70,7 +70,7 @@ export const c2s2 = [
     step: {
       selector: "#DisplayScreen",
       text: "限速 60km/h 运行至前方车站之后紧急停车 点击车辆显示屏的“临时停车”播放广播",
-      //   offset: { top: 90, left: -50 },
+      offset: { top: 90, left: 50 },
       //   avatar: driverAvatar,
     },
   },
