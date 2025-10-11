@@ -8,7 +8,6 @@ import "./GuideCharacter.css";
 //       offset: { top: 50, left: 50 },
 //       preventClickEvent:true,阻止当前点击事件执行进入下一步
 //     },
-
 const GuideCharacter = ({
   step = null,
   visible = false,

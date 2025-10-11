@@ -91,7 +91,7 @@ export const c3s2 = [
     guideStep: {
       selector: "#SZCK-L-2-1-0",
       text: "“信号选择打至信号切除位”",
-      offset: { top: 50, left: 0 },
+      offset: { top: 80, left: 0 },
     },
     chatStep: {
       selector: "#SZCK-L-2-1-0",
@@ -105,7 +105,7 @@ export const c3s2 = [
     guideStep: {
       selector: "#SZCK-L-2-2-0",
       text: "“车门旁路”至“合”位",
-      offset: { top: 50, left: 0 },
+      offset: { top: 80, left: 0 },
     },
     chatStep: {
       selector: "#SZCK-L-2-2-0",
