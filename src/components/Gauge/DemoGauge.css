@@ -1,20 +1,10 @@
 .oil,
 .bar {
   flex: 1;
+  max-width: 400px;
   width: 100%;
-  max-width: 400px; /* 可根据需要调整最大宽度 */
-  aspect-ratio: 4 / 3; /* 设置宽高比，避免布局乱掉，也可以根据图片比例设置 */
-  background-size: contain; /* 保持图片比例完整 */
-  background-repeat: no-repeat;
-  background-position: center;
+  aspect-ratio: 4 / 3;
+  object-fit: contain; /* 控制图片缩放方式，保持比例 */
   flex-shrink: 0;
-}
-
-/* 设置背景图（响应式） */
-.oil {
-  background-image: url("../../assets/imgs/oil.png");
-}
-
-.bar {
-  background-image: url("../../assets/imgs/bar.png");
+  display: block; /* 防止 img 元素下出现额外间隙 */
 }

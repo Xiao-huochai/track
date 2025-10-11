@@ -368,10 +368,7 @@ const SceneDetail = () => {
           </div>
           <div className="right-top-right">
             <div className="right-top-right-col1">
-              <div
-                className="demoGauge"
-                style={{ width: "120px", height: "120px" }}
-              >
+              <div className="demoGauge">
                 <DemoGauge />
               </div>
             </div>
