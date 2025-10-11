@@ -34,7 +34,7 @@
   overflow-x: hidden;
 
   background-color: #333;
-  color: red;
+  color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 1em;
   line-height: 1.5;
@@ -62,5 +62,5 @@
 
 .display-content::-webkit-scrollbar-thumb {
   background-color: #0f0;
-  border-radius: 3px;
+  border-radius: 5px;
 }
