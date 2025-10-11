@@ -1,4 +1,5 @@
 .chat-character {
+  width: 20vw;
   position: absolute;
   z-index: 9999;
   pointer-events: none;
@@ -15,13 +16,18 @@
   position: absolute;
   top: 10px;
   left: 70px;
-  background-color: #fff;
-  color: black;
-  border-radius: 6px;
-  padding: 8px 12px;
+  background-color: #ecf2f4;
+  color: #2c3e59;
+  border-radius: 2em 5em 5em 0;
+  padding: 8px 16px 8px 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* white-space: nowrap; */
   z-index: 10000;
   font-size: 1em;
-  width: 10em;
+  /* ✅ 关键设置 */
+  display: inline-block;
+  /* ✅ 自动宽度 */
+  width: auto;
+  /* ✅ 限制最大宽度（防止太宽） */
+  max-width: 12vw; /* 可按需调整，如 300px 或 25em */
 }
