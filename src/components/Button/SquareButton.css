@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(0.6vw + 0.6vh); /* 🔥 字体尺寸随着视图缩放 */
+  font-size: calc(0.6vw + 0.5vh); /* 🔥 字体尺寸随着视图缩放 */
   box-sizing: border-box;
   min-height: 0;
 }
@@ -19,13 +19,16 @@
 }
 
 .button-label {
-  font-size: 0.8em; /* 相对于 .square-button-container */
+  font-size: 0.8em;
   color: white;
   margin-top: 0.5em;
   text-align: center;
-  /* white-space: nowrap; */
-  overflow: hidden;
-  text-overflow: ellipsis;
   width: 100%;
   padding: 0 4px;
+
+  /* 移除所有会阻止换行的属性 */
+  overflow: visible;
+  white-space: normal;
+  text-overflow: unset;
+  word-break: break-word; /* 可选，必要时在单词中也换行 */
 }

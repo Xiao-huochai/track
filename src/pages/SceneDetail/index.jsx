@@ -62,7 +62,6 @@ const SceneDetail = () => {
 
   // 第一行旋钮标签（对应图中第一行10个旋钮）
   const row1Labels = [
-    "信号选择",
     "允许开弓旁路",
     "受电弓切除",
     "本车辅逆切除",
@@ -95,12 +94,18 @@ const SceneDetail = () => {
           <div className="knob-contener">
             {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
             <div className="knob-row">
+              <SplitZeroCombineKnob
+                key={"信号选择"}
+                label={"信号选择"}
+                options={["有效", "切除"]}
+                wrapperId={"SZCK-L-2-1-" + 0}
+              />
               {row1Labels.map((label, index) => (
                 <SplitZeroCombineKnob
                   key={label}
                   label={label}
                   options={splitCombineOptions}
-                  wrapperId={"SZCK-L-2-1-" + index}
+                  wrapperId={"SZCK-L-2-1-" + index + 1}
                 />
               ))}
             </div>
@@ -295,7 +300,7 @@ const SceneDetail = () => {
                 />
                 <SplitZeroCombineKnob
                   label="头灯"
-                  options={splitCombineOptions}
+                  options={["近光", "远光"]}
                   wrapperId={"SZCK-R-1-5"}
                 />
               </div>
@@ -311,7 +316,7 @@ const SceneDetail = () => {
                 />
                 <SplitZeroCombineKnob
                   label="ATP后退"
-                  options={splitCombineOptions}
+                  options={["禁止", "允许"]}
                   wrapperId={"SZCK-R-2-2"}
                 />
                 <ColorButton
@@ -322,12 +327,12 @@ const SceneDetail = () => {
                 />
                 <SplitZeroCombineKnob
                   label="关门模式选择"
-                  options={splitCombineOptions}
+                  options={["自动", "手动"]}
                   wrapperId={"SZCK-R-2-4"}
                 />
                 <LightTestZeroKnob
                   label="灯测试"
-                  options={splitCombineOptions}
+                  options={[splitCombineOptions]}
                   wrapperId={"SZCK-R-2-5"}
                   // 当initState.useDoorBugOn为true时添加点击事件，否则不添加
                   onClick={initState.useDoorBugOn ? lightTestOnClick : null}
