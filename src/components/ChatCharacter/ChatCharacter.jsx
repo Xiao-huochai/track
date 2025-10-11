@@ -60,7 +60,16 @@ const ChatCharacter = ({
         alt="chat-character"
         className="chat-avatar"
       />
-      <div className="chat-dialog">{step.text}</div>
+      <div
+        className="chat-dialog"
+        style={{
+          backgroundColor:
+            step.avatar !== defaultAvatar ? "#ffd4d4" : "#ecf2f4",
+          color: step.avatar !== defaultAvatar ? "#c04444" : "#2c3e59",
+        }}
+      >
+        {step.text}
+      </div>
     </div>
   );
 };
