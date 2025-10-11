@@ -61,10 +61,9 @@
 
 /* 中间内容区：左右分栏 */
 .detail-content {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  /* gap: 5px; */
-
+  display: flex; /* ✔️ 改为flex布局 */
+  flex-direction: row;
+  gap: 10px; /* ✔️ 分隔左右结构的间隙 */
   flex-grow: 1;
   overflow: hidden;
 }
@@ -79,39 +78,45 @@
 
 /* 左列 */
 .column.left {
-  display: flex;
-  align-items: center; /* 顶部对齐 */
-  justify-content: center;
+  flex: 1.2; /* ✅ 左侧稍大一点的比例 */
+  min-width: 300px; /* ✅ 防止被挤太小 */
   background-color: #d9d9d9;
   border-right: #f5f5f5 solid 0.5em;
   border-radius: 10px;
-  /* padding: 10px; */
-  /* 最小化内边距 */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 右列：上下分栏 */
+/* 右列 */
 .column.right {
-  display: grid;
-  grid-template-rows: 2fr 1fr; /* 上下两部分各占一半高度 */
+  flex: 2; /* ✅ 右侧占更大空间 */
+  display: flex;
+  flex-direction: column;
   gap: 5px;
+  min-width: 400px;
 }
 
 /* 右列上下行通用样式 */
+/* .column.right 内的上下区域 */
+.row.top {
+  flex: 2; /* 上区域占更多高度 */
+}
+.row.bottom {
+  flex: 1;
+}
+
 .row {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 5px; */
-}
-
-.row.top,
-.row.bottom {
-  /* background-color: #f9f9f9; */
   background-color: #2c3e50;
   border-radius: 4px;
+  overflow: hidden;
 }
 
-.modal-overlay {
+/* .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -183,4 +188,4 @@
     opacity: 1;
     transform: scale(1);
   }
-}
+} */
