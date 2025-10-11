@@ -460,27 +460,8 @@ const SceneDetail = () => {
               </div>
             </div>
             <div className="right-bottom-center">
-              <div className="right-bottom-center-line1">
-                <ColorButton activeColor="grey" label="" wrapperId={"RBCL11"} />
-                <ColorButton
-                  activeColor="#f39c12"
-                  label=""
-                  wrapperId={"RBCL12"}
-                />
-                <ColorButton
-                  activeColor="#f39c12"
-                  label=""
-                  wrapperId={"RBCL13"}
-                />
-              </div>
-              <div className="right-bottom-center-line2">
-                <ColorButton activeColor="grey" label="" wrapperId={"RBCL21"} />
-                <ColorButton
-                  activeColor="#f39c12"
-                  label=""
-                  wrapperId={"RBCL22"}
-                />
-              </div>
+              <div className="right-bottom-center-line1"></div>
+              <div className="right-bottom-center-line2"></div>
             </div>
             <div className="right-bottom-right">
               <SplitZeroCombineKnob
