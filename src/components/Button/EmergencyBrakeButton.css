@@ -26,7 +26,7 @@
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  border: 0.2em solid white;
+  /* border: 0.2em solid white; */
 
   position: absolute;
   top: 50%;
@@ -40,7 +40,7 @@
   width: 1.6em;
   height: 1.6em;
   border-radius: 50%;
-  border: 0.1em solid transparent;
+  border: 0.2em solid transparent;
   border-top-color: white;
 
   top: 0.2em;
