@@ -86,16 +86,6 @@ const OperationModeKnob = ({ wrapperId, title = "运行模式" }) => {
 
         {/* 圆心 */}
         <circle cx={center} cy={center} r="5" fill="#000" />
-
-        {/* 当前模式显示 */}
-        <text
-          x={center}
-          y={center + 110}
-          textAnchor="middle"
-          className="current-mode"
-        >
-          当前：{modes[currentIndex]}
-        </text>
       </svg>
     </div>
   );

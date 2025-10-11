@@ -8,7 +8,8 @@
   min-height: 0;
   box-sizing: border-box;
 
-  font-size: calc(0.6vw + 0.6vh); /* 👈 核心，viewport 相对单位，可以调节 */
+  font-size: calc(0.5vw + 0.3vh);
+  /* 👈 核心，viewport 相对单位，可以调节 */
 }
 
 /* 分0合状态标签容器 */
@@ -22,18 +23,18 @@
 
 .label-left,
 .label-right {
-  font-size: 0.6em; /* 相对字体 */
-  width: 1.2em;
+  /* font-size: 0.6em;
+  width: 1.2em; */
   text-align: center;
 }
 .label-middle {
-  font-size: 0.6em;
-  width: 1.2em;
+  /* font-size: 0.6em;
+  width: 1.2em; */
   text-align: center;
 }
 
 .knob-label {
-  font-size: 0.6em;
+  /* font-size: 0.6em; */
   width: 100%;
   margin-top: 4px;
   text-align: center;
