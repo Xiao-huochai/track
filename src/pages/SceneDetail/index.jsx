@@ -92,43 +92,43 @@ const SceneDetail = () => {
       title={systemName}
       childrenLeft={
         <div className="left-content-placeholder">
-          {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
-          <div className="knob-row">
-            {row1Labels.map((label, index) => (
-              <SplitZeroCombineKnob
-                key={label}
-                label={label}
-                options={splitCombineOptions}
-                wrapperId={"SZCK-L-2-1-" + index}
-              />
-            ))}
-          </div>
-
-          {/* 第二行：6个分合 + 3个分0合旋钮 */}
-          <div className="knob-row-custom">
-            {/* 分组 1：6个组件 */}
-            <div className="knob-group knob-group-1">
-              {row2SplitCombineLabels.map((label, index) => (
+          <div className="knob-contener">
+            {/* 第一行：10个分合旋钮（已替换为带分合选项的分0合旋钮） */}
+            <div className="knob-row">
+              {row1Labels.map((label, index) => (
                 <SplitZeroCombineKnob
                   key={label}
                   label={label}
                   options={splitCombineOptions}
-                  wrapperId={"SZCK-L-2-2-" + index}
+                  wrapperId={"SZCK-L-2-1-" + index}
                 />
               ))}
             </div>
-            {/* 分组2：3个组件，并排均分剩余空间 */}
-            <div className="knob-group knob-group-2">
-              {row2SplitZeroCombineLabels.map((label, index) => (
-                <SplitZeroCombineKnob
-                  key={label}
-                  label={label}
-                  wrapperId={"SZCK-L-3-2-" + index}
-                />
-              ))}
+            {/* 第二行：6个分合 + 3个分0合旋钮 */}
+            <div className="knob-row-custom">
+              {/* 分组 1：6个组件 */}
+              <div className="knob-group knob-group-1">
+                {row2SplitCombineLabels.map((label, index) => (
+                  <SplitZeroCombineKnob
+                    key={label}
+                    label={label}
+                    options={splitCombineOptions}
+                    wrapperId={"SZCK-L-2-2-" + index}
+                  />
+                ))}
+              </div>
+              {/* 分组2：3个组件，并排均分剩余空间 */}
+              <div className="knob-group knob-group-2">
+                {row2SplitZeroCombineLabels.map((label, index) => (
+                  <SplitZeroCombineKnob
+                    key={label}
+                    label={label}
+                    wrapperId={"SZCK-L-3-2-" + index}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-
           {/* 仪表区：电压表 + 里程计占位 + 运行模式旋钮 */}
           <div className="instruments-row">
             <Voltmeter wrapperId={"Voltmeter"} />
@@ -152,6 +152,7 @@ const SceneDetail = () => {
               <div className="left-col1">
                 <DoorButton
                   activeColor="#e74c3c"
+                  inactiveColor="#a50505"
                   label="开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-0"}
@@ -160,6 +161,7 @@ const SceneDetail = () => {
                 />
                 <DoorButton
                   activeColor="#e74c3c"
+                  inactiveColor="#e99f00"
                   label="强制开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-1"}
@@ -168,6 +170,7 @@ const SceneDetail = () => {
                 />
                 <DoorButton
                   activeColor="#e74c3c"
+                  inactiveColor="#333333"
                   label="重开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-2"}
@@ -176,6 +179,7 @@ const SceneDetail = () => {
                 />
                 <DoorButton
                   activeColor="#e74c3c"
+                  inactiveColor="#a50505"
                   label="开左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-3"}
@@ -184,6 +188,7 @@ const SceneDetail = () => {
                 />
                 <DoorButton
                   activeColor="#2ecc71"
+                  inactiveColor="#007343"
                   label="关左门"
                   borderColor="white"
                   wrapperId={"CBRL-0-4"}
@@ -203,7 +208,8 @@ const SceneDetail = () => {
                   wrapperId={"CBRL-1-0"}
                 />
                 <ColorButton
-                  activeColor="#f39c12"
+                  activeColor="#774b05ff"
+                  inactiveColor="#e99f00"
                   label="窗外加热"
                   wrapperId={"CBRL-1-1"}
                 />
@@ -254,6 +260,8 @@ const SceneDetail = () => {
                 >
                   <ColorButton
                     label="乘客报警复位"
+                    activeColor="#ea0e0eff"
+                    inactiveColor="#a50505"
                     topLabel="复位"
                     wrapperId={"CBRC-0-0"}
                   />
@@ -334,18 +342,21 @@ const SceneDetail = () => {
             <div className="right-section">
               <SquareButton
                 color="#2ecc71"
+                inActiveColor="#007343"
                 label="所有气制动缓解"
                 isOn={true}
                 wrapperId={"SB-0"}
               />
               <SquareButton
                 color="#e74c3c"
+                inActiveColor="#a50505"
                 label="气制动施加"
                 isOn={false}
                 wrapperId={"SB-1"}
               />
               <DoorAllButton
                 color="#2ecc71"
+                inActiveColor="#007343"
                 label="所有车门关闭"
                 isOn={initState.useDoorBugOn ? doorAllBugOn : doorAllOn} // 使用派生状态
                 wrapperId={"SB-2"}
@@ -378,6 +389,7 @@ const SceneDetail = () => {
             <div className="left-col1">
               <DoorButton
                 activeColor="#e74c3c"
+                inactiveColor="#a50505"
                 label="开右门"
                 borderColor="white"
                 wrapperId={"CBRL-1-0"}
@@ -386,6 +398,7 @@ const SceneDetail = () => {
               />
               <DoorButton
                 activeColor="#e74c3c"
+                inactiveColor="#e99f00"
                 label="强制开右门"
                 borderColor="white"
                 wrapperId={"CBRL-1-1"}
@@ -394,6 +407,7 @@ const SceneDetail = () => {
               />
               <DoorButton
                 activeColor="#e74c3c"
+                inactiveColor="#333333"
                 label="重开右门"
                 borderColor="white"
                 wrapperId={"CBRL-1-2"}
@@ -402,6 +416,7 @@ const SceneDetail = () => {
               />
               <DoorButton
                 activeColor="#e74c3c"
+                inactiveColor="#a50505"
                 label="开右门"
                 borderColor="white"
                 wrapperId={"CBRL-1-3"}
@@ -410,6 +425,7 @@ const SceneDetail = () => {
               />
               <DoorButton
                 activeColor="#2ecc71"
+                inactiveColor="#007343"
                 label="关右门"
                 borderColor="white"
                 wrapperId={"CBRL-1-4"}

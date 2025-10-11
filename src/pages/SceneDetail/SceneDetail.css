@@ -62,16 +62,22 @@
 .left-content-placeholder {
   display: flex;
   flex-direction: column;
-  padding: 10px; /* 缩小内边距 */
+  border: 1em solid #d9d9d9;
+  /* 缩小内边距 */
   width: 100%;
   box-sizing: border-box;
+  color: #fff;
 }
 
+.knob-contener {
+  border-radius: 10px;
+  background-color: #333333;
+}
 /* 左侧上方10个按钮 */
 .knob-row {
   display: flex;
   flex-wrap: nowrap; /* 不换行 */
-  margin-bottom: 12px;
+  margin-top: 12px;
   gap: 4px; /* 稍微加点间距 */
   width: 100%;
   align-items: stretch; /* 子项拉伸一致高度 */
@@ -105,6 +111,7 @@
 }
 
 .instruments-row {
+  background-color: #d9d9d9;
   display: flex;
   justify-content: start;
   margin-top: 12px;

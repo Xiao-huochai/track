@@ -16,7 +16,7 @@
   width: 80%; /* 相对宽度 */
   aspect-ratio: 1 / 1; /* 保持圆形 */
   border-radius: 50%;
-  border: 0.2em solid;
+  border: 0.55em solid;
   cursor: pointer;
   transition: background-color 0.2s ease;
   /* max-width: 30px; */

@@ -30,7 +30,7 @@ const Voltmeter = ({ voltage = 0, wrapperId }) => {
         <path
           d="M 40 160 A 80 80 0 1 1 160 160"
           fill="none"
-          stroke="#ddd"
+          stroke="#ffffff"
           strokeWidth="10"
         />
 
@@ -46,7 +46,7 @@ const Voltmeter = ({ voltage = 0, wrapperId }) => {
         />
 
         {/* 圆心 */}
-        <circle cx={center} cy={center} r="5" fill="#333" />
+        <circle cx={center} cy={center} r="10" fill="#717171" />
 
         {/* 电压文本 */}
         <text

@@ -3,6 +3,7 @@ import "./SquareButton.css";
 // 添加 isOn 和 onClick
 const DoorAllButton = ({
   color,
+  inActiveColor = "#666",
   label,
   isOn = false, // 从外部接收
   onClick = null, // 可选点击回调
@@ -20,7 +21,7 @@ const DoorAllButton = ({
     >
       <div
         className="square-button"
-        style={{ backgroundColor: isOn ? color : "#666" }}
+        style={{ backgroundColor: isOn ? color : inActiveColor }}
       ></div>
       <div className="button-label">{label}</div>
     </div>
