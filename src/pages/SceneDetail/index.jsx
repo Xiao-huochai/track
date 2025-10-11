@@ -378,14 +378,14 @@ const SceneDetail = () => {
                 forceActive={forceDisplayOpen}
               ></TrueScreen>
             </div>
-            <div className="right-col2">
+            <div className="right-col1">
               <EmergencyBrakeButton
                 isOn={false}
                 wrapperId={"EmergencyBrakeButton-1"}
               />
               <ColorButton activeColor="grey" wrapperId={"CBRR-0-0"} />
             </div>
-            <div className="right-col1">
+            <div className="right-col2">
               <DoorButton
                 activeColor="#e74c3c"
                 inactiveColor="#a50505"

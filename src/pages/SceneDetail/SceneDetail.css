@@ -76,7 +76,8 @@
 /* 左侧上方10个按钮 */
 .knob-row {
   display: flex;
-  flex-wrap: nowrap; /* 不换行 */
+  flex-wrap: nowrap;
+  /* 不换行 */
   margin-top: 12px;
   gap: 4px; /* 稍微加点间距 */
   width: 100%;
@@ -233,6 +234,10 @@
   height: 100%;
 }
 /* 右下的样式文件 */
+.right-col2 > * {
+  width: 71%;
+  box-sizing: border-box;
+}
 
 .right-bottom-placeholder {
   display: flex;
