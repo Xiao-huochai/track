@@ -6,6 +6,7 @@ const SplitZeroCombineKnob = ({
   options,
   wrapperId,
   startIndex = 0,
+  fontSize = "0.8em",
   // 0 1 2分别对应左中右
 }) => {
   // 验证输入参数，确保是2或3个选项
@@ -52,7 +53,7 @@ const SplitZeroCombineKnob = ({
       id={wrapperId}
     >
       {/* 动态状态标签 */}
-      <div className="knob-state-labels">
+      <div className="knob-state-labels" style={{ fontSize: fontSize }}>
         <span className="label-left">{options[0]}</span>
         {options.length === 3 && (
           <span className="label-middle">{options[1]}</span>
@@ -66,7 +67,9 @@ const SplitZeroCombineKnob = ({
       </div>
 
       {/* 底部标签 */}
-      <div className="knob-label">{label}</div>
+      <div className="knob-label" style={{ fontSize: fontSize }}>
+        {label}
+      </div>
     </div>
   );
 };

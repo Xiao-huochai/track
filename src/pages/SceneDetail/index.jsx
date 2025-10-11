@@ -490,11 +490,13 @@ const SceneDetail = () => {
                 options={["关", "开"]}
                 wrapperId={"mainKey"}
                 startIndex={2}
+                fontSize="1.5em"
               />
               <SplitZeroCombineKnob
                 label="主控手柄"
                 options={splitCombineOptions}
                 wrapperId={"rr1"}
+                fontSize="1.5em"
               />
             </div>
           </div>
