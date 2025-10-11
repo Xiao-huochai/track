@@ -63,7 +63,8 @@ export const c2s1 = [
     step: {
       selector: "#mainKey",
       text: "点击检查“受电弓升”绿灯是否亮起 “主控钥匙”是否在“开”位",
-      // offset: { top: 50, left: 50 },
+      offset: { top: 100, left: 0 },
+      preventClickEvent: true,
     },
   },
   {

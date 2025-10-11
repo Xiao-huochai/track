@@ -73,7 +73,7 @@ export const c3s1 = [
     type: "both",
     guideStep: {
       selector: "#BP-0-l",
-      text: "主断路器分",
+      text: "点击主断路分按钮",
     },
     chatStep: {
       selector: "#BP-0-l",
