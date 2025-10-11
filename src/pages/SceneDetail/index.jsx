@@ -305,6 +305,7 @@ const SceneDetail = () => {
                 <DriveModeButton wrapperId={"DriveModeButton"} />
                 <ColorButton
                   activeColor="#2ecc71"
+                  inactiveColor="#007343"
                   label="ATO模式"
                   wrapperId={"CBRC-2-1"}
                 />
@@ -315,6 +316,7 @@ const SceneDetail = () => {
                 />
                 <ColorButton
                   activeColor="#f39c12"
+                  inactiveColor="#e99f00"
                   label="无人驾折返模式"
                   wrapperId={"CBRC-2-3"}
                 />
@@ -443,12 +445,14 @@ const SceneDetail = () => {
               <div className="right-bottom-left-line1">
                 <SquareButton
                   color="#2ecc71"
+                  inActiveColor="#007343"
                   label="SKS1"
                   isOn={true}
                   wrapperId={"RBLL-SB-0"}
                 />
                 <SquareButton
                   color="#e74c3c"
+                  inActiveColor="#e99f00"
                   label="HSCB控制"
                   isOn={false}
                   wrapperId={"RBLL-SB-1"}

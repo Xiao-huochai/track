@@ -11,7 +11,7 @@ const EmergencyBrakeButton = ({ initialOn = false, wrapperId }) => {
       {/* 红色圆形按钮 */}
       <div
         className="emergency-button"
-        style={{ backgroundColor: isOn ? "#e74c3c" : "#666" }}
+        style={{ backgroundColor: isOn ? "#e74c3c" : "#900606ff" }}
       >
         {/* 中间白圈（分三圆弧） */}
         <div className="white-circle">

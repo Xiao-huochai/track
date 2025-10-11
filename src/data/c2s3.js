@@ -45,6 +45,10 @@ export const c2s3 = [
     step: {
       selector: "#mainKey",
       text: "将“主控钥匙”打到“关”位，待“车辆显示屏”黑屏 3 秒后，将“主控钥匙”打到“开”位，尝试动车",
+      offset: {
+        top: 120,
+        left: 100,
+      },
     },
   },
   {
@@ -77,6 +81,10 @@ export const c2s3 = [
     step: {
       selector: "#DisplayScreen",
       text: "点击“车辆显示屏”，查看车门、牵引、制动、辅助电源和空压机状态界面",
+      offset: {
+        top: 120,
+        left: 100,
+      },
     },
   },
   {
@@ -110,7 +118,7 @@ export const c2s3 = [
       selector: "#RBLL-SB-1",
       text: "接通电话 呼叫行调报告行调：“行调，XX 次在XX 站-XX 站上/下行区间“车辆显示屏”显示‘牵引封锁/激活故障’，司机操作降级模式后列车已经动车，申请限速退出服务。”",
       offset: {
-        top: -100,
+        top: -150,
         left: 0,
       },
       avatar: driverAvatar,

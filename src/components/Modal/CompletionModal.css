@@ -12,6 +12,7 @@
 /* 弹窗主体 */
 .cm-modal {
   background: white;
+  color: #333;
   width: 400px;
   padding: 30px 20px;
   border-radius: 12px;
