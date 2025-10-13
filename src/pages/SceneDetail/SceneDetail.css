@@ -233,11 +233,6 @@
   align-items: center;
   height: 100%;
 }
-/* 右下的样式文件 */
-.right-col2 > * {
-  width: 71%;
-  box-sizing: border-box;
-}
 
 .right-bottom-placeholder {
   display: flex;
