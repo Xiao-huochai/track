@@ -1,25 +1,26 @@
 .scene-card {
-  width: 280px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 15px;
+  width: 17.5em;
+  border: 0.0625em solid #ddd; /* 1px */
+  border-radius: 0.25em; /* 4px */
+  padding: 0.9375em; /* 15px */
   background-color: #f9f9f9;
   transition: all 0.3s ease;
   cursor: pointer;
-  min-height: 80px;
+  min-height: 5em; /* 80px */
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   text-align: center;
+  box-sizing: border-box;
 }
 
 .scene-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); /* 4px 8px */
+  transform: translateY(-0.125em); /* -2px */
   border-color: #007bff;
 }
 
 .scene-name {
   color: #333;
   font-weight: bold;
+  font-size: 1em; /* 可加，也可省略，继承字体即可 */
 }

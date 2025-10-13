@@ -1,69 +1,68 @@
-/* 关键修改：使用网格布局和固定高度限制 */
 .home-container {
-  max-width: 1200px;
+  max-width: 75em; /* 1200px ≈ 75em */
   margin: 0 auto;
-  padding: 20px;
-  height: 100vh; /* 固定高度为视口高度 */
+  padding: 1.25em; /* 20px */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* 完全禁止容器滚动 */
+  overflow: hidden;
+  font-size: calc(0.6vw + 0.6vh);
 }
 
 .home-container h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   color: #333;
-  padding: 10px 0;
+  padding: 0.625em 0; /* 10px 0 */
 }
 
 .sections-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 20px;
-  flex-grow: 1; /* 填充剩余空间 */
-  overflow: hidden; /* 禁止自身滚动 */
+  grid-template-columns: repeat(auto-fit, minmax(21.875em, 1fr));
+  gap: 1.25em; /* 20px */
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .fault-section {
   background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.9375em; /* 15px */
+  border-radius: 0.5em;
+  box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* 2px 4px */
   display: flex;
   flex-direction: column;
-  max-height: 100%; /* 最大高度限制为父容器 */
+  max-height: 100%;
 }
 
 .section-title {
   color: #555;
   margin-top: 0;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 8px;
-  font-size: 1.1rem; /* 缩小标题字体 */
+  margin-bottom: 0.9375em; /* 15px */
+  border-bottom: 0.125em solid #eee; /* 2px */
+  padding-bottom: 0.5em;
+  font-size: 1em;
 }
 
 .scenes-grid {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625em; /* 10px */
   flex-grow: 1;
-  overflow-y: auto; /* 仅在分类内部出现滚动（如有特殊情况） */
-  padding-right: 5px;
+  overflow-y: auto;
+  padding-right: 0.3125em; /* 5px */
 }
 
-/* 优化卡片大小，减少占用空间 */
 .scene-card {
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 12px;
+  border: 0.0625em solid #ddd; /* 1px */
+  border-radius: 0.25em;
+  padding: 0.75em; /* 12px */
   background-color: #f9f9f9;
-  cursor: pointer; /* 明确点击交互 */
+  cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .scene-card:hover {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.15); /* 2px 6px */
   border-color: #ccc;
 }
