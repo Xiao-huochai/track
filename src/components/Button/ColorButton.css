@@ -9,7 +9,8 @@
   padding: 4px;
   overflow: hidden; /* ⛔️ 保证字不溢出变大 */
 
-  font-size: calc(0.5vw + 0.3vh); /* 👈 核心，viewport 相对单位，可以调节 */
+  /* font-size: calc(0.5vw + 0.3vh);  */
+  /* 👈 核心，viewport 相对单位，可以调节 */
 }
 
 .red-button {

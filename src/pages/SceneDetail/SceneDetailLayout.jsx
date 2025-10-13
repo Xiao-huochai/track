@@ -14,31 +14,29 @@ const SceneDetailLayout = ({
     navigate("/");
   };
   return (
-    <div className="detail-page">
-      {/* 顶部区域：标题 + 操作说明 */}
-      <header className="detail-header">
-        <h1>{title}</h1>
+    <div className="page-wrapper">
+      <div className="aspect-ratio-container">
+        <div className="detail-page">
+          {/* Header 区域 */}
+          <header className="detail-header">
+            <h1>{title}</h1>
+            <div className="header-btn-group">
+              <button className="back-btn" onClick={handleBackToHome}>
+                返回首页
+              </button>
+            </div>
+          </header>
 
-        <div className="header-btn-group">
-          {/* <button
-            className="operation-btn"
-            onClick={() => setShowHelpModal(true)}
-          >
-            操作说明
-          </button> */}
-          <button className="back-btn" onClick={handleBackToHome}>
-            返回首页
-          </button>
+          {/* 内容区域 */}
+          <main className="detail-content">
+            <div className="column left">{childrenLeft}</div>
+            <div className="column right">
+              <div className="row top">{childrenRightTop}</div>
+              <div className="row bottom">{childrenRightBottom}</div>
+            </div>
+          </main>
         </div>
-      </header>
-      {/* 中间主内容区：左右分栏，右侧再上下分栏 */}
-      <main className="detail-content">
-        <div className="column left">{childrenLeft}</div>
-        <div className="column right">
-          <div className="row top">{childrenRightTop}</div>
-          <div className="row bottom">{childrenRightBottom}</div>
-        </div>
-      </main>
+      </div>
     </div>
   );
 };

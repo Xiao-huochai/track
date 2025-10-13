@@ -6,7 +6,7 @@
   z-index: 9999;
   pointer-events: none; /* 避免点击挡住页面 */
   transition: top 0.5s ease, left 0.5s ease;
-  font-size: calc(0.6vw + 0.6vh);
+  /* font-size: calc(0.6vw + 0.6vh); */
 }
 
 .guide-character img {
