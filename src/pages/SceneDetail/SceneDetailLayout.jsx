@@ -1,5 +1,6 @@
 import "./SceneDetailLayout.css";
 import { useNavigate } from "react-router-dom";
+import LandscapeHintWrapper from "../../components/LandscapeHintWrapper/LandscapeHintWrapper";
 // import { useState } from "react";
 const SceneDetailLayout = ({
   title,
@@ -14,30 +15,32 @@ const SceneDetailLayout = ({
     navigate("/");
   };
   return (
-    <div className="page-wrapper">
-      <div className="aspect-ratio-container">
-        <div className="detail-page">
-          {/* Header 区域 */}
-          <header className="detail-header">
-            <h1>{title}</h1>
-            <div className="header-btn-group">
-              <button className="back-btn" onClick={handleBackToHome}>
-                返回首页
-              </button>
-            </div>
-          </header>
+    <LandscapeHintWrapper>
+      <div className="page-wrapper">
+        <div className="aspect-ratio-container">
+          <div className="detail-page">
+            {/* Header 区域 */}
+            <header className="detail-header">
+              <h1>{title}</h1>
+              <div className="header-btn-group">
+                <button className="back-btn" onClick={handleBackToHome}>
+                  返回首页
+                </button>
+              </div>
+            </header>
 
-          {/* 内容区域 */}
-          <main className="detail-content">
-            <div className="column left">{childrenLeft}</div>
-            <div className="column right">
-              <div className="row top">{childrenRightTop}</div>
-              <div className="row bottom">{childrenRightBottom}</div>
-            </div>
-          </main>
+            {/* 内容区域 */}
+            <main className="detail-content">
+              <div className="column left">{childrenLeft}</div>
+              <div className="column right">
+                <div className="row top">{childrenRightTop}</div>
+                <div className="row bottom">{childrenRightBottom}</div>
+              </div>
+            </main>
+          </div>
         </div>
       </div>
-    </div>
+    </LandscapeHintWrapper>
   );
 };
 
