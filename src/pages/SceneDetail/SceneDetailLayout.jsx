@@ -16,8 +16,8 @@ const SceneDetailLayout = ({
   };
   return (
     <LandscapeHintWrapper>
-      <div className="page-wrapper">
-        <div className="aspect-ratio-container">
+      <div className="viewport-wrapper">
+        <div className="viewport-content">
           <div className="detail-page">
             {/* Header 区域 */}
             <header className="detail-header">
