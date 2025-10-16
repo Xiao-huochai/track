@@ -99,7 +99,8 @@ body {
 /* 左列 */
 .column.left {
   flex: 1.2; /* ✅ 左侧稍大一点的比例 */
-  min-width: 300px; /* ✅ 防止被挤太小 */
+  min-width: 30em;
+  /* ✅ 防止被挤太小 */
   background-color: #d9d9d9;
   border-radius: 10px;
   overflow: hidden;
@@ -111,6 +112,7 @@ body {
 /* 右列 */
 .column.right {
   flex: 2; /* ✅ 右侧占更大空间 */
+  /* min-width: 800px; */
   display: flex;
   flex-direction: column;
   gap: 5px;

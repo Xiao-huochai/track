@@ -1,21 +1,28 @@
 import { useEffect, useState } from "react";
 
-// ✅ 旋转提示封装组件
+// ✅ 仅在移动端检测横竖屏的提示封装组件
 export default function LandscapeHintWrapper({ children }) {
-  const [isPortrait, setIsPortrait] = useState(
-    window.innerHeight > window.innerWidth
-  );
+  const [isPortraitOnMobile, setIsPortraitOnMobile] = useState(false);
 
   useEffect(() => {
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod|Phone/i.test(
+      navigator.userAgent
+    );
+
     const checkOrientation = () => {
-      setIsPortrait(window.innerHeight > window.innerWidth);
+      if (isMobile) {
+        const portrait = window.innerHeight > window.innerWidth;
+        console.log(portrait);
+        setIsPortraitOnMobile(portrait);
+      } else {
+        setIsPortraitOnMobile(false); // 桌面端不显示提示
+      }
     };
+
+    checkOrientation();
 
     window.addEventListener("resize", checkOrientation);
     window.addEventListener("orientationchange", checkOrientation);
-
-    // 初始检查
-    checkOrientation();
 
     return () => {
       window.removeEventListener("resize", checkOrientation);
@@ -25,7 +32,7 @@ export default function LandscapeHintWrapper({ children }) {
 
   return (
     <>
-      {isPortrait ? (
+      {isPortraitOnMobile ? (
         <div
           style={{
             position: "fixed",
